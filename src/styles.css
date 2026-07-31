@@ -300,6 +300,19 @@
   }
 }
 
+@keyframes kenburns-out {
+  0% {
+    transform: scale(1.12);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@utility animate-kenburns-out {
+  animation: kenburns-out 6s ease-out forwards;
+}
+
 @utility float-shape {
   animation: float-slow 9s ease-in-out infinite;
 }
