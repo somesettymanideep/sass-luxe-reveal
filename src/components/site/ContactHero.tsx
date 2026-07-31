@@ -31,7 +31,7 @@ export function ContactHero() {
   return (
     <section className="surface-noir relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="float-shape absolute left-10 top-24 size-40 rounded-full border border-gold/10" />
+        <div className="float-shape absolute left-10 top-24 size-40 rounded-full border border-gold/[0.04]" />
         <div className="float-shape absolute bottom-10 left-1/3 size-64 rounded-full bg-[image:var(--gradient-gold)] opacity-[0.05] blur-3xl" />
       </div>
 
@@ -61,14 +61,14 @@ export function ContactHero() {
                     {item.label}
                   </p>
                   {item.lines.map((line) => (
-                    <p key={line} className="mt-1 text-xs leading-relaxed text-ivory/70">
+                    <p key={line} className="mt-1 break-words text-[0.7rem] leading-relaxed text-ivory/70">
                       {line}
                     </p>
                   ))}
                 </>
               );
               const cls =
-                "group lift-card block rounded-2xl border border-gold/20 bg-white/[0.03] p-5 backdrop-blur-md";
+                "group lift-card block rounded-2xl border border-gold/20 bg-white/[0.03] p-4 backdrop-blur-md";
               return (
                 <div
                   key={item.label}
