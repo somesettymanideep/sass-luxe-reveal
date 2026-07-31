@@ -11,7 +11,7 @@ const NAV = [
   { label: "Gallery", href: "#gallery" },
   { label: "Locations", href: "#locations" },
   { label: "Offers", href: "#offers" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export function Header() {
@@ -68,7 +68,7 @@ export function Header() {
           <a href="tel:+919000000000" className="hidden text-ivory/75 transition-colors hover:text-gold lg:block" aria-label="Call SASS Hair & Beauty">
             <Phone className="size-4" />
           </a>
-          <LuxeButton className="hidden sm:inline-flex" onClick={() => (window.location.hash = "#contact")}>
+          <LuxeButton className="hidden sm:inline-flex" onClick={() => (window.location.href = "/contact")}>
             Book Appointment
           </LuxeButton>
           <button
