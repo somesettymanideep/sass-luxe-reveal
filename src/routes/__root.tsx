@@ -84,6 +84,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:description", content: "Luxury hair, beauty and bridal salon chain across Andhra Pradesh." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "SASS Hair & Beauty | Luxury Salon" },
+      { name: "twitter:description", content: "Luxury hair, beauty and bridal salon chain across Andhra Pradesh." },
     ],
     links: [
       {
