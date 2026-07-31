@@ -54,7 +54,7 @@ export function Footer() {
           </div>
 
           <nav className="reveal" aria-label="Services" style={{ ["--reveal-delay" as string]: "100ms" }}>
-            <h2 className="eyebrow text-gold">Services</h2>
+            <h2 className="eyebrow font-[family-name:var(--font-sans)] text-gold">Services</h2>
             <ul className="mt-6 space-y-3">
               {SERVICES.map((service) => (
                 <li key={service}>
@@ -67,7 +67,7 @@ export function Footer() {
           </nav>
 
           <div className="reveal" style={{ ["--reveal-delay" as string]: "200ms" }}>
-            <h2 className="eyebrow text-gold">Locations</h2>
+            <h2 className="eyebrow font-[family-name:var(--font-sans)] text-gold">Locations</h2>
             <ul className="mt-6 space-y-6">
               {LOCATIONS.map((location) => (
                 <li key={location.city}>
@@ -79,7 +79,7 @@ export function Footer() {
           </div>
 
           <div className="reveal" style={{ ["--reveal-delay" as string]: "300ms" }}>
-            <h2 className="eyebrow text-gold">Contact</h2>
+            <h2 className="eyebrow font-[family-name:var(--font-sans)] text-gold">Contact</h2>
             <ul className="mt-6 space-y-4 text-sm text-ivory/60">
               <li className="flex items-center gap-3">
                 <Phone className="size-4 text-gold-deep" aria-hidden />
