@@ -135,7 +135,7 @@ export function Hero() {
                 <div>
                   <p className="eyebrow text-gold">Signature</p>
                   <p className="mt-2 font-[family-name:var(--font-display)] text-xl text-ivory sm:text-2xl">
-                    {SLIDES[index].label}
+                    {SLIDES[index]?.label}
                   </p>
                 </div>
                 <div className="flex gap-2">
