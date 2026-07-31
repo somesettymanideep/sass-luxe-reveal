@@ -112,10 +112,9 @@ export function Hero() {
           </ul>
         </div>
 
-        <div className="reveal-right relative">
-          <div className="reveal-right relative animate-zoom-out-section">
-            <div className="relative overflow-hidden rounded-[2rem] shadow-luxe ring-1 ring-gold/20">
-              <div className="relative aspect-4/5 sm:aspect-3/2 lg:aspect-4/5">
+        <div className="reveal-right relative animate-zoom-out-section">
+          <div className="relative overflow-hidden rounded-[2rem] shadow-luxe ring-1 ring-gold/20">
+            <div className="relative aspect-4/5 sm:aspect-3/2 lg:aspect-4/5">
                 {SLIDES.map((slide, i) => (
                   <img
                     key={slide.label}
