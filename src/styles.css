@@ -300,17 +300,17 @@
   }
 }
 
-@keyframes kenburns-out {
+@keyframes zoom-out-section {
   0% {
-    transform: scale(1.12);
+    transform: scale(1.05);
   }
   100% {
     transform: scale(1);
   }
 }
 
-@utility animate-kenburns-out {
-  animation: kenburns-out 6s ease-out forwards;
+@utility animate-zoom-out-section {
+  animation: zoom-out-section 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @utility float-shape {
