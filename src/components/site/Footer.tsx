@@ -1,6 +1,6 @@
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
 
-const QUICK_LINKS = ["Home", "About", "Services", "Bridal", "Gallery", "Offers", "Contact"];
+
 const SERVICES = ["Hair Cut", "Fashion Colours", "Keratin", "Smoothening", "Bridal Makeup", "Facials"];
 const LOCATIONS = [
   { city: "Vijayawada", address: "MG Road, Labbipet, Vijayawada 520010" },
