@@ -125,7 +125,7 @@ export function Hero() {
                   loading={i === 0 ? "eager" : "lazy"}
                   fetchPriority={i === 0 ? "high" : undefined}
                   className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${
-                    i === index ? "opacity-100" : "opacity-0"
+                    i === index ? "opacity-100 animate-kenburns-out" : "opacity-0"
                   }`}
                 />
               ))}
