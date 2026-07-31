@@ -113,22 +113,23 @@ export function Hero() {
         </div>
 
         <div className="reveal-right relative">
-          <div className="relative overflow-hidden rounded-[2rem] shadow-luxe ring-1 ring-gold/20">
-            <div className="relative aspect-4/5 sm:aspect-3/2 lg:aspect-4/5">
-              {SLIDES.map((slide, i) => (
-                <img
-                  key={slide.label}
-                  src={slide.src}
-                  alt={slide.alt}
-                  width={1200}
-                  height={1400}
-                  loading={i === 0 ? "eager" : "lazy"}
-                  fetchPriority={i === 0 ? "high" : undefined}
-                  className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${
-                    i === index ? "opacity-100 animate-kenburns-out" : "opacity-0"
-                  }`}
-                />
-              ))}
+          <div className="reveal-right relative animate-zoom-out-section">
+            <div className="relative overflow-hidden rounded-[2rem] shadow-luxe ring-1 ring-gold/20">
+              <div className="relative aspect-4/5 sm:aspect-3/2 lg:aspect-4/5">
+                {SLIDES.map((slide, i) => (
+                  <img
+                    key={slide.label}
+                    src={slide.src}
+                    alt={slide.alt}
+                    width={1200}
+                    height={1400}
+                    loading={i === 0 ? "eager" : "lazy"}
+                    fetchPriority={i === 0 ? "high" : undefined}
+                    className={`absolute inset-0 size-full object-cover transition-opacity duration-1000 ${
+                      i === index ? "opacity-100" : "opacity-0"
+                    }`}
+                  />
+                ))}
               <div className="absolute inset-0 bg-linear-to-t from-black/75 via-black/10 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-6 sm:p-8">
