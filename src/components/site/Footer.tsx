@@ -53,18 +53,8 @@ export function Footer() {
             </div>
           </div>
 
-          <nav className="reveal" aria-label="Quick links" style={{ ["--reveal-delay" as string]: "100ms" }}>
-            <h2 className="eyebrow text-gold">Quick Links</h2>
-            <ul className="mt-6 space-y-3">
-              {QUICK_LINKS.map((link) => (
-                <li key={link}>
-                  <a href={`#${link.toLowerCase()}`} className="text-sm text-ivory/60 transition-colors hover:text-gold">
-                    {link}
-                  </a>
-                </li>
-              ))}
-            </ul>
-            <h2 className="eyebrow mt-8 text-gold">Services</h2>
+          <nav className="reveal" aria-label="Services" style={{ ["--reveal-delay" as string]: "100ms" }}>
+            <h2 className="eyebrow text-gold">Services</h2>
             <ul className="mt-6 space-y-3">
               {SERVICES.map((service) => (
                 <li key={service}>
