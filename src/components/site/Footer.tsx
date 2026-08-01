@@ -27,7 +27,7 @@ export function Footer() {
               <img
                 src={logo.url}
                 alt="SASS Hair & Beauty logo"
-                className="h-12 w-auto max-w-[60vw] object-contain brightness-0 invert sm:h-14 lg:h-16"
+                className="h-16 w-auto max-w-[70vw] object-contain brightness-0 invert sm:h-20 lg:h-24"
               />
             </div>
 
