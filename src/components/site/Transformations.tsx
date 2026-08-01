@@ -63,7 +63,7 @@ export function Transformations() {
             {ITEMS.map((item) => (
               <figure
                 key={item.name}
-                className="zoom-frame group relative shrink-0 overflow-hidden rounded-[1.75rem] ring-1 ring-border"
+                className="zoom-frame group relative shrink-0 overflow-hidden rounded-[7px] ring-1 ring-border"
                 style={{ width: "var(--card-w)" }}
               >
                 <img
