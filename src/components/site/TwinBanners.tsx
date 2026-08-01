@@ -29,7 +29,7 @@ export function TwinBanners() {
           <article
             key={banner.id}
             id={banner.id}
-            className={`zoom-frame group relative isolate overflow-hidden rounded-[2rem] ${i === 0 ? "reveal-left" : "reveal-right"}`}
+            className={`zoom-frame group relative isolate overflow-hidden rounded-[7px] ${i === 0 ? "reveal-left" : "reveal-right"}`}
           >
             <img
               src={banner.image}

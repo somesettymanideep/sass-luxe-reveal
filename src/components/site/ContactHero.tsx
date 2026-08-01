@@ -89,7 +89,7 @@ export function ContactHero() {
         </div>
 
         <div className="reveal-right relative">
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-[2rem]">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-[7px]">
             <div
               aria-hidden
               className="float-shape absolute left-1/2 top-1/2 size-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-gold/50 shadow-gold"

@@ -113,7 +113,7 @@ export function Hero() {
         </div>
 
         <div className="reveal-right relative">
-          <div className="relative overflow-hidden rounded-[2rem] shadow-luxe ring-1 ring-gold/20">
+          <div className="relative overflow-hidden rounded-[7px] shadow-luxe ring-1 ring-gold/20">
             <div className="relative aspect-4/5 sm:aspect-3/2 lg:aspect-4/5">
               {SLIDES.map((slide, i) => (
                 <img

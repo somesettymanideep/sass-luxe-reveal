@@ -16,7 +16,7 @@ export function WhyChoose() {
     <section id="about" className="surface-noir relative overflow-hidden py-24 sm:py-32">
       <div aria-hidden className="pointer-events-none absolute -right-32 top-1/3 size-96 rounded-full border border-gold/10 float-shape" />
       <div className="relative mx-auto grid max-w-[88rem] items-center gap-14 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
-        <div className="reveal-left zoom-frame relative overflow-hidden rounded-[2rem] ring-1 ring-gold/20 shadow-luxe">
+        <div className="reveal-left zoom-frame relative overflow-hidden rounded-[7px] ring-1 ring-gold/20 shadow-luxe">
           <img
             src={interior}
             alt="Interior of the SASS Hair & Beauty luxury salon with black marble and gold mirrors"
