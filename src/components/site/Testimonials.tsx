@@ -155,7 +155,7 @@ export function Testimonials() {
                   {i === index && (
                     <span
                       className="absolute inset-0 origin-left bg-[image:var(--gradient-gold)]"
-                      style={{ transform: `scaleX(${paused ? progress : progress})` }}
+                      style={{ transform: `scaleX(${progress})` }}
                     />
                   )}
                 </button>
