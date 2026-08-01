@@ -28,6 +28,7 @@ export function Footer() {
                 src={logo.url}
                 alt="SASS Hair & Beauty logo"
                 className="h-12 w-auto max-w-[60vw] object-contain brightness-0 invert sm:h-14 lg:h-16"
+              />
             </div>
 
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ivory/55">
