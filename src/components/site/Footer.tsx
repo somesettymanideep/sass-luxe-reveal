@@ -1,4 +1,6 @@
 import { Instagram, Facebook, Youtube, MapPin, Phone, Mail, Clock } from "lucide-react";
+import logo from "@/assets/sass-logo.png.asset.json";
+
 
 
 const SERVICES = ["Hair Cut", "Fashion Colours", "Keratin", "Smoothening", "Bridal Makeup", "Facials"];
@@ -21,15 +23,14 @@ export function Footer() {
       <div className="mx-auto max-w-[88rem] px-5 sm:px-8">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="reveal">
-            <div className="flex items-center gap-3">
-              <span className="flex size-11 items-center justify-center rounded-full border border-gold/50">
-                <span className="font-[family-name:var(--font-display)] text-lg text-gilded">S</span>
-              </span>
-              <span>
-                <span className="block font-[family-name:var(--font-display)] text-lg tracking-[0.22em] text-ivory">SASS</span>
-                <span className="block text-[0.55rem] uppercase tracking-[0.42em] text-gold-deep">Hair &amp; Beauty</span>
-              </span>
+            <div className="flex items-center">
+              <img
+                src={logo.url}
+                alt="SASS Hair & Beauty logo"
+                className="h-14 w-auto brightness-0 invert"
+              />
             </div>
+
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-ivory/55">
               Andhra Pradesh&rsquo;s luxury salon chain for hair, beauty, skincare, bridal artistry and
               men&rsquo;s grooming — delivered by internationally trained professionals.

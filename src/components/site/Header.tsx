@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { LuxeButton } from "./LuxeButton";
 import { cn } from "@/lib/utils";
+import logo from "@/assets/sass-logo.png.asset.json";
+
 
 const NAV = [
   { label: "Home", href: "#home" },
@@ -35,19 +37,17 @@ export function Header() {
       )}
     >
       <div className="mx-auto flex max-w-[88rem] items-center justify-between px-5 sm:px-8">
-        <a href="#home" className="flex items-center gap-3" aria-label="SASS Hair & Beauty home">
-          <span className="flex size-11 items-center justify-center rounded-full border border-gold/50 bg-black/40">
-            <span className="font-[family-name:var(--font-display)] text-lg text-gilded">S</span>
-          </span>
-          <span className="leading-tight">
-            <span className="block font-[family-name:var(--font-display)] text-lg tracking-[0.22em] text-ivory">
-              SASS
-            </span>
-            <span className="block text-[0.55rem] tracking-[0.42em] text-gold-deep uppercase">
-              Hair &amp; Beauty
-            </span>
-          </span>
+        <a href="#home" className="flex items-center" aria-label="SASS Hair & Beauty home">
+          <img
+            src={logo.url}
+            alt="SASS Hair & Beauty logo"
+            className={cn(
+              "w-auto brightness-0 invert transition-all duration-500",
+              scrolled ? "h-10 sm:h-11" : "h-12 sm:h-14",
+            )}
+          />
         </a>
+
 
         <nav aria-label="Primary" className="hidden xl:block">
           <ul className="flex items-center gap-8">
