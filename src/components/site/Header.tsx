@@ -42,8 +42,8 @@ export function Header() {
             src={logo.url}
             alt="SASS Hair & Beauty logo"
             className={cn(
-              "w-auto brightness-0 invert transition-all duration-500",
-              scrolled ? "h-10 sm:h-11" : "h-12 sm:h-14",
+              "w-auto max-w-[52vw] object-contain brightness-0 invert transition-all duration-500",
+              scrolled ? "h-8 sm:h-10 lg:h-11" : "h-10 sm:h-12 lg:h-14",
             )}
           />
         </a>

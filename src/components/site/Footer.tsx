@@ -27,7 +27,7 @@ export function Footer() {
               <img
                 src={logo.url}
                 alt="SASS Hair & Beauty logo"
-                className="h-14 w-auto brightness-0 invert"
+                className="h-12 w-auto max-w-[60vw] object-contain brightness-0 invert sm:h-14 lg:h-16"
               />
             </div>
 
@@ -71,9 +71,12 @@ export function Footer() {
             <h2 className="eyebrow font-[family-name:var(--font-sans)] text-gold">Locations</h2>
             <ul className="mt-6 space-y-6">
               {LOCATIONS.map((location) => (
-                <li key={location.city}>
-                  <p className="font-[family-name:var(--font-display)] text-base text-ivory">{location.city}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-ivory/55">{location.address}</p>
+                <li key={location.city} className="flex items-start gap-3">
+                  <MapPin className="mt-1 size-4 shrink-0 text-gold-deep" aria-hidden />
+                  <div>
+                    <p className="font-[family-name:var(--font-display)] text-base text-ivory">{location.city}</p>
+                    <p className="mt-1 text-sm leading-relaxed text-ivory/55">{location.address}</p>
+                  </div>
                 </li>
               ))}
             </ul>
