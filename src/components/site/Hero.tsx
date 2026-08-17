@@ -78,7 +78,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-[88rem] items-center gap-14 px-5 sm:px-8 lg:grid-cols-[minmax(0,40fr)_minmax(0,60fr)] lg:gap-16">
         <div className="reveal-left">
-          <p className="eyebrow text-gold-deep">Vijayawada · Guntur · Rajahmundry</p>
+          <p className="eyebrow text-gold-deep">Vijayawada · Guntur</p>
           <h1 className="mt-6 text-[2.6rem] leading-[1.05] text-ivory sm:text-6xl">
             Luxury Hair.
             <span className="mt-2 block text-gilded">Beautiful Transformations.</span>
