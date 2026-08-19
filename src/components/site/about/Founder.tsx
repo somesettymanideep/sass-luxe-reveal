@@ -189,9 +189,7 @@ export function Founder() {
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <p className="mt-7 text-sm leading-relaxed text-cream/60">
-              Suresh trained as a master colourist before opening the first SASS studio at 27. He
-              still takes bridal consultations personally, mentors every new stylist through a
-              six-month apprenticeship, and signs off on each product that enters the salon.
+              SASS is more than just a salon—it is a vision to bring world-class hair and beauty expertise to our community. From the very beginning, my goal has been to ensure every client experiences luxury that is personal, professional, and precise. We don't just follow trends; we set standards.
             </p>
 
             <ul className="mt-8 space-y-3">
