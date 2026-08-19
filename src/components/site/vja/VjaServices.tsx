@@ -6,6 +6,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import haircut from "@/assets/svc-haircut.jpg?url";
+import why1 from "@/assets/why-1.svg.asset.json";
+import why2 from "@/assets/why-2.svg.asset.json";
+import why3 from "@/assets/why-3.svg.asset.json";
+import why4 from "@/assets/why-4.svg.asset.json";
+import why5 from "@/assets/why-5.svg.asset.json";
+import why6 from "@/assets/why-6.svg.asset.json";
+import why7 from "@/assets/why-7.svg.asset.json";
+import why8 from "@/assets/why-8.svg.asset.json";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import smoothening from "@/assets/svc-smoothening.jpg?url";
