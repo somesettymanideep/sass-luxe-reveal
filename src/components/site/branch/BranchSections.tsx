@@ -15,64 +15,63 @@ import rjy5 from "@/assets/rjy-store-5.jpg.asset.json";
 import rjy6 from "@/assets/rjy-store-6.jpg.asset.json";
 import rjy7 from "@/assets/rjy-store-7.jpg.asset.json";
 import rjy8 from "@/assets/rjy-store-8.jpg.asset.json";
-import haircut from "@/assets/svc-haircut.jpg";
-import hairspa from "@/assets/svc-hairspa.jpg";
-import colour from "@/assets/svc-colour.jpg";
-import smoothening from "@/assets/svc-smoothening.jpg";
-import keratin from "@/assets/svc-keratin.jpg";
-import bridalMakeup from "@/assets/svc-bridal.jpg";
-import bridal from "@/assets/svc-bridal.jpg";
-import bridalHair from "@/assets/bridal.jpg";
-import pedicure from "@/assets/svc-pedicure.jpg";
-import manicure from "@/assets/svc-manicure.jpg";
-import facial from "@/assets/svc-facial.jpg";
-import makeup from "@/assets/svc-makeup.jpg";
-import threading from "@/assets/svc-threading.jpg";
-import interior from "@/assets/interior.jpg";
-import hero from "@/assets/hero.jpg";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import before from "@/assets/before.jpg";
-import after from "@/assets/after.jpg";
-import storeFront from "@/assets/store-front.jpg";
-import storeReception from "@/assets/store-reception.jpg";
-import storeStyling from "@/assets/store-styling-floor.jpg";
-import storeWash from "@/assets/store-wash-lounge.jpg";
-import storeBridalSuite from "@/assets/store-bridal-suite.jpg";
-import storeNail from "@/assets/store-nail-lounge.jpg";
-import reel1 from "@/assets/reel1.mp4.asset.json";
-import reel2 from "@/assets/reel2.mp4.asset.json";
-import reel3 from "@/assets/reel3.mp4.asset.json";
-import reel4 from "@/assets/reel4.mp4.asset.json";
-import poster1 from "@/assets/reel1-poster.jpg.asset.json";
-import poster2 from "@/assets/reel2-poster.jpg.asset.json";
-import poster3 from "@/assets/reel3-poster.jpg.asset.json";
-import poster4 from "@/assets/reel4-poster.jpg.asset.json";
-import reel5 from "@/assets/reel5.mp4.asset.json";
-import reel6 from "@/assets/reel6.mp4.asset.json";
-import poster5 from "@/assets/reel5-poster.jpg.asset.json";
-import poster6 from "@/assets/reel6-poster.jpg.asset.json";
-import salonIcon from "@/assets/why-beauty-salon.svg.asset.json";
-import employeesIcon from "@/assets/employees.svg.asset.json";
-import makeupIcon from "@/assets/why-makeup.svg.asset.json";
-import skincareIcon from "@/assets/skincare.svg.asset.json";
-import productsIcon from "@/assets/why-products.svg.asset.json";
-import safeIcon from "@/assets/why-safe.svg.asset.json";
-
-import hairIcon from "@/assets/hair.svg.asset.json";
-import consultationIcon from "@/assets/consultation.svg.asset.json";
+import haircut from "@/assets/svc-haircut.jpg?url";
+import hairspa from "@/assets/svc-hairspa.jpg?url";
+import colour from "@/assets/svc-colour.jpg?url";
+import smoothening from "@/assets/svc-smoothening.jpg?url";
+import keratin from "@/assets/svc-keratin.jpg?url";
+import bridalMakeup from "@/assets/svc-bridal.jpg?url";
+import bridal from "@/assets/svc-bridal.jpg?url";
+import bridalHair from "@/assets/bridal.jpg?url";
+import pedicure from "@/assets/svc-pedicure.jpg?url";
+import manicure from "@/assets/svc-manicure.jpg?url";
+import facial from "@/assets/svc-facial.jpg?url";
+import makeup from "@/assets/svc-makeup.jpg?url";
+import threading from "@/assets/svc-threading.jpg?url";
+import interior from "@/assets/interior.jpg?url";
+import hero from "@/assets/hero.jpg?url";
+import g1 from "@/assets/g1.jpg?url";
+import g2 from "@/assets/g2.jpg?url";
+import before from "@/assets/before.jpg?url";
+import after from "@/assets/after.jpg?url";
+import storeFront from "@/assets/store-front.jpg?url";
+import storeReception from "@/assets/store-reception.jpg?url";
+import storeStyling from "@/assets/store-styling-floor.jpg?url";
+import storeWash from "@/assets/store-wash-lounge.jpg?url";
+import storeBridalSuite from "@/assets/store-bridal-suite.jpg?url";
+import storeNail from "@/assets/store-nail-lounge.jpg?url";
+import reel1 from "@/assets/reel1.mp4?url";
+import reel2 from "@/assets/reel2.mp4?url";
+import reel3 from "@/assets/reel3.mp4?url";
+import reel4 from "@/assets/reel4.mp4?url";
+import poster1 from "@/assets/reel1-poster.jpg?url";
+import poster2 from "@/assets/reel2-poster.jpg?url";
+import poster3 from "@/assets/reel3-poster.jpg?url";
+import poster4 from "@/assets/reel4-poster.jpg?url";
+import reel5 from "@/assets/reel5.mp4?url";
+import reel6 from "@/assets/reel6.mp4?url";
+import poster5 from "@/assets/reel5-poster.jpg?url";
+import poster6 from "@/assets/reel6-poster.jpg?url";
+import salonIcon from "@/assets/why-beauty-salon.svg?url";
+import employeesIcon from "@/assets/employees.svg?url";
+import makeupIcon from "@/assets/why-makeup.svg?url";
+import skincareIcon from "@/assets/skincare.svg?url";
+import productsIcon from "@/assets/why-products.svg?url";
+import safeIcon from "@/assets/why-safe.svg?url";
+import hairIcon from "@/assets/hair.svg?url";
+import consultationIcon from "@/assets/consultation.svg?url";
 
 /* ---------------- Section 2 — Why Choose SASS ---------------- */
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: salonIcon.url, title: "Premium Salon Experience" },
-  { icon: employeesIcon.url, title: "Certified Hair Stylists" },
-  { icon: makeupIcon.url, title: "Bridal Makeup Experts" },
-  { icon: hairIcon.url, title: "Luxury Hair Treatments" },
-  { icon: productsIcon.url, title: "International Colour Techniques" },
-  { icon: safeIcon.url, title: "Hygiene & Safety Standards" },
-  { icon: skincareIcon.url, title: "Premium Imported Products" },
-  { icon: consultationIcon.url, title: "Personalised Consultation" },
+  { icon: salonIcon, title: "Premium Salon Experience" },
+  { icon: employeesIcon, title: "Certified Hair Stylists" },
+  { icon: makeupIcon, title: "Bridal Makeup Experts" },
+  { icon: hairIcon, title: "Luxury Hair Treatments" },
+  { icon: productsIcon, title: "International Colour Techniques" },
+  { icon: safeIcon, title: "Hygiene & Safety Standards" },
+  { icon: skincareIcon, title: "Premium Imported Products" },
+  { icon: consultationIcon, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
@@ -213,12 +212,12 @@ function Slider() {
 }
 
 const clips = [
-  { src: reel1.url, poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
-  { src: reel2.url, poster: poster2.url, tag: "Bridal", title: "Bridal makeover reveal" },
-  { src: reel3.url, poster: poster3.url, tag: "Styling", title: "Signature blowout styling" },
-  { src: reel4.url, poster: poster4.url, tag: "Makeover", title: "Complete salon makeover" },
-  { src: reel5.url, poster: poster5.url, tag: "Studio", title: "Inside the SASS studio" },
-  { src: reel6.url, poster: poster6.url, tag: "Salon", title: "A day at SASS Hair & Beauty" },
+  { src: reel1, poster: poster1, tag: "Colour", title: "Fashion colour transformation" },
+  { src: reel2, poster: poster2, tag: "Bridal", title: "Bridal makeover reveal" },
+  { src: reel3, poster: poster3, tag: "Styling", title: "Signature blowout styling" },
+  { src: reel4, poster: poster4, tag: "Makeover", title: "Complete salon makeover" },
+  { src: reel5, poster: poster5, tag: "Studio", title: "Inside the SASS studio" },
+  { src: reel6, poster: poster6, tag: "Salon", title: "A day at SASS Hair & Beauty" },
 ];
 
 function VideoSlider() {

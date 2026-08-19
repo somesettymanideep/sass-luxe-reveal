@@ -16,18 +16,18 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
-import haircut from "@/assets/svc-haircut.jpg";
-import threading from "@/assets/svc-threading.jpg";
-import colour from "@/assets/svc-colour.jpg";
-import pedicure from "@/assets/svc-pedicure.jpg";
-import manicure from "@/assets/svc-manicure.jpg";
-import smoothening from "@/assets/svc-smoothening.jpg";
-import keratin from "@/assets/svc-keratin.jpg";
-import facial from "@/assets/svc-facial.jpg";
-import bridal from "@/assets/svc-bridal.jpg";
-import after from "@/assets/after.jpg";
-import hairspa from "@/assets/svc-hairspa.jpg";
-import makeup from "@/assets/svc-makeup.jpg";
+import haircut from "@/assets/svc-haircut.jpg?url";
+import threading from "@/assets/svc-threading.jpg?url";
+import colour from "@/assets/svc-colour.jpg?url";
+import pedicure from "@/assets/svc-pedicure.jpg?url";
+import manicure from "@/assets/svc-manicure.jpg?url";
+import smoothening from "@/assets/svc-smoothening.jpg?url";
+import keratin from "@/assets/svc-keratin.jpg?url";
+import facial from "@/assets/svc-facial.jpg?url";
+import bridal from "@/assets/svc-bridal.jpg?url";
+import after from "@/assets/after.jpg?url";
+import hairspa from "@/assets/svc-hairspa.jpg?url";
+import makeup from "@/assets/svc-makeup.jpg?url";
 
 interface Service {
   title: string;

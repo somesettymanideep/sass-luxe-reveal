@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import bridalImg from "@/assets/bridal.jpg";
+import bridalImg from "@/assets/bridal.jpg?url";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
 

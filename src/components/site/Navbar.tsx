@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/sass-logo-white.png.asset.json";
+import logo from "@/assets/sass-logo-white.png?url";
 import { LuxeButton } from "./LuxeButton";
 import { cn } from "@/lib/utils";
 
@@ -63,7 +63,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <Link to="/" aria-label="SASS Hair & Beauty home" className="shrink-0">
           <img
-            src={logo.url}
+            src={logo}
             alt="SASS Hair & Beauty"
             width={160}
             height={80}
@@ -105,26 +105,26 @@ export function Navbar() {
                 >
                   <div className="rounded-xl border border-gold/20 bg-ink/95 p-2 backdrop-blur-xl shadow-luxe">
                     {l.children.map((c) => (
-                      <a
+                      <Link
                         key={c.href}
-                        href={c.href}
+                        to={c.href}
                         onClick={() => setBranchesOpen(false)}
                         className="block rounded-lg px-4 py-2.5 text-sm text-cream/80 transition-colors hover:bg-gold/10 hover:text-gold"
                       >
                         {c.label}
-                      </a>
+                      </Link>
                     ))}
                   </div>
                 </div>
               </li>
             ) : (
               <li key={l.href}>
-                <a
-                  href={l.href}
+                <Link
+                  to={l.href}
                   className="link-underline text-[0.78rem] font-medium uppercase tracking-[0.18em] text-cream/85"
                 >
                   {l.label}
-                </a>
+                </Link>
               </li>
             ),
           )}
@@ -169,7 +169,7 @@ export function Navbar() {
           )}
         >
           <div className="mb-8 flex items-center justify-between">
-            <img src={logo.url} alt="" width={120} height={60} className="w-24" />
+            <img src={logo} alt="" width={120} height={60} className="w-24" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"
@@ -209,21 +209,21 @@ export function Navbar() {
                   )}
                 >
                   {l.children.map((c) => (
-                    <a
+                    <Link
                       key={c.href}
-                      href={c.href}
+                      to={c.href}
                       onClick={() => setOpen(false)}
                       className="block py-2 pl-3 text-lg text-cream/70 transition-colors hover:text-gold"
                     >
                       {c.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
             ) : (
-              <a
+              <Link
                 key={l.href}
-                href={l.href}
+                to={l.href}
                 onClick={() => setOpen(false)}
                 className="border-b border-cream/10 py-4 font-display text-2xl text-cream transition-colors hover:text-gold"
                 style={{
@@ -235,7 +235,7 @@ export function Navbar() {
                 }}
               >
                 {l.label}
-              </a>
+              </Link>
             ),
           )}
           <LuxeButton as="a" href="/contact" className="mt-8 w-full">

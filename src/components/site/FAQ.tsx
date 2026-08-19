@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 import { gsap } from "gsap";
 import { ensureGsap } from "@/lib/motion";
-import faqImage from "@/assets/best_hair_and_beauty_clinic.png.asset.json";
+import faqImage from "@/assets/best_hair_and_beauty_clinic.png?url";
 
 const faqs = [
   {
@@ -117,7 +117,7 @@ export function FAQ() {
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.15fr]">
           <div className="faq-image mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28" style={{ willChange: "transform, opacity, filter" }}>
             <img
-              src={faqImage.url}
+              src={faqImage}
               alt="SASS Hair & Beauty signature services menu"
               loading="lazy"
               width={1080}

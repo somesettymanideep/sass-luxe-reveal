@@ -3,9 +3,9 @@ import { Link } from "@tanstack/react-router";
 import { Star, Phone, BadgeCheck, Sparkles, Award, MoveHorizontal, ChevronDown } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
-import hero from "@/assets/hero.jpg";
-import before from "@/assets/before.jpg";
-import after from "@/assets/after.jpg";
+import hero from "@/assets/hero.jpg?url";
+import before from "@/assets/before.jpg?url";
+import after from "@/assets/after.jpg?url";
 
 const trust = [
   { Icon: BadgeCheck, label: "Certified Experts" },

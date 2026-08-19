@@ -1,6 +1,6 @@
 import { useReveal } from "@/lib/motion";
-import mens from "@/assets/mens-grooming.jpg";
-import bridal from "@/assets/bridal-split.jpg";
+import mens from "@/assets/mens-grooming.jpg?url";
+import bridal from "@/assets/bridal-split.jpg?url";
 
 export function SplitBanner() {
   const ref = useReveal<HTMLDivElement>({ selector: ".split-fade", stagger: 0.16 });

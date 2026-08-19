@@ -1,9 +1,9 @@
 import { Instagram, Facebook, Linkedin } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import hero from "@/assets/hero.jpg";
-import after from "@/assets/after.jpg";
-import bridal from "@/assets/bridal.jpg";
-import g1 from "@/assets/g1.jpg";
+import hero from "@/assets/hero.jpg?url";
+import after from "@/assets/after.jpg?url";
+import bridal from "@/assets/bridal.jpg?url";
+import g1 from "@/assets/g1.jpg?url";
 
 const team = [
   { name: "Aarav Menon", role: "Creative Director · Cutting", img: hero },

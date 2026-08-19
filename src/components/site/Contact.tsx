@@ -3,10 +3,10 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
 import { WhatsAppIcon } from "./WhatsAppIcon";
-import svcBridal from "@/assets/svc-bridal.jpg";
-import mensGrooming from "@/assets/mens-grooming.jpg";
-import svcMakeup from "@/assets/svc-makeup.jpg";
-import svcThreading from "@/assets/svc-threading.jpg";
+import svcBridal from "@/assets/svc-bridal.jpg?url";
+import mensGrooming from "@/assets/mens-grooming.jpg?url";
+import svcMakeup from "@/assets/svc-makeup.jpg?url";
+import svcThreading from "@/assets/svc-threading.jpg?url";
 
 const slides = [
   { src: svcBridal, title: "Bridal Makeup", caption: "Muhurtham-ready artistry" },

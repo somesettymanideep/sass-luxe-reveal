@@ -3,10 +3,10 @@ import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHa
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-import heroReel from "@/assets/hero-reel.mp4.asset.json";
-import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
-import gunturReel from "@/assets/guntur-reel.mp4.asset.json";
-import gunturPoster from "@/assets/guntur-reel-poster.jpg.asset.json";
+import heroReel from "@/assets/hero-reel.mp4?url";
+import heroPoster from "@/assets/hero-reel-poster.jpg?url";
+import gunturReel from "@/assets/guntur-reel.mp4?url";
+import gunturPoster from "@/assets/guntur-reel-poster.jpg?url";
 
 const badges = [
   { Icon: Star, label: "4.9 Rating", sub: "★★★★★" },
@@ -88,8 +88,8 @@ export function BranchHero({ branch }: { branch: Branch }) {
           <div className="relative mx-auto max-w-[26rem] overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe">
             <video
               ref={videoRef}
-              src={reel.url}
-              poster={poster.url}
+              src={reel}
+              poster={poster}
               autoPlay
               muted
               loop

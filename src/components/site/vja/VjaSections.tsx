@@ -6,15 +6,15 @@ import {
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import { VjaHead as Head } from "./VjaServices";
-import client1 from "@/assets/client-1.jpg";
-import client2 from "@/assets/client-2.jpg";
-import client3 from "@/assets/client-3.jpg";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import interior from "@/assets/interior.jpg";
-import makeup from "@/assets/svc-makeup.jpg";
-import colour from "@/assets/svc-colour.jpg";
-import facial from "@/assets/svc-facial.jpg";
+import client1 from "@/assets/client-1.jpg?url";
+import client2 from "@/assets/client-2.jpg?url";
+import client3 from "@/assets/client-3.jpg?url";
+import g1 from "@/assets/g1.jpg?url";
+import g2 from "@/assets/g2.jpg?url";
+import interior from "@/assets/interior.jpg?url";
+import makeup from "@/assets/svc-makeup.jpg?url";
+import colour from "@/assets/svc-colour.jpg?url";
+import facial from "@/assets/svc-facial.jpg?url";
 
 const PHONE = "+91 72868 11999";
 const TEL = "tel:+917286811999";
