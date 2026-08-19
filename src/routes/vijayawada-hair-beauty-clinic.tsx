@@ -115,7 +115,7 @@ function VijayawadaClinicPage() {
         <VjaProcess />
         <VjaBeforeAfter />
         <VjaTestimonials />
-        <VjaPackages />
+        
         <VjaExperts />
         <VjaFAQ />
         <VjaBlogs />
