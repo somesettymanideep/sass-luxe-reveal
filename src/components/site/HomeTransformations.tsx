@@ -1,6 +1,8 @@
-import { useEffect, useRef } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight, MoveHorizontal } from "lucide-react";
 import { useReveal } from "@/lib/motion";
+import before from "@/assets/before.jpg?url";
+import after from "@/assets/after.jpg?url";
 import reel1 from "@/assets/transformation-1.mp4.asset.json";
 import reel2 from "@/assets/transformation-2.mp4.asset.json";
 import reel3 from "@/assets/transformation-3.mp4.asset.json";
@@ -9,6 +11,35 @@ import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
 import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
 import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
 import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
+
+function Slider() {
+  const [pos, setPos] = useState(42);
+  const wrap = useRef<HTMLDivElement | null>(null);
+  const move = (clientX: number) => {
+    const rect = wrap.current?.getBoundingClientRect();
+    if (!rect) return;
+    setPos(Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100)));
+  };
+  return (
+    <div
+      ref={wrap}
+      className="relative mx-auto h-[240px] w-full max-w-4xl select-none overflow-hidden rounded-[24px] border border-gold/25 sm:h-[340px] lg:h-[400px]"
+      onPointerMove={(e) => e.buttons === 1 && move(e.clientX)}
+      onPointerDown={(e) => move(e.clientX)}
+      onTouchMove={(e) => e.touches[0] && move(e.touches[0].clientX)}
+    >
+      <img src={after} alt="After transformation" loading="lazy" className="absolute inset-0 size-full object-cover object-top" />
+      <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
+        <img src={before} alt="Before transformation" loading="lazy" className="size-full object-cover object-top" />
+      </div>
+      <div className="absolute inset-y-0 w-px bg-gold-gradient" style={{ left: `${pos}%` }}>
+        <span className="absolute left-1/2 top-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold-gradient text-ink shadow-gold">
+          <MoveHorizontal className="size-5" />
+        </span>
+      </div>
+    </div>
+  );
+}
 
 const clips = [
   { src: reel1.url, poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
@@ -27,15 +58,15 @@ function VideoSlider() {
   };
 
   return (
-    <div className="relative mt-8 md:mt-12">
+    <div className="relative">
       <div
         ref={track}
-        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:gap-6"
+        className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:gap-6"
       >
         {clips.map((c) => (
           <figure
             key={c.src}
-            className="ht-item group relative aspect-9/16 w-[75%] shrink-0 snap-center overflow-hidden rounded-[18px] border border-gold/20 sm:w-[45%] md:w-[31%] lg:w-[23%]"
+            className="ht-item group relative aspect-9/16 w-[68%] shrink-0 snap-center overflow-hidden rounded-[18px] border border-gold/20 sm:w-[45%] md:w-[31%] lg:w-[23%]"
           >
             <video
               src={c.src}
@@ -94,17 +125,25 @@ export function HomeTransformations() {
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.06]">
             Transformations worth the drive
           </h2>
-          <div className="mt-5 flex items-center justify-center gap-4">
-            <span className="h-px w-12 bg-gold/40" />
-            <span className="size-1.5 rotate-45 bg-gold" />
-            <span className="h-px w-12 bg-gold/40" />
-          </div>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Drag the handle to see the difference a SASS consultation makes — then watch the real makeovers filmed inside our studios.
+          </p>
         </div>
 
-        <div className="ht-item">
+        <div className="ht-item mt-12">
+          <Slider />
+        </div>
+
+        <div className="ht-head mt-16 flex flex-wrap items-end justify-between gap-3">
+          <h3 className="font-display text-2xl md:text-3xl">Transformation reels</h3>
+          <p className="text-sm text-muted-foreground">Hover to preview · swipe to browse</p>
+        </div>
+
+        <div className="mt-8">
           <VideoSlider />
         </div>
       </div>
     </section>
   );
 }
+
