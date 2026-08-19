@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { Quote, Star } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import c1 from "@/assets/client-1.jpg";
-import c2 from "@/assets/client-2.jpg";
-import c3 from "@/assets/client-3.jpg";
+import c1 from "@/assets/client-1.jpg?url";
+import c2 from "@/assets/client-2.jpg?url";
+import c3 from "@/assets/client-3.jpg?url";
 
 const reviews = [
   {

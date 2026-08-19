@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Target, Eye, Gem } from "lucide-react";
 import { useReveal, gsap, ensureGsap } from "@/lib/motion";
-import interior from "@/assets/interior.jpg";
-import g2 from "@/assets/g2.jpg";
+import interior from "@/assets/interior.jpg?url";
+import g2 from "@/assets/g2.jpg?url";
 
 const pillars = [
   {

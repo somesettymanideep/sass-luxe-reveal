@@ -5,20 +5,20 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import haircut from "@/assets/svc-haircut.jpg";
-import hairspa from "@/assets/svc-hairspa.jpg";
-import colour from "@/assets/svc-colour.jpg";
-import smoothening from "@/assets/svc-smoothening.jpg";
-import facial from "@/assets/svc-facial.jpg";
-import makeup from "@/assets/svc-makeup.jpg";
-import bridal from "@/assets/svc-bridal.jpg";
-import manicure from "@/assets/svc-manicure.jpg";
-import threading from "@/assets/svc-threading.jpg";
-import interior from "@/assets/interior.jpg";
-import g1 from "@/assets/g1.jpg";
-import g2 from "@/assets/g2.jpg";
-import before from "@/assets/before.jpg";
-import after from "@/assets/after.jpg";
+import haircut from "@/assets/svc-haircut.jpg?url";
+import hairspa from "@/assets/svc-hairspa.jpg?url";
+import colour from "@/assets/svc-colour.jpg?url";
+import smoothening from "@/assets/svc-smoothening.jpg?url";
+import facial from "@/assets/svc-facial.jpg?url";
+import makeup from "@/assets/svc-makeup.jpg?url";
+import bridal from "@/assets/svc-bridal.jpg?url";
+import manicure from "@/assets/svc-manicure.jpg?url";
+import threading from "@/assets/svc-threading.jpg?url";
+import interior from "@/assets/interior.jpg?url";
+import g1 from "@/assets/g1.jpg?url";
+import g2 from "@/assets/g2.jpg?url";
+import before from "@/assets/before.jpg?url";
+import after from "@/assets/after.jpg?url";
 
 function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title: string; italic?: string; copy?: string; light?: boolean }) {
   return (

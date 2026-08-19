@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { X, MoveHorizontal, Play, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import before from "@/assets/before.jpg";
-import after from "@/assets/after.jpg";
+import before from "@/assets/before.jpg?url";
+import after from "@/assets/after.jpg?url";
 import reel1 from "@/assets/reel1.mp4.asset.json";
 import reel2 from "@/assets/reel2.mp4.asset.json";
 import reel3 from "@/assets/reel3.mp4.asset.json";

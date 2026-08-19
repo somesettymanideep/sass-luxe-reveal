@@ -2,14 +2,14 @@ import { Scissors, Palette, Droplets, Waves, Sparkles, Crown, Flower2, Feather }
 import type { LucideIcon } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { useReveal } from "@/lib/motion";
-import haircut from "@/assets/svc-haircut.jpg";
-import colour from "@/assets/svc-colour.jpg";
-import keratin from "@/assets/svc-keratin.jpg";
-import smoothening from "@/assets/svc-smoothening.jpg";
-import bridalMakeup from "@/assets/svc-bridal.jpg";
-import bridalHair from "@/assets/bridal.jpg";
-import pedicure from "@/assets/svc-pedicure.jpg";
-import threading from "@/assets/svc-threading.jpg";
+import haircut from "@/assets/svc-haircut.jpg?url";
+import colour from "@/assets/svc-colour.jpg?url";
+import keratin from "@/assets/svc-keratin.jpg?url";
+import smoothening from "@/assets/svc-smoothening.jpg?url";
+import bridalMakeup from "@/assets/svc-bridal.jpg?url";
+import bridalHair from "@/assets/bridal.jpg?url";
+import pedicure from "@/assets/svc-pedicure.jpg?url";
+import threading from "@/assets/svc-threading.jpg?url";
 
 interface Service {
   title: string;
