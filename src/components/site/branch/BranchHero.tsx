@@ -96,7 +96,6 @@ export function BranchHero({ branch }: { branch: Branch }) {
           <div className="relative mx-auto max-w-[26rem] overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe">
             <video
               ref={videoRef}
-              src={reel}
               poster={poster}
               autoPlay
               muted
@@ -105,7 +104,9 @@ export function BranchHero({ branch }: { branch: Branch }) {
               preload="auto"
               aria-label={`SASS Hair & Beauty ${branch.city} salon showreel`}
               className="mx-auto aspect-9/16 w-full max-w-[26rem] object-cover"
-            />
+            >
+              <source src={reel} type="video/mp4" />
+            </video>
             <button
               type="button"
               onClick={toggleSound}

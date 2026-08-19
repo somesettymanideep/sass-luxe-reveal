@@ -38,7 +38,6 @@ function VideoSlider() {
             className="ht-item group relative aspect-9/16 w-[75%] shrink-0 snap-center overflow-hidden rounded-[18px] border border-gold/20 sm:w-[45%] md:w-[31%] lg:w-[23%]"
           >
             <video
-              src={c.src}
               poster={c.poster}
               muted
               loop
@@ -54,7 +53,9 @@ function VideoSlider() {
                 v.currentTime = 0;
               }}
               className="size-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
-            />
+            >
+              <source src={c.src} type="video/mp4" />
+            </video>
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-black/20" />
             <span className="absolute left-4 top-4 rounded-full border border-gold/40 bg-black/45 px-3 py-1 text-[0.58rem] uppercase tracking-[0.2em] text-gold backdrop-blur">
               {c.tag}
