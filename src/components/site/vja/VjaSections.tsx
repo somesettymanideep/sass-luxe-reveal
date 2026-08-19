@@ -7,6 +7,7 @@ import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import { VjaHead as Head } from "./VjaServices";
 import client1 from "@/assets/client-1.jpg?url";
+import transformsImage from "@/assets/transforms-services.png.asset.json";
 import client2 from "@/assets/client-2.jpg?url";
 import client3 from "@/assets/client-3.jpg?url";
 import g1 from "@/assets/g1.jpg?url";
