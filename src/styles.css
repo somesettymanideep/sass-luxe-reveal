@@ -278,3 +278,7 @@
   letter-spacing: 0;
   text-transform: none;
 }
+
+#lovable-badge {
+  display: none !important;
+}
