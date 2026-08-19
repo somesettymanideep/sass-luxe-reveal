@@ -40,18 +40,14 @@ import storeStyling from "@/assets/store-styling-floor.jpg?url";
 import storeWash from "@/assets/store-wash-lounge.jpg?url";
 import storeBridalSuite from "@/assets/store-bridal-suite.jpg?url";
 import storeNail from "@/assets/store-nail-lounge.jpg?url";
-import reel1 from "@/assets/reel1.mp4.asset.json";
-import reel2 from "@/assets/reel2.mp4.asset.json";
-import reel3 from "@/assets/reel3.mp4.asset.json";
-import reel4 from "@/assets/reel4.mp4.asset.json";
-import poster1 from "@/assets/reel1-poster.jpg.asset.json";
-import poster2 from "@/assets/reel2-poster.jpg.asset.json";
-import poster3 from "@/assets/reel3-poster.jpg.asset.json";
-import poster4 from "@/assets/reel4-poster.jpg.asset.json";
-import reel5 from "@/assets/reel5.mp4.asset.json";
-import reel6 from "@/assets/reel6.mp4.asset.json";
-import poster5 from "@/assets/reel5-poster.jpg.asset.json";
-import poster6 from "@/assets/reel6-poster.jpg.asset.json";
+import reel1 from "@/assets/transformation-1.mp4.asset.json";
+import reel2 from "@/assets/transformation-2.mp4.asset.json";
+import reel3 from "@/assets/transformation-3.mp4.asset.json";
+import reel4 from "@/assets/transformation-4.mp4.asset.json";
+import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
+import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
+import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
+import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
 import why1 from "@/assets/why-1.svg.asset.json";
 import why2 from "@/assets/why-2.svg.asset.json";
 import why3 from "@/assets/why-3.svg.asset.json";
@@ -212,12 +208,10 @@ function Slider() {
 }
 
 const clips = [
-  {src: reel1.url,poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
-  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Bridal makeover reveal" },
-  {src: reel3.url,poster: poster3.url, tag: "Styling", title: "Signature blowout styling" },
-  {src: reel4.url,poster: poster4.url, tag: "Makeover", title: "Complete salon makeover" },
-  {src: reel5.url,poster: poster5.url, tag: "Studio", title: "Inside the SASS studio" },
-  {src: reel6.url,poster: poster6.url, tag: "Salon", title: "A day at SASS Hair & Beauty" },
+  {src: reel1.url,poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
+  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Exquisite Bridal Glow" },
+  {src: reel3.url,poster: poster3.url, tag: "Glow", title: "Skin Revival Reveal" },
+  {src: reel4.url,poster: poster4.url, tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {
