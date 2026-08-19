@@ -3,10 +3,10 @@ import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHa
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-import heroReel from "@/assets/hero-reel.mp4?url";
-import heroPoster from "@/assets/hero-reel-poster.jpg?url";
-import gunturReel from "@/assets/guntur-reel.mp4?url";
-import gunturPoster from "@/assets/guntur-reel-poster.jpg?url";
+import heroReel from "@/assets/hero-reel.mp4.asset.json";
+import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
+import gunturReel from "@/assets/guntur-reel.mp4.asset.json";
+import gunturPoster from "@/assets/guntur-reel-poster.jpg.asset.json";
 
 const badges = [
   { Icon: Star, label: "4.9 Rating", sub: "★★★★★" },
@@ -28,8 +28,8 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
   const isGuntur = branch.slug === "guntur";
-  const reel = isGuntur ? gunturReel : heroReel;
-  const poster = isGuntur ? gunturPoster : heroPoster;
+  const reel = (isGuntur ? gunturReel : heroReel).url;
+  const poster = (isGuntur ? gunturPoster : heroPoster).url;
 
 
 
