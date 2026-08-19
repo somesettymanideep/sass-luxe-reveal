@@ -7,6 +7,7 @@ import heroReel from "@/assets/hero-reel.mp4.asset.json";
 import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
 import gunturReel from "@/assets/guntur-reel.mp4.asset.json";
 import gunturPoster from "@/assets/guntur-reel-poster.jpg.asset.json";
+import rjyReel from "@/assets/rjy-hero-reel.mp4.asset.json";
 
 const badges = [
   { Icon: Star, label: "4.9 Rating", sub: "★★★★★" },
@@ -28,8 +29,18 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
   const isGuntur = branch.slug === "guntur";
-  const reel = (isGuntur ? gunturReel : heroReel).url;
-  const poster = (isGuntur ? gunturPoster : heroPoster).url;
+  const isRajahmundry = branch.slug === "rajahmundry";
+  
+  let reel = heroReel.url;
+  let poster = heroPoster.url;
+
+  if (isGuntur) {
+    reel = gunturReel.url;
+    poster = gunturPoster.url;
+  } else if (isRajahmundry) {
+    reel = rjyReel.url;
+    // No specific poster for RJY yet, using heroPoster or none
+  }
 
 
 
