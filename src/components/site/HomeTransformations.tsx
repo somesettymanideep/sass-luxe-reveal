@@ -90,9 +90,9 @@ export function HomeTransformations() {
     <section className="bg-background py-20 md:py-28">
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="ht-head mx-auto max-w-2xl text-center">
-          <p className="section-eyebrow text-gold">Our Artistry</p>
+          <p className="section-eyebrow text-gold">Before & After</p>
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.06]">
-            Transformations we love
+            Transformations worth the drive
           </h2>
           <div className="mt-5 flex items-center justify-center gap-4">
             <span className="h-px w-12 bg-gold/40" />
