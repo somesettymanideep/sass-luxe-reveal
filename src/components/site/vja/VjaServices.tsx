@@ -45,13 +45,13 @@ function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title
 }
 
 /* -------- 2. Why choose — single horizontal row with dividers -------- */
-const why: { Icon: LucideIcon; title: string; copy: string }[] = [
-  { Icon: BadgeCheck, title: "Certified Professionals", copy: "Expert & experienced beauty specialists" },
-  { Icon: Sparkles, title: "Premium Products", copy: "We use top-quality, international brands" },
-  { Icon: Cpu, title: "Modern Equipment", copy: "Advanced technology for best results" },
-  { Icon: MessageCircle, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
-  { Icon: Wallet, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
-  { Icon: ShieldCheck, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
+const why: { icon: string; title: string; copy: string }[] = [
+  { icon: why1.url, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
+  { icon: why7.url, title: "Premium Products", copy: "We use top-quality, international brands" },
+  { icon: why3.url, title: "Modern Equipment", copy: "Advanced technology for best results" },
+  { icon: why8.url, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
+  { icon: why5.url, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
+  { icon: why6.url, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
 ];
 
 export function VjaWhy() {
