@@ -64,14 +64,14 @@ import why8 from "@/assets/why-8.svg.asset.json";
 /* ---------------- Section 2 — Why Choose SASS ---------------- */
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: salonIcon.url, title: "Premium Salon Experience" },
-  { icon: employeesIcon.url, title: "Certified Hair Stylists" },
-  { icon: makeupIcon.url, title: "Bridal Makeup Experts" },
-  { icon: hairIcon.url, title: "Luxury Hair Treatments" },
-  { icon: productsIcon.url, title: "International Colour Techniques" },
-  { icon: safeIcon.url, title: "Hygiene & Safety Standards" },
-  { icon: skincareIcon.url, title: "Premium Imported Products" },
-  { icon: consultationIcon.url, title: "Personalised Consultation" },
+  { icon: why1.url, title: "Premium Salon Experience" },
+  { icon: why2.url, title: "Certified Hair Stylists" },
+  { icon: why3.url, title: "Bridal Makeup Experts" },
+  { icon: why4.url, title: "Luxury Hair Treatments" },
+  { icon: why5.url, title: "International Colour Techniques" },
+  { icon: why6.url, title: "Hygiene & Safety Standards" },
+  { icon: why7.url, title: "Premium Imported Products" },
+  { icon: why8.url, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
