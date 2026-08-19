@@ -11,6 +11,7 @@ import { Bridal } from "@/components/site/Bridal";
 import { SplitBanner } from "@/components/site/SplitBanner";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Stats } from "@/components/site/Stats";
+import { HomeTransformations } from "@/components/site/HomeTransformations";
 
 import { Brands } from "@/components/site/Brands";
 import { Membership } from "@/components/site/Membership";
@@ -72,6 +73,7 @@ function Index() {
         <Hero />
         <SplitBanner />
         <Services />
+        <HomeTransformations />
         <Gallery />
         <WhyChoose />
         <Contact />
