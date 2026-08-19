@@ -29,9 +29,9 @@ export function Preloader() {
       <img
         src={logo.url}
         alt="SASS Hair & Beauty"
-        className="w-40 invert md:w-52"
+        className="w-40 invert md:w-52 opacity-0"
         style={{ 
-          animation: "fade-in 1s ease-out both",
+          animation: "fade-in 1s ease-out forwards",
           display: "block",
           minHeight: "80px" 
         }}
