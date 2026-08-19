@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Quote, Instagram, Award } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
-import founderAsset from "@/assets/founder-chunchu-suresh.png.asset.json";
+import founderAsset from "@/assets/founder.jpg.asset.json";
 import { LuxeButton } from "../LuxeButton";
 
 const founder = founderAsset.url;
