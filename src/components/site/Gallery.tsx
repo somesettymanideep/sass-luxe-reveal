@@ -125,14 +125,15 @@ function ReelCard({
     >
       <video
         ref={video}
-        src={reel.src}
         poster={reel.poster}
         muted
         loop
         playsInline
         preload="auto"
         className="size-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-      />
+      >
+        <source src={reel.src} type="video/mp4" />
+      </video>
       <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/25" />
       <span className="absolute left-4 top-4 rounded-full border border-gold/40 bg-black/45 px-3 py-1 text-[0.6rem] uppercase tracking-[0.22em] text-gold backdrop-blur">
         {reel.tag}
