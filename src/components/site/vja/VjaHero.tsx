@@ -14,64 +14,6 @@ const trust = [
   { Icon: Award, label: "10+ Years Experience" },
 ];
 
-function MiniCompare() {
-  const wrap = useRef<HTMLDivElement | null>(null);
-  const [pos, setPos] = useState(55);
-
-  useEffect(() => {
-    const el = wrap.current;
-    if (!el) return;
-    let dragging = false;
-    const move = (x: number) => {
-      const r = el.getBoundingClientRect();
-      setPos(Math.min(100, Math.max(0, ((x - r.left) / r.width) * 100)));
-    };
-    const down = (e: PointerEvent) => {
-      dragging = true;
-      move(e.clientX);
-    };
-    const pmove = (e: PointerEvent) => dragging && move(e.clientX);
-    const up = () => (dragging = false);
-    el.addEventListener("pointerdown", down);
-    window.addEventListener("pointermove", pmove);
-    window.addEventListener("pointerup", up);
-    return () => {
-      el.removeEventListener("pointerdown", down);
-      window.removeEventListener("pointermove", pmove);
-      window.removeEventListener("pointerup", up);
-    };
-  }, []);
-
-  return (
-    <div
-      ref={wrap}
-      className="relative aspect-4/5 w-full cursor-ew-resize touch-none select-none overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe"
-    >
-      <img src={after} alt="Hair transformation after result in Vijayawada" className="absolute inset-0 size-full object-cover" />
-      <div className="absolute inset-0 overflow-hidden" style={{ width: `${pos}%` }}>
-        <img
-          src={before}
-          alt="Hair before treatment"
-          className="absolute inset-0 h-full object-cover"
-          style={{ width: wrap.current?.clientWidth ?? "100%", maxWidth: "none" }}
-        />
-        <span className="absolute left-4 top-4 rounded-full bg-black/60 px-3 py-1 font-button text-[0.58rem] uppercase tracking-[0.2em] text-cream">
-          Before
-        </span>
-      </div>
-      <span className="absolute right-4 top-4 rounded-full bg-gold px-3 py-1 font-button text-[0.58rem] uppercase tracking-[0.2em] text-ink">
-        After
-      </span>
-      <span className="absolute inset-y-0 w-px bg-gold" style={{ left: `${pos}%` }} />
-      <span
-        className="absolute top-1/2 flex size-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold text-ink shadow-gold"
-        style={{ left: `${pos}%` }}
-      >
-        <MoveHorizontal className="size-4" />
-      </span>
-    </div>
-  );
-}
 
 export function VjaHero() {
   const ref = useReveal<HTMLDivElement>({ selector: ".vh-item", stagger: 0.1 });
