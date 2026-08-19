@@ -65,12 +65,16 @@ export function VjaWhy() {
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {why.map(({ Icon, title, copy }, i) => (
+          {why.map(({ icon, title, copy }, i) => (
             <div
               key={title}
               className={`v-card group px-4 text-center ${i ? "lg:border-l lg:border-gold/25" : ""}`}
             >
-              <Icon className="mx-auto size-8 text-gold transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110" strokeWidth={1.2} />
+              <img
+                src={icon}
+                alt={title}
+                className="mx-auto size-8 transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110"
+              />
               <h3 className="mt-4 font-button text-[0.72rem] font-semibold uppercase tracking-[0.08em]">{title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{copy}</p>
             </div>
