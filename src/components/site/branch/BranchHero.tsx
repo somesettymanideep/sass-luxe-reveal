@@ -5,8 +5,7 @@ import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
 import heroReel from "@/assets/hero-reel.mp4.asset.json";
 import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
-import gunturReel from "@/assets/guntur-reel.mp4.asset.json";
-import gunturPoster from "@/assets/guntur-reel-poster.jpg.asset.json";
+import gunturReel from "@/assets/guntur-hero-reel.mp4.asset.json";
 import rjyReel from "@/assets/rjy-hero-reel.mp4.asset.json";
 
 const badges = [
@@ -36,10 +35,8 @@ export function BranchHero({ branch }: { branch: Branch }) {
 
   if (isGuntur) {
     reel = gunturReel.url;
-    poster = gunturPoster.url;
   } else if (isRajahmundry) {
     reel = rjyReel.url;
-    // No specific poster for RJY yet, using heroPoster or none
   }
 
 
@@ -105,7 +102,7 @@ export function BranchHero({ branch }: { branch: Branch }) {
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="auto"
               aria-label={`SASS Hair & Beauty ${branch.city} salon showreel`}
               className="mx-auto aspect-9/16 w-full max-w-[26rem] object-cover"
             />
