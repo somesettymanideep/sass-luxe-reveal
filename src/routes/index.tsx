@@ -73,7 +73,7 @@ function Index() {
         <Hero />
         <SplitBanner />
         <Services />
-        <HomeTransformations />
+        
         <Gallery />
         <WhyChoose />
         <Contact />
