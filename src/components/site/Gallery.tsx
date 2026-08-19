@@ -3,14 +3,14 @@ import { X, MoveHorizontal, Play, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
-import reel1 from "@/assets/reel1.mp4.asset.json";
-import reel2 from "@/assets/reel2.mp4.asset.json";
-import reel3 from "@/assets/reel3.mp4.asset.json";
-import reel4 from "@/assets/reel4.mp4.asset.json";
-import poster1 from "@/assets/reel1-poster.jpg.asset.json";
-import poster2 from "@/assets/reel2-poster.jpg.asset.json";
-import poster3 from "@/assets/reel3-poster.jpg.asset.json";
-import poster4 from "@/assets/reel4-poster.jpg.asset.json";
+import reel1 from "@/assets/transformation-1.mp4.asset.json";
+import reel2 from "@/assets/transformation-2.mp4.asset.json";
+import reel3 from "@/assets/transformation-3.mp4.asset.json";
+import reel4 from "@/assets/transformation-4.mp4.asset.json";
+import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
+import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
+import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
+import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
 
 const reels = [
   {src: reel1.url,poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
