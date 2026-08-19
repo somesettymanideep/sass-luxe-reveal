@@ -157,7 +157,7 @@ export function Founder() {
             ref={(el) => { if (el) bioItemsRef.current[0] = el; }}
             style={{ opacity: 0, visibility: "hidden" }}
           >
-            <p className="section-eyebrow text-gold">Meet the Founder</p>
+            <p className="section-eyebrow text-gold">Founder's Message</p>
           </div>
 
           <div
