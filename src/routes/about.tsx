@@ -12,7 +12,6 @@ import { Experts } from "@/components/site/Experts";
 import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { TransformationReels } from "@/components/site/TransformationReels";
 import interior from "@/assets/interior.jpg";
 
 const title = "About SASS Hair & Beauty | Our Story, Founder & Journey";
@@ -54,7 +53,6 @@ function AboutPage() {
         <AboutBranches />
         <AboutStats />
         <Experts />
-        <TransformationReels />
         <Brands />
       </main>
       <Footer />

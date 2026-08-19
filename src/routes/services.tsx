@@ -9,7 +9,6 @@ import { FAQ } from "@/components/site/FAQ";
 import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import { TransformationReels } from "@/components/site/TransformationReels";
 import hero from "@/assets/hero.jpg";
 
 const title = "Salon Services | SASS Hair & Beauty Vijayawada, Guntur, Rajahmundry";
@@ -45,7 +44,6 @@ function ServicesPage() {
           image={hero}
         />
         <ServicesGrid />
-        <TransformationReels />
         <Membership />
         <FAQ />
         <Brands />
