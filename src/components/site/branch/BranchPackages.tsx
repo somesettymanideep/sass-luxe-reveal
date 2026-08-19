@@ -6,11 +6,11 @@ import hairPkg from "@/assets/svc-keratin.jpg?url";
 import bridalPkg from "@/assets/svc-bridal.jpg?url";
 import glowPkg from "@/assets/svc-facial.jpg?url";
 import groomPkg from "@/assets/mens-grooming.jpg?url";
-import employeesIcon from "@/assets/employees.svg?url";
-import productsIcon from "@/assets/why-products.svg?url";
-import consultationIcon from "@/assets/consultation.svg?url";
-import safeIcon from "@/assets/why-safe.svg?url";
-import consumerIcon from "@/assets/why-consumer.svg?url";
+import employeesIcon from "@/assets/employees.svg.asset.json";
+import productsIcon from "@/assets/why-products.svg.asset.json";
+import consultationIcon from "@/assets/consultation.svg.asset.json";
+import safeIcon from "@/assets/why-safe.svg.asset.json";
+import consumerIcon from "@/assets/why-consumer.svg.asset.json";
 
 interface Pkg {
   name: string;
@@ -70,11 +70,11 @@ const packages: Pkg[] = [
 ];
 
 const benefits = [
-  { label: "Certified Stylists", icon: employeesIcon },
-  { label: "Premium Products", icon: productsIcon },
-  { label: "Personalised Consultation", icon: consultationIcon },
-  { label: "Flexible Appointments", icon: safeIcon },
-  { label: "4.9 Google Rating", icon: consumerIcon },
+  { label: "Certified Stylists", icon: employeesIcon.url },
+  { label: "Premium Products", icon: productsIcon.url },
+  { label: "Personalised Consultation", icon: consultationIcon.url },
+  { label: "Flexible Appointments", icon: safeIcon.url },
+  { label: "4.9 Google Rating", icon: consumerIcon.url },
 ];
 
 const inr = (n: number) => n.toLocaleString("en-IN");
