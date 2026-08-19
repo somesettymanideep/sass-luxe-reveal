@@ -9,6 +9,7 @@ import { VjaWhy, VjaServiceGrid, VjaProcess, VjaBeforeAfter } from "@/components
 import {
   VjaTestimonials, VjaPackages, VjaExperts, VjaFAQ, VjaBlogs, VjaAreas, VjaBooking, VjaContact, vjaFaqs,
 } from "@/components/site/vja/VjaSections";
+import { TransformationReels } from "@/components/site/TransformationReels";
 
 const URL = "https://sass-elegance-animated.lovable.app/vijayawada-hair-beauty-clinic";
 const TITLE = "Best Hair & Beauty Clinic in Vijayawada | SASS Hair & Beauty";
@@ -114,6 +115,7 @@ function VijayawadaClinicPage() {
         <VjaServiceGrid />
         <VjaProcess />
         <VjaBeforeAfter />
+        <TransformationReels />
         <VjaTestimonials />
         
         <VjaExperts />
