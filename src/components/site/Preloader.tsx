@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/sass-logo.png.asset.json";
+import logo from "@/assets/sass-logo-new.png.asset.json";
 
 export function Preloader() {
   const [done, setDone] = useState(false);

@@ -8,7 +8,7 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/sass-logo-white.png.asset.json";
+import logo from "@/assets/sass-logo-new.png.asset.json";
 import { useReveal } from "@/lib/motion";
 
 const quickLinks: [string, string][] = [
