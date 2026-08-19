@@ -241,10 +241,14 @@ function VideoSlider() {
               loop
               playsInline
               preload="auto"
-              onMouseEnter={(e) => void e.currentTarget.play().catch(() => {})}
+              onMouseEnter={(e) => {
+                const v = e.currentTarget;
+                v.play().catch(() => {});
+              }}
               onMouseLeave={(e) => {
-                e.currentTarget.pause();
-                e.currentTarget.currentTime = 0;
+                const v = e.currentTarget;
+                v.pause();
+                v.currentTime = 0;
               }}
               className="size-full object-cover transition-transform duration-[1200ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105"
             />
