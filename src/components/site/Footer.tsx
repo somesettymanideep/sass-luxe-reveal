@@ -16,7 +16,7 @@ const quickLinks: [string, string][] = [
   ["About Us", "/about"],
   ["Transformations", "/#gallery"],
   ["Bridal Beauty", "/#bridal"],
-  ["Our Experts", "/#experts"],
+  
   ["Membership", "/#membership"],
   ["FAQs", "/#faq"],
   ["Contact", "/contact"],
