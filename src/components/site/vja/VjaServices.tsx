@@ -6,6 +6,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import haircut from "@/assets/svc-haircut.jpg?url";
+import why1 from "@/assets/why-1.svg.asset.json";
+import why2 from "@/assets/why-2.svg.asset.json";
+import why3 from "@/assets/why-3.svg.asset.json";
+import why4 from "@/assets/why-4.svg.asset.json";
+import why5 from "@/assets/why-5.svg.asset.json";
+import why6 from "@/assets/why-6.svg.asset.json";
+import why7 from "@/assets/why-7.svg.asset.json";
+import why8 from "@/assets/why-8.svg.asset.json";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import smoothening from "@/assets/svc-smoothening.jpg?url";
@@ -37,13 +45,13 @@ function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title
 }
 
 /* -------- 2. Why choose — single horizontal row with dividers -------- */
-const why: { Icon: LucideIcon; title: string; copy: string }[] = [
-  { Icon: BadgeCheck, title: "Certified Professionals", copy: "Expert & experienced beauty specialists" },
-  { Icon: Sparkles, title: "Premium Products", copy: "We use top-quality, international brands" },
-  { Icon: Cpu, title: "Modern Equipment", copy: "Advanced technology for best results" },
-  { Icon: MessageCircle, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
-  { Icon: Wallet, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
-  { Icon: ShieldCheck, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
+const why: { icon: string; title: string; copy: string }[] = [
+  { icon: why1.url, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
+  { icon: why7.url, title: "Premium Products", copy: "We use top-quality, international brands" },
+  { icon: why3.url, title: "Modern Equipment", copy: "Advanced technology for best results" },
+  { icon: why8.url, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
+  { icon: why5.url, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
+  { icon: why6.url, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
 ];
 
 export function VjaWhy() {
@@ -57,12 +65,16 @@ export function VjaWhy() {
           </h2>
         </div>
         <div className="mt-10 grid grid-cols-2 gap-y-10 sm:grid-cols-3 lg:grid-cols-6">
-          {why.map(({ Icon, title, copy }, i) => (
+          {why.map(({ icon, title, copy }, i) => (
             <div
               key={title}
               className={`v-card group px-4 text-center ${i ? "lg:border-l lg:border-gold/25" : ""}`}
             >
-              <Icon className="mx-auto size-8 text-gold transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110" strokeWidth={1.2} />
+              <img
+                src={icon}
+                alt={title}
+                className="mx-auto size-8 transition-transform duration-500 group-hover:-translate-y-1 group-hover:scale-110"
+              />
               <h3 className="mt-4 font-button text-[0.72rem] font-semibold uppercase tracking-[0.08em]">{title}</h3>
               <p className="mt-2 text-xs leading-relaxed text-muted-foreground">{copy}</p>
             </div>
