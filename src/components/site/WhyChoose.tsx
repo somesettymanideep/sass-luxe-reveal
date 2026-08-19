@@ -1,34 +1,34 @@
 import { useEffect, useRef } from "react";
 import { gsap, ensureGsap } from "@/lib/motion";
-import salonIcon from "@/assets/why-beauty-salon.svg.asset.json";
-import makeupIcon from "@/assets/employees.svg.asset.json";
-import productsIcon from "@/assets/skincare.svg.asset.json";
-import safeIcon from "@/assets/why-safe.svg.asset.json";
-import consumerIcon from "@/assets/why-consumer.svg.asset.json";
+import why1 from "@/assets/why-home-1.svg.asset.json";
+import why2 from "@/assets/why-home-2.svg.asset.json";
+import why3 from "@/assets/why-home-3.svg.asset.json";
+import why4 from "@/assets/why-home-4.svg.asset.json";
+import why5 from "@/assets/why-home-5.svg.asset.json";
 
 const items = [
   {
-    icon: salonIcon.url,
+    icon: why1.url,
     title: "Premium Experience",
     copy: "Luxury salon experience with world-class services.",
   },
   {
-    icon: makeupIcon.url,
+    icon: why2.url,
     title: "Expert Stylists",
     copy: "Trained & certified professionals at your service.",
   },
   {
-    icon: productsIcon.url,
+    icon: why3.url,
     title: "High Quality Products",
     copy: "We use only top-quality, skin & hair safe products.",
   },
   {
-    icon: safeIcon.url,
+    icon: why4.url,
     title: "Hygiene & Cleanliness",
     copy: "100% hygiene and sterilized equipment.",
   },
   {
-    icon: consumerIcon.url,
+    icon: why5.url,
     title: "Customer Satisfaction",
     copy: "Your satisfaction is our top priority.",
   },
