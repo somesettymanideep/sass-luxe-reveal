@@ -301,9 +301,18 @@ export function VjaFAQ() {
   const [open, setOpen] = useState<number | null>(0);
   return (
     <section className="bg-cream py-24 md:py-32">
-      <div ref={ref} className="mx-auto max-w-[900px] px-6">
+      <div ref={ref} className="mx-auto max-w-[1400px] px-6">
         <div className="v-head"><Head eyebrow="FAQ" title="Questions, answered" /></div>
-        <div className="mt-12 space-y-4">
+        <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1fr_1.5fr]">
+          <div className="mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28">
+            <img
+              src={transformsImage.url}
+              alt="SASS Hair & Beauty signature services"
+              loading="lazy"
+              className="w-full rounded-[7px] shadow-luxe"
+            />
+          </div>
+          <div className="space-y-4">
           {vjaFaqs.map(({ q, a }, i) => {
             const active = open === i;
             return (
