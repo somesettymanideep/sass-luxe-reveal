@@ -6,6 +6,7 @@ import { LuxeButton } from "../LuxeButton";
 import hero from "@/assets/hero.jpg?url";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
+import vjaHeroReel from "@/assets/vja-hero-reel.mp4.asset.json";
 
 const trust = [
   { Icon: BadgeCheck, label: "Certified Experts" },
