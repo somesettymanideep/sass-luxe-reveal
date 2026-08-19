@@ -139,7 +139,18 @@ export function VjaHero() {
         </div>
 
         <div className="vh-item relative">
-          <MiniCompare />
+          <div className="relative aspect-4/5 w-full overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe">
+            <video
+              src={vjaHeroReel.url}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="size-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+          </div>
           <div className="absolute -left-4 bottom-10 hidden max-w-[13rem] rounded-[20px] border border-gold/25 bg-black/60 p-4 backdrop-blur-md md:block">
             <div className="flex gap-1 text-gold">
               {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3 fill-current" />)}
