@@ -255,7 +255,7 @@ export function BranchFAQ({ branch }: { branch: Branch }) {
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.15fr]">
           <div className="bf-image mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28">
             <img
-              src={faqImage.url}
+              src={transformsImage.url}
               alt={`SASS Hair & Beauty ${branch.city} signature services`}
               loading="lazy"
               width={1080}
