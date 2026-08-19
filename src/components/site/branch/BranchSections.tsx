@@ -7,14 +7,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import type { Branch } from "@/lib/branches";
-import rjy1 from "@/assets/rjy-store-1.jpg.asset.json";
-import rjy2 from "@/assets/rjy-store-2.jpg.asset.json";
-import rjy3 from "@/assets/rjy-store-3.jpg.asset.json";
-import rjy4 from "@/assets/rjy-store-4.jpg.asset.json";
-import rjy5 from "@/assets/rjy-store-5.jpg.asset.json";
-import rjy6 from "@/assets/rjy-store-6.jpg.asset.json";
-import rjy7 from "@/assets/rjy-store-7.jpg.asset.json";
-import rjy8 from "@/assets/rjy-store-8.jpg.asset.json";
+import storeExterior from "@/assets/store-exterior.jpg.asset.json";
+import reception from "@/assets/reception.jpg.asset.json";
+import stylingArea from "@/assets/styling-area.jpg.asset.json";
+import kidsStyling1 from "@/assets/kids-styling-1.jpg.asset.json";
+import hairWashStation from "@/assets/hair-wash-station.jpg.asset.json";
+import spaRoom from "@/assets/spa-room.jpg.asset.json";
+import studioCorridor from "@/assets/studio-corridor.jpg.asset.json";
+import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
 import haircut from "@/assets/svc-haircut.jpg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
@@ -500,14 +500,14 @@ const baseShots = [
 ];
 
 const rajahmundryShots = [
-  { src: rjy2.url, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
-  { src: rjy6.url, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
-  { src: rjy3.url, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
-  { src: rjy4.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
-  { src: rjy8.url, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
-  { src: rjy1.url, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
-  { src: rjy5.url, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
-  { src: rjy7.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
+  { src: storeExterior.url, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
+  { src: reception.url, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
+  { src: stylingArea.url, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
+  { src: kidsStyling1.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
+  { src: hairWashStation.url, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
+  { src: spaRoom.url, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
+  { src: studioCorridor.url, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
+  { src: kidsStyling2.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
 ];
 
 export function BranchGallery({ slug }: { slug?: string }) {
