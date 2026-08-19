@@ -3,7 +3,7 @@ import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHa
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-import heroReel from "@/assets/hero-reel.mp4.asset.json";
+import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
 import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
 import gunturReel from "@/assets/guntur-hero-reel.mp4.asset.json";
 import rjyReel from "@/assets/rjy-hero-reel.mp4.asset.json";
@@ -27,13 +27,16 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const tel = `tel:${branch.phone.replace(/\s/g, "")}`;
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [muted, setMuted] = useState(true);
+  const isVijayawada = branch.slug === "vijayawada";
   const isGuntur = branch.slug === "guntur";
   const isRajahmundry = branch.slug === "rajahmundry";
   
-  let reel = heroReel.url;
+  let reel = "";
   let poster = heroPoster.url;
 
-  if (isGuntur) {
+  if (isVijayawada) {
+    reel = vjaHeroReel.url;
+  } else if (isGuntur) {
     reel = gunturReel.url;
   } else if (isRajahmundry) {
     reel = rjyReel.url;
