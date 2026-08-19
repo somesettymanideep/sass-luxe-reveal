@@ -89,7 +89,7 @@ export function Preloader() {
       </div>
       
       <p className="eyebrow mt-6 text-cream/50 min-h-[1em] transition-opacity duration-300" style={{ opacity: done ? 0 : 1 }}>
-        {icons[activeIndex].label}
+        {icons[activeIndex]?.label ?? "SASS"}
       </p>
     </div>
   );
