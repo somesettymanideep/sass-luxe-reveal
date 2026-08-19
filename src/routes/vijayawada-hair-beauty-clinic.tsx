@@ -7,7 +7,7 @@ import { FloatingActions } from "@/components/site/FloatingActions";
 import { VjaHero } from "@/components/site/vja/VjaHero";
 import { VjaWhy, VjaServiceGrid, VjaProcess, VjaBeforeAfter } from "@/components/site/vja/VjaServices";
 import {
-  VjaTestimonials, VjaPackages, VjaExperts, VjaFAQ, VjaBlogs, VjaAreas, VjaBooking, VjaContact, vjaFaqs,
+  VjaTestimonials, VjaPackages, VjaFAQ, VjaBlogs, VjaAreas, VjaBooking, VjaContact, vjaFaqs,
 } from "@/components/site/vja/VjaSections";
 
 const URL = "https://sass-elegance-animated.lovable.app/vijayawada-hair-beauty-clinic";
@@ -116,7 +116,7 @@ function VijayawadaClinicPage() {
         <VjaBeforeAfter />
         <VjaTestimonials />
         
-        <VjaExperts />
+        
         <VjaFAQ />
         <VjaBlogs />
         <VjaAreas />

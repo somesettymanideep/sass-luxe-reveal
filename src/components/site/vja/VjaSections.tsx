@@ -249,43 +249,6 @@ export function VjaPackages() {
   );
 }
 
-/* -------- 12. Experts -------- */
-const experts = [
-  { name: "Ramya Sri", role: "Senior Hair Stylist", cert: "L'Oréal Colour Certified", image: g1 },
-  { name: "Kavya Nair", role: "Skin Expert", cert: "Advanced Aesthetics", image: facial },
-  { name: "Meghana R.", role: "Beauty Therapist", cert: "Spa & Wellness Diploma", image: g2 },
-  { name: "Pooja Sharma", role: "Makeup Artist", cert: "HD & Airbrush Pro", image: makeup },
-];
-
-export function VjaExperts() {
-  const ref = useReveal<HTMLDivElement>({ selector: ".v-head, .v-tile", stagger: 0.08 });
-  return (
-    <section className="bg-background py-24 md:py-32">
-      <div ref={ref} className="mx-auto max-w-[1200px] px-6">
-        <div className="v-head"><Head eyebrow="Meet Our Experts" title="The hands behind the" italic="transformations" /></div>
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {experts.map(({ name, role, cert, image }) => (
-            <article key={name} className="v-tile group overflow-hidden rounded-[24px] border border-gold/20 bg-card transition-all duration-700 hover:-translate-y-2 hover:border-gold hover:shadow-gold">
-              <div className="relative overflow-hidden">
-                <img src={image} alt={`${name}, ${role} at SASS Vijayawada`} loading="lazy" className="aspect-4/5 w-full object-cover transition-transform duration-[1300ms] group-hover:scale-110" />
-                <div className="absolute inset-x-0 bottom-0 flex translate-y-full justify-center gap-3 bg-black/65 py-3 backdrop-blur-md transition-transform duration-500 group-hover:translate-y-0">
-                  <Instagram className="size-4 text-gold" />
-                  <Facebook className="size-4 text-gold" />
-                  <MessageCircle className="size-4 text-gold" />
-                </div>
-              </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg">{name}</h3>
-                <p className="mt-1 text-[0.62rem] uppercase tracking-[0.18em] text-gold">{role}</p>
-                <p className="mt-2 text-xs text-muted-foreground">{cert}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 /* -------- 13. FAQ -------- */
 export const vjaFaqs = [
