@@ -43,7 +43,7 @@ export function BranchHero({ branch }: { branch: Branch }) {
 
   return (
     <section className="relative overflow-hidden bg-ink pb-20 pt-32 text-cream md:pb-28 md:pt-40">
-      <div className="pointer-events-none absolute -left-40 top-0 size-[36rem] rounded-full bg-gold/10 blur-[140px]" />
+      
       <div
         ref={ref}
         className="mx-auto grid max-w-[1400px] items-center gap-14 px-6 lg:grid-cols-2 lg:px-10"
@@ -108,16 +108,6 @@ export function BranchHero({ branch }: { branch: Branch }) {
             </button>
           </div>
 
-          {floating.map(({ Icon, label, pos }) => (
-            <div
-              key={label}
-              className={`absolute ${pos} flex items-center gap-2 rounded-full border border-gold/30 bg-black/55 px-4 py-2.5 backdrop-blur-md`}
-              style={{ animation: "fade-in 0.8s ease-out both" }}
-            >
-              <Icon className="size-4 text-gold" strokeWidth={1.5} />
-              <span className="text-[0.62rem] uppercase tracking-[0.18em] text-cream">{label}</span>
-            </div>
-          ))}
         </div>
       </div>
     </section>
