@@ -1,4 +1,4 @@
-import { useEffect, useRef, state, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 import { gsap } from "gsap";
 import { ensureGsap } from "@/lib/motion";
