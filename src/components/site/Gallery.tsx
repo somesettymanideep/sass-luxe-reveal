@@ -130,7 +130,7 @@ function ReelCard({
         muted
         loop
         playsInline
-        preload="none"
+        preload="auto"
         className="size-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
       />
       <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/25" />
