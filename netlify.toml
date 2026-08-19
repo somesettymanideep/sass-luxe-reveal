@@ -1,0 +1,12 @@
+[build]
+  command = "bun run build"
+  publish = "dist"
+
+# Media (images, videos, fonts) live on Lovable's asset CDN and are referenced
+# with root-relative /__l5e/ URLs. Netlify has no such route, so proxy them to
+# the Lovable-hosted origin that serves them.
+[[redirects]]
+  from = "/__l5e/*"
+  to = "https://sass-elegance-animated.lovable.app/__l5e/:splat"
+  status = 200
+  force = true
