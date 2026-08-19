@@ -28,11 +28,13 @@ export function Preloader() {
     >
       <img
         src={logo.url}
-        alt=""
-        width={220}
-        height={110}
+        alt="SASS Hair & Beauty"
         className="w-40 invert md:w-52"
-        style={{ animation: "fade-in 1s ease-out both" }}
+        style={{ 
+          animation: "fade-in 1s ease-out both",
+          display: "block",
+          minHeight: "80px" 
+        }}
       />
       <div className="mt-8 h-px w-40 overflow-hidden bg-cream/15">
         <div
