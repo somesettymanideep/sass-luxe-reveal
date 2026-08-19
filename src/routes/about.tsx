@@ -8,7 +8,7 @@ import { Founder } from "@/components/site/about/Founder";
 import { Timeline } from "@/components/site/about/Timeline";
 import { AboutStats } from "@/components/site/about/AboutStats";
 import { AboutBranches } from "@/components/site/about/AboutBranches";
-import { Experts } from "@/components/site/Experts";
+
 import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
@@ -52,7 +52,7 @@ function AboutPage() {
         <Timeline />
         <AboutBranches />
         <AboutStats />
-        <Experts />
+        
         <Brands />
       </main>
       <Footer />
