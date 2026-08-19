@@ -2,13 +2,13 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
-import fashionColours from "@/assets/hero-colours.jpg.asset.json";
-import bridalBanner from "@/assets/hero-bride.jpg.asset.json";
-import mensBanner from "@/assets/hero-mens.jpg.asset.json";
+import fashionColours from "@/assets/hero-colours.jpg?url";
+import bridalBanner from "@/assets/hero-bride.jpg?url";
+import mensBanner from "@/assets/hero-mens.jpg?url";
 
 const slides = [
   {
-    image: fashionColours.url,
+    image: fashionColours,
     alt: "Model with bold fashion colour balayage styled at SASS Hair & Beauty",
     eyebrow: "Fashion Colours",
     line1: "Bold shades.",
@@ -19,7 +19,7 @@ const slides = [
     cta: "Explore Colour Services",
   },
   {
-    image: bridalBanner.url,
+    image: bridalBanner,
     alt: "Bride in traditional gold jewellery styled by the SASS bridal team",
     eyebrow: "Bridal Excellence",
     line1: "Your wedding day,",
@@ -30,7 +30,7 @@ const slides = [
     cta: "Book Bridal Consultation",
   },
   {
-    image: mensBanner.url,
+    image: mensBanner,
     alt: "Man receiving a precision beard detailing service at SASS Hair & Beauty",
     eyebrow: "Master Barbers",
     line1: "Sharp looks.",

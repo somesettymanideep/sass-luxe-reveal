@@ -3,20 +3,20 @@ import { X, MoveHorizontal, Play, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
-import reel1 from "@/assets/reel1.mp4.asset.json";
-import reel2 from "@/assets/reel2.mp4.asset.json";
-import reel3 from "@/assets/reel3.mp4.asset.json";
-import reel4 from "@/assets/reel4.mp4.asset.json";
-import poster1 from "@/assets/reel1-poster.jpg.asset.json";
-import poster2 from "@/assets/reel2-poster.jpg.asset.json";
-import poster3 from "@/assets/reel3-poster.jpg.asset.json";
-import poster4 from "@/assets/reel4-poster.jpg.asset.json";
+import reel1 from "@/assets/reel1.mp4?url";
+import reel2 from "@/assets/reel2.mp4?url";
+import reel3 from "@/assets/reel3.mp4?url";
+import reel4 from "@/assets/reel4.mp4?url";
+import poster1 from "@/assets/reel1-poster.jpg?url";
+import poster2 from "@/assets/reel2-poster.jpg?url";
+import poster3 from "@/assets/reel3-poster.jpg?url";
+import poster4 from "@/assets/reel4-poster.jpg?url";
 
 const reels = [
-  { src: reel1.url, poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
-  { src: reel2.url, poster: poster2.url, tag: "Bridal", title: "Bridal makeover reveal" },
-  { src: reel3.url, poster: poster3.url, tag: "Styling", title: "Signature blowout styling" },
-  { src: reel4.url, poster: poster4.url, tag: "Makeover", title: "Complete salon makeover" },
+  { src: reel1, poster: poster1, tag: "Colour", title: "Fashion colour transformation" },
+  { src: reel2, poster: poster2, tag: "Bridal", title: "Bridal makeover reveal" },
+  { src: reel3, poster: poster3, tag: "Styling", title: "Signature blowout styling" },
+  { src: reel4, poster: poster4, tag: "Makeover", title: "Complete salon makeover" },
 ];
 
 const SNAP_POINTS = [0, 25, 50, 75, 100];
