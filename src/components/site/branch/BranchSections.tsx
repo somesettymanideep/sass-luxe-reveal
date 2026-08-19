@@ -284,7 +284,7 @@ function VideoSlider() {
 export function BranchTransformations() {
   const ref = useReveal<HTMLDivElement>({ selector: ".bt-item, .bt-head", stagger: 0.08 });
   return (
-    <section className="bg-background py-20 md:py-28">
+    <section className="bg-inherit py-20 md:py-28">
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10">
         <div className="bt-head mx-auto max-w-2xl text-center">
           <p className="section-eyebrow text-gold">Before &amp; After</p>
