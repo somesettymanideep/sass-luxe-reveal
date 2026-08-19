@@ -6,7 +6,7 @@ import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
 import { branches } from "@/lib/branches";
-import faqImage from "@/assets/best_hair_and_beauty_clinic.png.asset.json";
+import transformsImage from "@/assets/transforms-services.png.asset.json";
 
 const serviceOptions = [
   "Hair Cut", "Hair Styling", "Threading", "Fashion Colours", "Hair Smoothening",
