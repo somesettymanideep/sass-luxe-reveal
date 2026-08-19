@@ -52,26 +52,26 @@ import reel5 from "@/assets/reel5.mp4.asset.json";
 import reel6 from "@/assets/reel6.mp4.asset.json";
 import poster5 from "@/assets/reel5-poster.jpg.asset.json";
 import poster6 from "@/assets/reel6-poster.jpg.asset.json";
-import salonIcon from "@/assets/why-beauty-salon.svg?url";
-import employeesIcon from "@/assets/employees.svg?url";
-import makeupIcon from "@/assets/why-makeup.svg?url";
-import skincareIcon from "@/assets/skincare.svg?url";
-import productsIcon from "@/assets/why-products.svg?url";
-import safeIcon from "@/assets/why-safe.svg?url";
-import hairIcon from "@/assets/hair.svg?url";
-import consultationIcon from "@/assets/consultation.svg?url";
+import salonIcon from "@/assets/why-beauty-salon.svg.asset.json";
+import employeesIcon from "@/assets/employees.svg.asset.json";
+import makeupIcon from "@/assets/why-makeup.svg.asset.json";
+import skincareIcon from "@/assets/skincare.svg.asset.json";
+import productsIcon from "@/assets/why-products.svg.asset.json";
+import safeIcon from "@/assets/why-safe.svg.asset.json";
+import hairIcon from "@/assets/hair.svg.asset.json";
+import consultationIcon from "@/assets/consultation.svg.asset.json";
 
 /* ---------------- Section 2 — Why Choose SASS ---------------- */
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: salonIcon, title: "Premium Salon Experience" },
-  { icon: employeesIcon, title: "Certified Hair Stylists" },
-  { icon: makeupIcon, title: "Bridal Makeup Experts" },
-  { icon: hairIcon, title: "Luxury Hair Treatments" },
-  { icon: productsIcon, title: "International Colour Techniques" },
-  { icon: safeIcon, title: "Hygiene & Safety Standards" },
-  { icon: skincareIcon, title: "Premium Imported Products" },
-  { icon: consultationIcon, title: "Personalised Consultation" },
+  { icon: salonIcon.url, title: "Premium Salon Experience" },
+  { icon: employeesIcon.url, title: "Certified Hair Stylists" },
+  { icon: makeupIcon.url, title: "Bridal Makeup Experts" },
+  { icon: hairIcon.url, title: "Luxury Hair Treatments" },
+  { icon: productsIcon.url, title: "International Colour Techniques" },
+  { icon: safeIcon.url, title: "Hygiene & Safety Standards" },
+  { icon: skincareIcon.url, title: "Premium Imported Products" },
+  { icon: consultationIcon.url, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
