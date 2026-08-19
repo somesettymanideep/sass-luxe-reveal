@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, state, useState } from "react";
 import { Plus } from "lucide-react";
 import { gsap } from "gsap";
 import { ensureGsap } from "@/lib/motion";
 import transformsImage from "@/assets/transforms-services.png.asset.json";
-import faqImage from "@/assets/best_hair_and_beauty_clinic.png.asset.json";
 
 const faqs = [
   {
@@ -39,7 +38,6 @@ export function FAQ() {
     ensureGsap();
 
     const ctx = gsap.context(() => {
-      // Image: elegant slide-in from left with subtle scale and blur
       gsap.fromTo(
         ".faq-image",
         { autoAlpha: 0, x: -80, scale: 1.04, filter: "blur(16px)" },
@@ -54,7 +52,6 @@ export function FAQ() {
         },
       );
 
-      // Heading block: fade up with blur
       gsap.fromTo(
         ".reveal-head",
         { autoAlpha: 0, y: 50, filter: "blur(14px)" },
@@ -68,7 +65,6 @@ export function FAQ() {
         },
       );
 
-      // FAQ cards: staggered fade + slide + scale + blur
       gsap.fromTo(
         ".faq-item",
         { autoAlpha: 0, y: 45, x: 40, scale: 0.98, filter: "blur(12px)" },
@@ -85,7 +81,6 @@ export function FAQ() {
         },
       );
 
-      // FAQ number badges: pop in after their cards appear
       gsap.fromTo(
         ".faq-item .faq-num",
         { autoAlpha: 0, scale: 0.6, y: 10 },
@@ -107,7 +102,6 @@ export function FAQ() {
   return (
     <section className="bg-background py-28 md:py-36">
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10">
-        {/* Heading — top left of the section */}
         <div className="reveal-head mb-10 lg:mb-14">
           <p className="section-eyebrow text-gold">FAQ</p>
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4vw,3.2rem)] leading-[1.05]">
@@ -140,7 +134,6 @@ export function FAQ() {
                   }`}
                   style={{ willChange: "transform, opacity, filter" }}
                 >
-                  {/* Active gold accent bar */}
                   <div
                     className={`absolute left-0 top-0 h-full w-[3px] bg-gold-gradient transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${
                       isOpen ? "translate-x-0" : "-translate-x-full"
