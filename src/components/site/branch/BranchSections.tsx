@@ -240,7 +240,7 @@ function VideoSlider() {
               muted
               loop
               playsInline
-              preload="none"
+              preload="auto"
               onMouseEnter={(e) => void e.currentTarget.play().catch(() => {})}
               onMouseLeave={(e) => {
                 e.currentTarget.pause();
