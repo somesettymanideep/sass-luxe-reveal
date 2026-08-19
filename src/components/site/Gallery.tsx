@@ -3,14 +3,14 @@ import { X, MoveHorizontal, Play, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
-import reel1 from "@/assets/reel1.mp4.asset.json";
-import reel2 from "@/assets/reel2.mp4.asset.json";
-import reel3 from "@/assets/reel3.mp4.asset.json";
-import reel4 from "@/assets/reel4.mp4.asset.json";
-import poster1 from "@/assets/reel1-poster.jpg.asset.json";
-import poster2 from "@/assets/reel2-poster.jpg.asset.json";
-import poster3 from "@/assets/reel3-poster.jpg.asset.json";
-import poster4 from "@/assets/reel4-poster.jpg.asset.json";
+import reel1 from "@/assets/transformation-1.mp4.asset.json";
+import reel2 from "@/assets/transformation-2.mp4.asset.json";
+import reel3 from "@/assets/transformation-3.mp4.asset.json";
+import reel4 from "@/assets/transformation-4.mp4.asset.json";
+import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
+import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
+import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
+import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
 
 const reels = [
   {src: reel1.url,poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
@@ -125,14 +125,15 @@ function ReelCard({
     >
       <video
         ref={video}
-        src={reel.src}
         poster={reel.poster}
         muted
         loop
         playsInline
         preload="auto"
         className="size-full object-cover transition-transform duration-[1400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
-      />
+      >
+        <source src={reel.src} type="video/mp4" />
+      </video>
       <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/25" />
       <span className="absolute left-4 top-4 rounded-full border border-gold/40 bg-black/45 px-3 py-1 text-[0.6rem] uppercase tracking-[0.22em] text-gold backdrop-blur">
         {reel.tag}
@@ -215,7 +216,6 @@ export function Gallery() {
           </button>
           <video
             key={active}
-            src={reels[active]!.src}
             poster={reels[active]!.poster}
             autoPlay
             loop
@@ -225,7 +225,9 @@ export function Gallery() {
             className="max-h-[86vh] w-auto rounded-2xl border border-gold/20 object-contain"
             style={{ animation: "scale-in 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <source src={reels[active]!.src} type="video/mp4" />
+          </video>
         </div>
       )}
     </section>
