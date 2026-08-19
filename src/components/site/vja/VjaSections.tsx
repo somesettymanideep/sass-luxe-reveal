@@ -343,8 +343,9 @@ export function VjaFAQ() {
           })}
         </div>
       </div>
-    </section>
-  );
+    </div>
+  </section>
+);
 }
 
 /* -------- 14. Blogs -------- */
