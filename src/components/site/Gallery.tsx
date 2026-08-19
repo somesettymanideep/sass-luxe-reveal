@@ -216,7 +216,6 @@ export function Gallery() {
           </button>
           <video
             key={active}
-            src={reels[active]!.src}
             poster={reels[active]!.poster}
             autoPlay
             loop
@@ -226,7 +225,9 @@ export function Gallery() {
             className="max-h-[86vh] w-auto rounded-2xl border border-gold/20 object-contain"
             style={{ animation: "scale-in 0.45s cubic-bezier(0.22,1,0.36,1) both" }}
             onClick={(e) => e.stopPropagation()}
-          />
+          >
+            <source src={reels[active]!.src} type="video/mp4" />
+          </video>
         </div>
       )}
     </section>
