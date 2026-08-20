@@ -65,15 +65,15 @@ export function Preloader() {
         ))}
       </div>
 
-      <div className="relative h-12 w-48 overflow-hidden">
+      <div className="relative h-20 w-64 px-4 overflow-hidden flex items-center justify-center">
         <img
           src={logo.url}
           alt="SASS Hair & Beauty"
-          className="w-full invert transition-all duration-700 ease-luxe"
+          className="h-full w-auto object-contain transition-all duration-700 ease-luxe"
           style={{ 
             opacity: done ? 0 : 1,
             transform: done ? "translateY(-10px)" : "translateY(0)",
-            filter: "brightness(0) invert(1)"
+            filter: "brightness(0) invert(1) contrast(1.2)"
           }}
         />
       </div>
