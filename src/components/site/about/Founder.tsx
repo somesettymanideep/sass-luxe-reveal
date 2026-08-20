@@ -207,7 +207,7 @@ export function Founder() {
             className="mt-10 flex flex-wrap items-center gap-4"
             style={{ opacity: 0, visibility: "hidden" }}
           >
-            <LuxeButton as="a" href="/contact" className="px-10">
+            <LuxeButton as="a" href="/sass-luxe-reveal/contact" className="px-10">
               Book with the Studio
             </LuxeButton>
             <a

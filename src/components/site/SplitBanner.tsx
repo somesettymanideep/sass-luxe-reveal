@@ -34,7 +34,7 @@ export function SplitBanner() {
                 Skin fades, undercuts, beard detailing &amp; luxury grooming.
               </p>
               <a
-                href="/services"
+                href="/sass-luxe-reveal/services"
                 className="mt-3 inline-flex w-fit items-center rounded-[4px] border border-gold/60 px-5 py-2.5 font-button text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-cream transition-colors duration-500 hover:bg-gold hover:text-ink"
               >
                 Explore Men's Services
@@ -54,7 +54,7 @@ export function SplitBanner() {
                 Make your special day even more beautiful with our bridal packages.
               </p>
               <a
-                href="/#bridal"
+                href="/sass-luxe-reveal/#bridal"
                 className="mt-3 inline-flex w-fit items-center rounded-[4px] bg-ink px-5 py-2.5 font-button text-[0.62rem] font-semibold uppercase tracking-[0.18em] text-cream transition-transform duration-500 hover:-translate-y-0.5"
               >
                 Explore Bridal Packages

@@ -14,11 +14,11 @@ import { useReveal } from "@/lib/motion";
 const quickLinks: [string, string][] = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Transformations", "/#gallery"],
-  ["Bridal Beauty", "/#bridal"],
+  ["Transformations", "/sass-luxe-reveal/#gallery"],
+  ["Bridal Beauty", "/sass-luxe-reveal/#bridal"],
   
-  ["Membership", "/#membership"],
-  ["FAQs", "/#faq"],
+  ["Membership", "/sass-luxe-reveal/#membership"],
+  ["FAQs", "/sass-luxe-reveal/#faq"],
   ["Contact", "/contact"],
 ];
 
@@ -101,7 +101,7 @@ export function Footer() {
           <ul className="mt-6 space-y-3 text-sm text-cream/60">
             {services.map((s) => (
               <li key={s}>
-                <a href="/#services" className="link-underline">
+                <a href="/sass-luxe-reveal/#services" className="link-underline">
                   {s}
                 </a>
               </li>
