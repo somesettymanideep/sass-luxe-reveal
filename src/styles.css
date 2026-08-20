@@ -279,6 +279,11 @@
   text-transform: none;
 }
 
-#lovable-badge {
+#lovable-badge, 
+a[href*="lovable.dev"], 
+a[href*="lovable.app"] {
   display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
