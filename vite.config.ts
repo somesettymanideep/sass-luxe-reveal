@@ -7,12 +7,14 @@ export default defineConfig({
       outDir: 'dist',
       assetsDir: 'assets',
       emptyOutDir: true,
+      ssr: false,
     }
   },
   nitro: { 
     preset: "static",
-  },
-  tanstackStart: {
-    server: { entry: "server" },
-  },
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
+  }
 });
