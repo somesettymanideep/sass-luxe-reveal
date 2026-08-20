@@ -12,10 +12,5 @@ export default defineConfig({
   },
   nitro: { 
     preset: "github-pages",
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true,
-      failOnError: false
-    }
   }
 });
