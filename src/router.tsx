@@ -11,11 +11,7 @@ export const getRouter = () => {
     routeTree,
     context: { queryClient },
     history: hashHistory,
-    // Note: When using basepath in createRouter, TanStack Router handles the prefix automatically
-    // for all <Link> and router.navigate calls.
     basepath: "/sass-luxe-reveal",
-    scrollRestoration: true,
-    defaultPreloadStaleTime: 0,
   });
 
   return router;
