@@ -53,7 +53,7 @@ export function FloatingActions() {
           aria-label="Back to top"
           aria-hidden={!show}
           tabIndex={show ? 0 : -1}
-          className="grid size-12 place-items-center rounded-full border border-gold/30 bg-background/70 text-gold shadow-luxe backdrop-blur transition-all duration-500 hover:scale-110 hover:border-gold hover:bg-ink"
+          className="grid size-12 place-items-center rounded-full border border-gold/30 bg-gold-gradient text-ink shadow-luxe backdrop-blur transition-all duration-500 hover:scale-110 hover:border-gold hover:bg-gold"
           style={{
             opacity: show ? 1 : 0,
             transform: show ? "translateY(0)" : "translateY(12px)",
