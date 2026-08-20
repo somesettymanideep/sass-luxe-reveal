@@ -1,34 +1,16 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tsconfigPaths from "vite-tsconfig-paths";
-import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
-import tailwindcss from "@tailwindcss/vite";
-import { fileURLToPath } from "node:url";
-import { dirname, resolve } from "node:path";
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
+import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  plugins: [
-    TanStackRouterVite(),
-    react(),
-    tailwindcss(),
-    tsconfigPaths(),
-  ],
-  base: './',
-  build: {
-    outDir: 'dist/client',
-    assetsDir: 'assets',
-    emptyOutDir: true,
-    ssr: false,
-    cssMinify: false, // Disable CSS minification to bypass lightingcss/esbuild resolution issues
-    rollupOptions: {
-      input: resolve(__dirname, 'index.html'),
+  vite: {
+    base: './',
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      emptyOutDir: true,
+      ssr: false,
     }
   },
-  resolve: {
-    alias: {
-      "@": resolve(__dirname, "./src"),
-    },
-  },
+  nitro: { 
+    preset: "static",
+  }
 });
