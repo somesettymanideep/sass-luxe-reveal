@@ -46,7 +46,7 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
     
     setState("loading");
     try {
-      await createConsultation({ data });
+      await createConsultation(data);
       setState("done");
       setTimeout(() => setState("idle"), 3000);
     } catch (err) {
