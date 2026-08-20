@@ -130,9 +130,15 @@ export function Hero() {
               ))}
             </ul>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <LuxeButton as="a" href="/contact" className="hero-anim">
-                Book Your Appointment
-              </LuxeButton>
+              <div className="hero-anim">
+                <AppointmentForm 
+                  trigger={
+                    <LuxeButton>
+                      Book Your Appointment
+                    </LuxeButton>
+                  }
+                />
+              </div>
               <LuxeButton
                 as="a"
                 href={s.href}
