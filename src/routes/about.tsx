@@ -12,7 +12,7 @@ import { AboutBranches } from "@/components/site/about/AboutBranches";
 import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import interior from "@/assets/interior.jpg";
+import interior from "@/assets/interior.jpg?url";;
 
 const title = "About SASS Hair & Beauty | Our Story, Founder & Journey";
 const description =
