@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/lib/assets";
 import { useEffect, useState } from "react";
 import logo from "@/assets/sass-logo-new.png.asset.json";
 import { Scissors, Sparkles, Heart, Star, Sparkle } from "lucide-react";

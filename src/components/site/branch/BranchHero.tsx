@@ -30,13 +30,7 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const isVijayawada = branch.slug === "vijayawada";
   const isGuntur = branch.slug === "guntur";
   const isRajahmundry = branch.slug === "rajahmundry";
-  const getAssetUrl = (asset: any) => {
-    if (!asset?.url) return "";
-    if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
-      return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
-    }
-    return asset.url;
-  };
+  import { getAssetUrl } from "@/lib/assets";
 
   let reel = "";
   let poster = getAssetUrl(heroPoster);

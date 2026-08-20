@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/lib/assets";
 import {
   Instagram,
   Facebook,

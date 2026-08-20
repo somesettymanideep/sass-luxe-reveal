@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/lib/assets";
 import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import { Star, Phone, BadgeCheck, Sparkles, Award, MoveHorizontal, ChevronDown } from "lucide-react";
