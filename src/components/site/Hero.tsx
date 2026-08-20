@@ -9,7 +9,7 @@ import heroMen from "@/assets/hero-men.jpg.asset.json";
 // Helper to resolve asset URLs with base path
 const getAssetUrl = (asset: any) => {
   if (!asset?.url) return "";
-  const url = asset.url;
+  let url = asset.url;
   if (url.startsWith("/") && !url.startsWith(import.meta.env.BASE_URL)) {
     const base = import.meta.env.BASE_URL.replace(/\/$/, "");
     return `${base}${url}`;

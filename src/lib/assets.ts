@@ -20,7 +20,6 @@ import why8 from "@/assets/why-8.svg.asset.json";
 // Helper to ensure assets from .asset.json or vite imports resolve correctly with base path
 export const getAssetUrl = (asset: any) => {
   if (typeof asset === 'string') {
-    // If it's a relative path starting with /, prepend the base path
     if (asset.startsWith('/') && !asset.startsWith(import.meta.env.BASE_URL)) {
       const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       return `${base}${asset}`;
@@ -30,7 +29,6 @@ export const getAssetUrl = (asset: any) => {
   
   if (asset?.url) {
     let url = asset.url;
-    // If it's a relative path starting with /, prepend the base path
     if (url.startsWith('/') && !url.startsWith(import.meta.env.BASE_URL)) {
       const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       url = `${base}${url}`;
