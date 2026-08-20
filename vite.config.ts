@@ -21,6 +21,7 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     ssr: false,
+    cssMinify: 'esbuild', // Use esbuild to avoid lightningcss errors with Tailwind v4
     rollupOptions: {
       input: resolve(__dirname, 'index.html'),
     }
