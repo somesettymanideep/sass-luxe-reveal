@@ -269,7 +269,7 @@ export function VjaFAQ() {
         <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28">
             <img
-              src={transformsImage.url}
+              src={transformsImage.url.startsWith('/') && !transformsImage.url.startsWith(import.meta.env.BASE_URL) ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${transformsImage.url}` : transformsImage.url}
               alt="SASS Hair & Beauty signature services"
               loading="lazy"
               className="w-full rounded-[7px] shadow-luxe"

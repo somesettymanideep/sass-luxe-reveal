@@ -67,7 +67,7 @@ export function Preloader() {
 
       <div className="relative h-20 w-64 px-4 overflow-hidden flex items-center justify-center">
         <img
-          src={logo.url}
+          src={logo.url.startsWith('/') && !logo.url.startsWith(import.meta.env.BASE_URL) ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${logo.url}` : logo.url}
           alt="SASS Hair & Beauty"
           className="h-full w-auto object-contain transition-all duration-700 ease-luxe"
           style={{ 
