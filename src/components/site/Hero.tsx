@@ -127,7 +127,7 @@ export function Hero() {
               ))}
             </ul>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <LuxeButton as="a" href="/contact" className="hero-anim">
+              <LuxeButton as="a" href="/sass-luxe-reveal/contact" className="hero-anim">
                 Book Your Appointment
               </LuxeButton>
               <LuxeButton
