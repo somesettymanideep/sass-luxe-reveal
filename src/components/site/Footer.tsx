@@ -57,8 +57,8 @@ export function Footer() {
 
           <div className="mt-6 flex gap-3">
             {[
-              { Icon: Instagram, label: "Instagram", href: "https://instagram.com" },
-              { Icon: Facebook, label: "Facebook", href: "https://facebook.com" },
+              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/sasshairbeauty/" },
+              { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61560116745363" },
               { Icon: Youtube, label: "YouTube", href: "https://youtube.com" },
             ].map(({ Icon, label, href }) => (
               <a
