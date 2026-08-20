@@ -1,7 +1,8 @@
 import { useState, type FormEvent } from "react";
-import { Check, X } from "lucide-react";
+import { Check, X, Loader2 } from "lucide-react";
 import { useDirectionalReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
+import { createBooking } from "@/lib/bookings.functions";
 import {
   Dialog,
   DialogContent,
@@ -9,6 +10,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+
 
 const branches = ["Vijayawada", "Guntur", "Rajahmundry"];
 const services = [
@@ -32,28 +34,38 @@ export function AppointmentForm({
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
   const [error, setError] = useState("");
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    if (
-      !String(data.get("name") || "").trim() ||
-      !String(data.get("phone") || "").trim() ||
-      !data.get("service") ||
-      !data.get("branch")
-    ) {
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: String(formData.get("name") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      service: String(formData.get("service") || ""),
+      branch: String(formData.get("branch") || ""),
+      message: String(formData.get("message") || "").trim(),
+    };
+
+    if (!data.name || !data.phone || !data.service || !data.branch) {
       setError("Please fill in all required fields.");
       setTimeout(() => setError(""), 1400);
       return;
     }
+
     setState("loading");
-    setTimeout(() => {
+    try {
+      await createBooking({ data });
       setState("done");
       setTimeout(() => {
         setIsOpen(false);
         setState("idle");
       }, 2000);
-    }, 1200);
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
+      setState("idle");
+    }
   };
+
 
   const field =
     "peer w-full rounded-xl border border-border bg-card px-4 pb-2.5 pt-6 text-sm outline-none transition-[border-color,box-shadow] duration-400 focus:border-gold focus:shadow-gold";
@@ -65,7 +77,7 @@ export function AppointmentForm({
     "pointer-events-none absolute left-4 top-2 text-[0.6rem] uppercase tracking-[0.16em] text-gold";
 
   const formContent = (
-    <div className={`h-full ${!embedded ? "p-0" : "rounded-[2rem] border border-gold/20 bg-card p-8 shadow-luxe md:p-10"}`}>
+    <div className={`h-full overflow-y-auto ${!embedded ? "p-0 max-h-[85vh] pr-2 custom-scrollbar" : "rounded-[2rem] border border-gold/20 bg-card p-8 shadow-luxe md:p-10"}`}>
       <div className="flex items-center justify-between">
         <div>
           <p className="section-eyebrow text-gold">Appointment Request</p>
@@ -124,7 +136,12 @@ export function AppointmentForm({
         <div className="md:col-span-2">
           <LuxeButton type="submit" className="w-full" disabled={state !== "idle"}>
             {state === "idle" && "Book Appointment"}
-            {state === "loading" && "Sending…"}
+            {state === "loading" && (
+              <span className="inline-flex items-center gap-2">
+                <Loader2 className="size-4 animate-spin" /> Sending…
+              </span>
+            )}
+
             {state === "done" && (
               <span className="inline-flex items-center gap-2">
                 <Check className="size-4" /> Request received
@@ -145,7 +162,7 @@ export function AppointmentForm({
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-xl border-gold/20 bg-ink/95 p-8 backdrop-blur-2xl sm:rounded-[2rem]">
+      <DialogContent className="max-w-xl border-gold/20 bg-ink/95 p-6 backdrop-blur-2xl sm:rounded-[2rem] sm:p-8 w-[95vw] md:w-full">
         <DialogHeader className="sr-only">
           <DialogTitle>Book an Appointment</DialogTitle>
         </DialogHeader>
