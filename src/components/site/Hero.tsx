@@ -6,8 +6,18 @@ import heroHair from "@/assets/hero-hair.jpg.asset.json";
 import heroBridal from "@/assets/hero-bridal.jpg.asset.json";
 import heroMen from "@/assets/hero-men.jpg.asset.json";
 
+// Helper to resolve asset URLs with base path
+const getAssetUrl = (asset: any) => {
+  if (!asset?.url) return "";
+  if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
+    return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
+  }
+  return asset.url;
+};
+
 const slides = [
-  {image: heroHair.url,
+  {
+    image: getAssetUrl(heroHair),
     alt: "Model with bold fashion colour balayage styled at SASS Hair & Beauty",
     eyebrow: "Fashion Colours",
     line1: "Bold shades.",
@@ -17,7 +27,8 @@ const slides = [
     href: "/services",
     cta: "Explore Colour Services",
   },
-  {image: heroBridal.url,
+  {
+    image: getAssetUrl(heroBridal),
     alt: "Bride in traditional gold jewellery styled by the SASS bridal team",
     eyebrow: "Bridal Excellence",
     line1: "Your wedding day,",
@@ -27,7 +38,8 @@ const slides = [
     href: "/#bridal",
     cta: "Book Bridal Consultation",
   },
-  {image: heroMen.url,
+  {
+    image: getAssetUrl(heroMen),
     alt: "Man receiving a precision beard detailing service at SASS Hair & Beauty",
     eyebrow: "Master Barbers",
     line1: "Sharp looks.",

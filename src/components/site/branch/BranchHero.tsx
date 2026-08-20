@@ -30,16 +30,23 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const isVijayawada = branch.slug === "vijayawada";
   const isGuntur = branch.slug === "guntur";
   const isRajahmundry = branch.slug === "rajahmundry";
-  
+  const getAssetUrl = (asset: any) => {
+    if (!asset?.url) return "";
+    if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
+      return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
+    }
+    return asset.url;
+  };
+
   let reel = "";
-  let poster = heroPoster.url;
+  let poster = getAssetUrl(heroPoster);
 
   if (isVijayawada) {
-    reel = vjaHeroReel.url;
+    reel = getAssetUrl(vjaHeroReel);
   } else if (isGuntur) {
-    reel = gunturReel.url;
+    reel = getAssetUrl(gunturReel);
   } else if (isRajahmundry) {
-    reel = rjyReel.url;
+    reel = getAssetUrl(rjyReel);
   }
 
 

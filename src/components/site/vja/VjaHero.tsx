@@ -88,7 +88,7 @@ export function VjaHero() {
               preload="auto"
               className="size-full object-cover"
             >
-              <source src={vjaHeroReel.url} type="video/mp4" />
+              <source src={vjaHeroReel.url.startsWith('/') && !vjaHeroReel.url.startsWith(import.meta.env.BASE_URL) ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${vjaHeroReel.url}` : vjaHeroReel.url} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
           </div>

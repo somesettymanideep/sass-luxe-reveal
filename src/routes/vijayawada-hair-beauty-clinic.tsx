@@ -10,7 +10,7 @@ import {
   VjaTestimonials, VjaPackages, VjaFAQ, VjaBlogs, VjaAreas, VjaBooking, VjaContact, vjaFaqs,
 } from "@/components/site/vja/VjaSections";
 
-const URL = "https://sass-elegance-animated.lovable.app/vijayawada-hair-beauty-clinic";
+const URL = "https://somesettymanideep.github.io/sass-luxe-reveal/vijayawada-hair-beauty-clinic";
 const TITLE = "Best Hair & Beauty Clinic in Vijayawada | SASS Hair & Beauty";
 const DESC =
   "SASS Hair & Beauty is a luxury hair & beauty clinic in Vijayawada offering hair spa, keratin, colour, hydra facials, laser treatments, bridal makeup and nail spa. Book on MG Road, Labbipet.";
@@ -35,7 +35,7 @@ export const Route = createFileRoute("/vijayawada-hair-beauty-clinic")({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "SASS Hair & Beauty",
-            url: "https://sass-elegance-animated.lovable.app",
+            url: "https://somesettymanideep.github.io/sass-luxe-reveal/",
             areaServed: "Andhra Pradesh, India",
           },
           {
@@ -44,7 +44,7 @@ export const Route = createFileRoute("/vijayawada-hair-beauty-clinic")({
             name: "SASS Hair & Beauty — Vijayawada",
             description: DESC,
             url: URL,
-            image: "https://sass-elegance-animated.lovable.app/favicon.png",
+            image: "https://somesettymanideep.github.io/sass-luxe-reveal/favicon.png",
             telephone: "+91 72868 11999",
             email: "vijayawada@sasshairbeauty.com",
             priceRange: "₹₹",
@@ -82,7 +82,7 @@ export const Route = createFileRoute("/vijayawada-hair-beauty-clinic")({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             itemListElement: [
-              { "@type": "ListItem", position: 1, name: "Home", item: "https://sass-elegance-animated.lovable.app/" },
+              { "@type": "ListItem", position: 1, name: "Home", item: "https://somesettymanideep.github.io/sass-luxe-reveal/" },
               { "@type": "ListItem", position: 2, name: "Hair & Beauty Clinic in Vijayawada", item: URL },
             ],
           },

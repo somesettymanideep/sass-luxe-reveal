@@ -1,23 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { X, MoveHorizontal, Play, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import before from "@/assets/before.jpg?url";
-import after from "@/assets/after.jpg?url";
-import reel1 from "@/assets/transformation-1.mp4.asset.json";
-import reel2 from "@/assets/transformation-2.mp4.asset.json";
-import reel3 from "@/assets/transformation-3.mp4.asset.json";
-import reel4 from "@/assets/transformation-4.mp4.asset.json";
-import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
-import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
-import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
-import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
+import { reels, beforeAfter } from "@/lib/assets";
 
-const reels = [
-  {src: reel1.url,poster: poster1.url, tag: "Keratin", title: "Signature Keratin treatment" },
-  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Bridal makeover reveal" },
-  {src: reel3.url,poster: poster3.url, tag: "Styling", title: "Professional hair styling" },
-  {src: reel4.url,poster: poster4.url, tag: "Blowout", title: "Classic salon blowout" },
-];
+const before = beforeAfter.before;
+const after = beforeAfter.after;
+
 
 const SNAP_POINTS = [0, 25, 50, 75, 100];
 
