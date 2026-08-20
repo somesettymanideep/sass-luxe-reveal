@@ -7,8 +7,11 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
+  // Pass additional Vite config via the 'vite' property
+  vite: {
+    base: "/sass-luxe-reveal/",
+  },
   // Static SPA deployment for GitHub Pages
-  base: "/sass-luxe-reveal/",
   nitro: { preset: "static" },
   tanstackStart: {
     // We are disabling server features for SPA mode
