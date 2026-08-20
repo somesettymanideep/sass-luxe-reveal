@@ -7,7 +7,7 @@ import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
 import { branches } from "@/lib/branches";
 import { createConsultation } from "@/lib/admin.functions";
-const transformsImage = { url: "/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png" };;
+const transformsImage = { url: "/sass-luxe-reveal/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png" };;
 
 const serviceOptions = [
   "Hair Cut", "Hair Styling", "Threading", "Fashion Colours", "Hair Smoothening",

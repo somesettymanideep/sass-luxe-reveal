@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-const logo = { url: "/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png" };;
+const logo = { url: "/sass-luxe-reveal/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png" };;
 import { LuxeButton } from "./LuxeButton";
 import { AppointmentForm } from "./contact/AppointmentForm";
 import { cn } from "@/lib/utils";

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 import { gsap } from "gsap";
 import { ensureGsap } from "@/lib/motion";
-const transformsImage = { url: "/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png" };;
+const transformsImage = { url: "/sass-luxe-reveal/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png" };;
 
 const faqs = [
   {
