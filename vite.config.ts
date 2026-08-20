@@ -8,17 +8,9 @@ export default defineConfig({
       assetsDir: 'assets',
       emptyOutDir: true,
       ssr: false,
-    },
-    // Force Vite to avoid SSR building even if Nitro requests it
-    ssr: {
-      noExternal: true
     }
   },
   nitro: { 
     preset: "static",
-    prerender: {
-      crawlLinks: true,
-      routes: ['/']
-    }
   }
 });
