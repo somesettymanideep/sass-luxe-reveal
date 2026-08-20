@@ -3,9 +3,18 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 export default defineConfig({
   vite: {
     base: './',
+    build: {
+      outDir: 'dist',
+      assetsDir: 'assets',
+      emptyOutDir: true
+    }
   },
-  nitro: { 
-    preset: "static",
+  nitro: {
+    preset: "github-pages",
+    output: {
+      dir: "dist",
+      publicDir: "dist/client"
+    }
   },
   tanstackStart: {
     server: { entry: "server" },
