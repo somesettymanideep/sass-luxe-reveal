@@ -21,7 +21,7 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     ssr: false,
-    cssMinify: 'esbuild', // Use esbuild to avoid lightningcss errors with Tailwind v4
+    cssMinify: false, // Disable CSS minification to bypass lightingcss/esbuild resolution issues
     rollupOptions: {
       input: resolve(__dirname, 'index.html'),
     }
