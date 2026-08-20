@@ -190,7 +190,7 @@ export function AppointmentForm({
       <DialogTrigger asChild>
         {trigger}
       </DialogTrigger>
-      <DialogContent className="max-w-xl border-gold/20 bg-ink/95 p-6 backdrop-blur-2xl sm:rounded-[2rem] sm:p-8 w-[95vw] md:w-full data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-125 data-[state=open]:zoom-in-125 duration-500">
+      <DialogContent className="max-w-xl border-gold/20 bg-ink/95 p-6 backdrop-blur-2xl sm:rounded-[2rem] sm:p-8 w-[95vw] md:w-full data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 duration-500">
         <DialogHeader className="sr-only">
           <DialogTitle>Book an Appointment</DialogTitle>
         </DialogHeader>
