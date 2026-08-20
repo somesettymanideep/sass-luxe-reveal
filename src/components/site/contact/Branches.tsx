@@ -1,11 +1,11 @@
 import { Navigation, Phone } from "lucide-react";
-import { useReveal } from "@/lib/motion";
+import { useDirectionalReveal } from "@/lib/motion";
 import { branches as branchData } from "@/lib/branches";
 
 const branches = branchData;
 
 export function Branches() {
-  const ref = useReveal<HTMLDivElement>({ selector: ".br-card, .br-head", stagger: 0.12 });
+  const ref = useDirectionalReveal<HTMLDivElement>("up", { selector: ".br-card, .br-head", stagger: 0.12 });
 
   return (
     <section className="bg-ink py-24 text-cream md:py-32">

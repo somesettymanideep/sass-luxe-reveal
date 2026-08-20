@@ -58,6 +58,67 @@ export function useReveal<T extends HTMLElement>(options?: {
   return ref;
 }
 
+/** Specific directional reveals mimicking Wow.js animations. */
+export function useDirectionalReveal<T extends HTMLElement>(
+  direction: "left" | "right" | "up" | "down",
+  options?: {
+    selector?: string;
+    stagger?: number;
+    delay?: number;
+    distance?: number;
+  }
+): RefObject<T | null> {
+  const ref = useRef<T | null>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    ensureGsap();
+
+    const targets = options?.selector
+      ? Array.from(el.querySelectorAll<HTMLElement>(options.selector))
+      : [el];
+    if (!targets.length) return;
+
+    const distance = options?.distance ?? 100;
+    const initialProps = {
+      autoAlpha: 0,
+      x: direction === "left" ? -distance : direction === "right" ? distance : 0,
+      y: direction === "up" ? distance : direction === "down" ? -distance : 0,
+      scale: 0.95,
+    };
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        targets,
+        initialProps,
+        {
+          autoAlpha: 1,
+          x: 0,
+          y: 0,
+          scale: 1,
+          duration: 1.2,
+          delay: options?.delay ?? 0,
+          ease: "back.out(1.2)", // Mimics Wow.js "backIn" effect
+          stagger: options?.stagger ?? 0.1,
+          scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+    }, el);
+
+    return () => ctx.revert();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return ref;
+}
+
+
 /** Count from 0 to value when scrolled into view. */
 export function useCounter(value: number, decimals = 0) {
   const ref = useRef<HTMLSpanElement | null>(null);

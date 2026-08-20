@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useReveal } from "@/lib/motion";
+import { useDirectionalReveal } from "@/lib/motion";
 
 interface Props {
   eyebrow: string;
@@ -13,7 +13,7 @@ interface Props {
 
 
 export function PageHero({ eyebrow, title, italic, subtitle, image, crumb, hideCircle }: Props) {
-  const ref = useReveal<HTMLDivElement>({ selector: ".ph-fade", stagger: 0.14 });
+  const ref = useDirectionalReveal<HTMLDivElement>("down", { selector: ".ph-fade", stagger: 0.1, distance: 30 });
 
   return (
     <section className="relative isolate overflow-hidden bg-ink text-cream">
