@@ -18,8 +18,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # We use a custom build script to bypass the SSR entry error in GitHub Actions
-          # by forcing a client-only build pass first if needed, or using nitro's static capabilities.
+          # We use the standard build command. 
+          # The vite.config.ts is now set to ssr: false to prevent the entry error.
           npm run build
           touch dist/client/.nojekyll
 

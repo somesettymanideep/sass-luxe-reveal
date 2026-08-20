@@ -4,11 +4,10 @@ export default defineConfig({
   vite: {
     base: './',
     build: {
-      rollupOptions: {
-        // Explicitly set to undefined to prevent the wrapper from 
-        // passing index.html to the SSR build environment.
-        input: undefined,
-      }
+      emptyOutDir: true,
+      // We explicitly disable SSR build in Vite to prevent Rolldown from attempting to process
+      // index.html as an SSR entry point, which causes the build failure in GH Actions.
+      ssr: false,
     }
   },
   nitro: {
