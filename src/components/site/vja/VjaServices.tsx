@@ -42,10 +42,10 @@ function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title
 const why: { icon: string; title: string; copy: string }[] = [
   { icon: brandIcons.why1, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
   { icon: brandIcons.why7, title: "Premium Products", copy: "We use top-quality, international brands" },
-  { icon: why3.url, title: "Modern Equipment", copy: "Advanced technology for best results" },
-  { icon: why8.url, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
-  { icon: why5.url, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
-  { icon: why6.url, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
+  { icon: brandIcons.why3, title: "Modern Equipment", copy: "Advanced technology for best results" },
+  { icon: brandIcons.why8, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
+  { icon: brandIcons.why5, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
+  { icon: brandIcons.why6, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
 ];
 
 export function VjaWhy() {

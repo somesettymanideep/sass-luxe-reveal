@@ -196,10 +196,10 @@ function Slider() {
 }
 
 const clips = [
-  {src: reel1.url,poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
-  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Exquisite Bridal Glow" },
-  {src: reel3.url,poster: poster3.url, tag: "Glow", title: "Skin Revival Reveal" },
-  {src: reel4.url,poster: poster4.url, tag: "Art", title: "Technical Colour Excellence" },
+  {src: reels[0].src, poster: reels[0].poster, tag: "Style", title: "Signature Hair Transformation" },
+  {src: reels[1].src, poster: reels[1].poster, tag: "Bridal", title: "Exquisite Bridal Glow" },
+  {src: reels[2].src, poster: reels[2].poster, tag: "Glow", title: "Skin Revival Reveal" },
+  {src: reels[3].src, poster: reels[3].poster, tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {
@@ -487,14 +487,14 @@ const baseShots = [
 ];
 
 const rajahmundryShots = [
-  { src: storeExterior.url, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
-  { src: reception.url, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
-  { src: stylingArea.url, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
-  { src: kidsStyling1.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
-  { src: hairWashStation.url, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
-  { src: spaRoom.url, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
-  { src: studioCorridor.url, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
-  { src: kidsStyling2.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
+  { src: getAssetUrl(storeExterior), alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
+  { src: getAssetUrl(reception), alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
+  { src: getAssetUrl(stylingArea), alt: "SASS Rajahmundry styling floor with lit mirrors", cat: "Styling Floor", span: "" },
+  { src: getAssetUrl(kidsStyling1), alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
+  { src: getAssetUrl(hairWashStation), alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
+  { src: getAssetUrl(spaRoom), alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
+  { src: getAssetUrl(studioCorridor), alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
+  { src: getAssetUrl(kidsStyling2), alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
 ];
 
 export function BranchGallery({ slug }: { slug?: string }) {
