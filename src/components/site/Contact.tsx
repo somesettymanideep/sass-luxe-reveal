@@ -155,13 +155,11 @@ export function Contact() {
     setState("loading");
     try {
       await createConsultation({ 
-        data: {
           name: v.name,
           phone: v.phone,
           location: v.branch,
           message: v.notes,
           service: "Home Page Consultation"
-        }
       });
       setState("done");
       setTimeout(() => {
