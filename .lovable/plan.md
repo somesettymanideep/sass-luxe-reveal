@@ -1,30 +1,29 @@
-# Deployment Plan: GitHub Pages Transition
+# Transition to Supabase Client & GitHub Pages Deployment
 
-Convert the TanStack Start project to a React SPA for GitHub Pages deployment, ensuring all assets and dynamic routes function correctly.
+Refactor the application to use the client-side Supabase SDK instead of TanStack Start server functions, enabling static deployment to GitHub Pages (SPA mode) while maintaining full backend functionality.
 
 ## Proposed Changes
 
-### Configuration
-- Modify `vite.config.ts` to set `base: "/sass-luxe-reveal/"` (matching the repository name).
-- Update Nitro configuration to `preset: "static"` to generate a pure SPA build.
-- Configure TanStack Router for `history: 'hash'` or ensure a `404.html` redirect for GitHub Pages clean URLs.
+### 1. Refactor Data Access (Client-side Only)
+- **Replace Server Functions**: Convert all `createServerFn` handlers in `src/lib/bookings.functions.ts` and `src/lib/admin.functions.ts` to regular async functions that use the `supabase` client from `@/integrations/supabase/client`.
+- **Direct Database Interaction**: Components will call these functions directly from the browser.
+- **Why**: GitHub Pages is a static host and cannot execute server-side Node.js code/functions. Direct client-to-Supabase calls are the standard for SPAs.
 
-### Feature Replacement (Server Functions to Client Logic)
-- **Problem**: GitHub Pages is static; `createServerFn` (server functions) will not run.
-- **Solution**: Refactor `src/lib/bookings.functions.ts` and `src/lib/admin.functions.ts` to use direct Supabase client calls instead of server functions.
-  - Submissions (bookings, consultations) will use `supabase.from('bookings').insert()`.
-  - Admin dashboard will use `supabase.from('bookings').select()`.
+### 2. Configuration for GitHub Pages (SPA)
+- **Vite Config**: Update `vite.config.ts` to use `base: "/sass-luxe-reveal/"` (assuming this matches the repo name) and set Nitro to `preset: "static"`.
+- **Router Configuration**: Switch TanStack Router to `history: 'hash'` mode (e.g., `/#/about`) to ensure deep links work on GitHub Pages without complex 404 redirects.
+- **Asset Integrity**: Audit all components to ensure image/video paths are relative or correctly prefixed with the base path.
 
-### Asset Integrity
-- Verify all image and video paths use relative URLs or `import.meta.env.BASE_URL` to prevent breakage on GitHub Pages sub-paths.
-- Ensure all video reels are properly bundled or hosted.
+### 3. Build & Deployment Setup
+- **Dependencies**: Install `gh-pages` for easy deployment.
+- **Scripts**: Add `predeploy` and `deploy` commands to `package.json`.
 
-### Build & Deploy
-- Add `gh-pages` package.
-- Add `predeploy` and `deploy` scripts to `package.json`.
+### 4. Admin Security Implementation
+- **Client-side Auth**: Maintain the existing local login state logic in `src/routes/admin.tsx`.
+- **RLS Enforcement**: Verify that Supabase RLS policies allow public `INSERT` but require authentication or matching credentials for `SELECT` (this is managed on the database side via the service role or user auth if configured).
 
 ## Technical Details
 - **Base URL**: `/sass-luxe-reveal/`
-- **Router**: TanStack Router with hash history or 404 redirect script.
-- **Data Access**: Move all logic from `.functions.ts` to `.ts` using the browser Supabase client.
-- **Backend**: Supabase RLS policies must allow public inserts (already configured) and authenticated selects (managed via client-side auth state).
+- **Nitro Preset**: `static`
+- **Router History**: Hash History
+- **Data Flow**: `Component` -> `Client-side Utility` -> `Supabase Client` -> `Database`
