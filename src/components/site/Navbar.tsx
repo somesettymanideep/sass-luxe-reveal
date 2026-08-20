@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/lib/assets";
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
@@ -64,7 +65,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <Link to="/" aria-label="SASS Hair & Beauty home" className="shrink-0">
           <img
-            src={logo.url.startsWith('/') && !logo.url.startsWith("/sass-luxe-reveal/") ? `${"/sass-luxe-reveal/".replace(/\/$/, '')}${logo.url}` : logo.url}
+            src={getAssetUrl(logo)}
             alt="SASS Hair & Beauty"
             width={160}
             height={80}

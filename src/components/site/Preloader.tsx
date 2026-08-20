@@ -1,3 +1,4 @@
+import { getAssetUrl } from "@/lib/assets";
 import { useEffect, useState } from "react";
 import logo from "@/assets/sass-logo-new.png.asset.json";
 import { Scissors, Sparkles, Heart, Star, Sparkle } from "lucide-react";
@@ -67,7 +68,7 @@ export function Preloader() {
 
       <div className="relative h-20 w-64 px-4 overflow-hidden flex items-center justify-center">
         <img
-          src={logo.url.startsWith('/') && !logo.url.startsWith("/sass-luxe-reveal/") ? `${"/sass-luxe-reveal/".replace(/\/$/, '')}${logo.url}` : logo.url}
+          src={getAssetUrl(logo)}
           alt="SASS Hair & Beauty"
           className="h-full w-auto object-contain transition-all duration-700 ease-luxe"
           style={{ 

@@ -19,24 +19,31 @@ import why8 from "@/assets/why-8.svg.asset.json";
 
 // Helper to ensure assets from .asset.json or vite imports resolve correctly with base path
 export const getAssetUrl = (asset: any) => {
+  if (!asset) return '';
+  
+  let url = '';
   if (typeof asset === 'string') {
-    if (asset.startsWith('/') && !asset.startsWith(import.meta.env.BASE_URL)) {
-      const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-      return `${base}${asset}`;
-    }
-    return asset;
+    url = asset;
+  } else if (asset?.url) {
+    url = asset.url;
   }
   
-  if (asset?.url) {
-    let url = asset.url;
-    if (url.startsWith('/') && !url.startsWith(import.meta.env.BASE_URL)) {
-      const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-      url = `${base}${url}`;
-    }
+  if (!url) return '';
+  
+  // If the URL is already absolute or a blob, return it as is
+  if (url.startsWith('http') || url.startsWith('blob:') || url.startsWith('data:')) {
     return url;
   }
   
-  return '';
+  // Handle paths that need the base path prefix
+  if (url.startsWith('/')) {
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    if (!url.startsWith(import.meta.env.BASE_URL) && !url.startsWith(base + '/')) {
+      return `${base}${url}`;
+    }
+  }
+  
+  return url;
 };
 
 export const reels = [
