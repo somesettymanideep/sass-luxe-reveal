@@ -19,12 +19,12 @@ jobs:
         run: |
           npm install
           # We use the standard build command. 
-          # The vite.config.ts is now set to ssr: false to prevent the entry error.
+          # The vite.config.ts is now set to a standard SPA build.
           npm run build
-          touch dist/client/.nojekyll
+          touch dist/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/client
+          folder: dist
           branch: gh-pages
