@@ -12,7 +12,7 @@ export function MediaDebugOverlay() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production" && !window.location.search.includes("debug=true")) {
+    if (process.env['NODE_ENV'] === "production" && !window.location.search.includes("debug=true")) {
       return;
     }
 
@@ -36,7 +36,7 @@ export function MediaDebugOverlay() {
   }, []);
 
   if (!isVisible && errors.length === 0) {
-    if (process.env.NODE_ENV === "production" && !window.location.search.includes("debug=true")) {
+    if (process.env['NODE_ENV'] === "production" && !window.location.search.includes("debug=true")) {
       return null;
     }
     return (
