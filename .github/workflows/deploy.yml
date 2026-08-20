@@ -18,9 +18,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # Standard TanStack Start build
-          npm run build
-          # Ensure .nojekyll is present for GitHub Pages
+          # We run a pure client build to bypass Nitro's SSR entry requirement for static hosting
+          npx vite build --environment client
           touch dist/client/.nojekyll
 
       - name: Deploy 🚀

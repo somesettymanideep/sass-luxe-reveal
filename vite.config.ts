@@ -9,7 +9,5 @@ export default defineConfig({
   },
   nitro: {
     preset: "github-pages",
-    // @ts-ignore - Disable SSR to avoid Rolldown entry errors and produce a static SPA
-    ssr: false,
   }
 });
