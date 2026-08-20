@@ -17,7 +17,7 @@ const trust = [
 export function VjaHero() {
   const ref = useReveal<HTMLDivElement>({ selector: ".vh-item", stagger: 0.1 });
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useRef(true);
+  const [muted, setMuted] = useState(true);
 
   return (
     <section className="relative isolate overflow-hidden bg-ink pb-24 pt-32 text-cream md:pb-32 md:pt-40">
