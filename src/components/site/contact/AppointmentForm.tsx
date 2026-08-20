@@ -22,8 +22,13 @@ export function AppointmentForm() {
   const submit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const data = new FormData(e.currentTarget);
-    if (!String(data.get("name") || "").trim() || !String(data.get("phone") || "").trim()) {
-      setError("Please share your name and phone number.");
+    if (
+      !String(data.get("name") || "").trim() ||
+      !String(data.get("phone") || "").trim() ||
+      !data.get("service") ||
+      !data.get("branch")
+    ) {
+      setError("Please fill in all required fields.");
       setTimeout(() => setError(""), 1400);
       return;
     }
