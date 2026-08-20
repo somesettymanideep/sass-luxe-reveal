@@ -11,7 +11,7 @@ const bookingSchema = z.object({
 });
 
 export const createBooking = createServerFn({ method: "POST" })
-  .input(bookingSchema)
+  .validator((data: unknown) => bookingSchema.parse(data))
   .handler(async ({ data }) => {
     const { error } = await supabase
       .from("bookings")
