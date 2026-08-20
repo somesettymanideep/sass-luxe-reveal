@@ -131,20 +131,19 @@ export function Navbar() {
           )}
         </ul>
 
-          <div className="flex items-center gap-4">
-            <Link to="/admin" className="hidden lg:block text-[0.65rem] uppercase tracking-widest text-gold/60 hover:text-gold transition-colors">
-              Admin
-            </Link>
-            <AppointmentForm 
-              trigger={
-                <LuxeButton
-                  className="hidden gold-pulse md:inline-flex"
-                >
-                  Book Appointment
-                </LuxeButton>
-              }
-            />
-          </div>
+        <div className="flex items-center gap-4">
+          <Link to="/admin" className="hidden lg:block text-[0.65rem] uppercase tracking-widest text-gold/60 hover:text-gold transition-colors">
+            Admin
+          </Link>
+          <AppointmentForm 
+            trigger={
+              <LuxeButton
+                className="hidden gold-pulse md:inline-flex"
+              >
+                Book Appointment
+              </LuxeButton>
+            }
+          />
 
           <button
             onClick={() => setOpen(true)}
