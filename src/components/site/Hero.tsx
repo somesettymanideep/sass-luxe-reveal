@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
+import { AppointmentForm } from "./contact/AppointmentForm";
 import heroHairCustom from "@/assets/hero-hair-custom.jpg?url";
 import heroBridalCustom from "@/assets/hero-bridal-custom.jpg?url";
 import heroMenCustom from "@/assets/hero-men-custom.jpg?url";
@@ -130,9 +131,15 @@ export function Hero() {
               ))}
             </ul>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <LuxeButton as="a" href="/contact" className="hero-anim">
-                Book Your Appointment
-              </LuxeButton>
+              <div className="hero-anim">
+                <AppointmentForm 
+                  trigger={
+                    <LuxeButton>
+                      Book Your Appointment
+                    </LuxeButton>
+                  }
+                />
+              </div>
               <LuxeButton
                 as="a"
                 href={s.href}
