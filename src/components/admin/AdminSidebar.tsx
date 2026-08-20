@@ -11,11 +11,11 @@ export function AdminSidebar({ onLogout }: { onLogout: () => void }) {
       </div>
       
       <nav className="flex-1 px-4 py-6 space-y-2">
-        <Link to="/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all [&.active]:bg-gold/10 [&.active]:text-gold">
+        <Link to="/sass-luxe-reveal/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all [&.active]:bg-gold/10 [&.active]:text-gold">
           <LayoutDashboard className="size-5" />
           Dashboard
         </Link>
-        <Link to="/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all">
+        <Link to="/sass-luxe-reveal/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all">
           <CalendarDays className="size-5" />
           Bookings
         </Link>

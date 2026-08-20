@@ -7,18 +7,18 @@ import { AppointmentForm } from "./contact/AppointmentForm";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "Home", href: "/sass-luxe-reveal/" },
+  { label: "About", href: "/sass-luxe-reveal/about" },
+  { label: "Services", href: "/sass-luxe-reveal/services" },
   {
     label: "Branches",
     children: [
-      { label: "Vijayawada", href: "/branches/vijayawada" },
-      { label: "Guntur", href: "/branches/guntur" },
-      { label: "Rajahmundry", href: "/branches/rajahmundry" },
+      { label: "Vijayawada", href: "/sass-luxe-reveal/branches/vijayawada" },
+      { label: "Guntur", href: "/sass-luxe-reveal/branches/guntur" },
+      { label: "Rajahmundry", href: "/sass-luxe-reveal/branches/rajahmundry" },
     ],
   },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/sass-luxe-reveal/contact" },
 ];
 
 export function Navbar() {
@@ -62,7 +62,7 @@ export function Navbar() {
       )}
     >
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10">
-        <Link to="/" aria-label="SASS Hair & Beauty home" className="shrink-0">
+        <Link to="/sass-luxe-reveal/" aria-label="SASS Hair & Beauty home" className="shrink-0">
           <img
             src={logo.url}
             alt="SASS Hair & Beauty"
@@ -132,7 +132,7 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-4">
-          <Link to="/admin" className="hidden lg:block text-[0.65rem] uppercase tracking-widest text-gold/60 hover:text-gold transition-colors">
+          <Link to="/sass-luxe-reveal/admin" className="hidden lg:block text-[0.65rem] uppercase tracking-widest text-gold/60 hover:text-gold transition-colors">
             Admin
           </Link>
           <AppointmentForm 

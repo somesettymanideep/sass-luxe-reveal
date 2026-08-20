@@ -11,6 +11,7 @@ export const getRouter = () => {
     routeTree,
     context: { queryClient },
     history: hashHistory,
+    basepath: "/sass-luxe-reveal/",
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
   });
