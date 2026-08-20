@@ -9,7 +9,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero.jpg?url";;
 
 const title = "Salon Services | SASS Hair & Beauty Vijayawada, Guntur, Rajahmundry";
 const description =

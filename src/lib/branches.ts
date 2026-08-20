@@ -1,5 +1,5 @@
-import vijayawada from "@/assets/branch-vijayawada.jpg";
-import guntur from "@/assets/branch-guntur.jpg";
+import vijayawada from "@/assets/branch-vijayawada.jpg?url";;
+import guntur from "@/assets/branch-guntur.jpg?url";;
 import rajahmundryAsset from "@/assets/rajahmundry-bridge.jpg.asset.json";
 
 export interface Branch {

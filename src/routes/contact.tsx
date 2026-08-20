@@ -8,7 +8,7 @@ import { AppointmentForm } from "@/components/site/contact/AppointmentForm";
 import { Branches } from "@/components/site/contact/Branches";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import bridal from "@/assets/bridal.jpg";
+import bridal from "@/assets/bridal.jpg?url";;
 
 const title = "Contact SASS Hair & Beauty | Book in Vijayawada, Guntur, Rajahmundry";
 const description =
