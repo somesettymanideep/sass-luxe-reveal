@@ -47,7 +47,7 @@ function ContactPage() {
         <section id="book" className="bg-background py-24 md:py-32">
           <div className="mx-auto grid max-w-[1400px] gap-8 px-6 lg:grid-cols-12 lg:px-10">
             <div className="lg:col-span-6">
-              <AppointmentForm embedded />
+              <AppointmentForm embedded type="contact" />
             </div>
             <div className="lg:col-span-6">
               <ContactInfo />

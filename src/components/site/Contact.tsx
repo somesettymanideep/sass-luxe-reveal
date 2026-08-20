@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type FormEvent, type ChangeEvent } from "react";
-import { Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { Check, ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { createConsultation } from "@/lib/admin.functions";
 import svcBridal from "@/assets/svc-bridal.jpg?url";
 import mensGrooming from "@/assets/mens-grooming.jpg?url";
 import svcMakeup from "@/assets/svc-makeup.jpg?url";
@@ -146,11 +147,37 @@ export function Contact() {
     window.open(`https://wa.me/${number}?text=${encodeURIComponent(msg)}`, "_blank", "noopener");
   };
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!readForm()) return;
+    const v = readForm();
+    if (!v) return;
+
     setState("loading");
-    setTimeout(() => setState("done"), 1200);
+    try {
+      await createConsultation({ 
+        data: {
+          name: v.name,
+          phone: v.phone,
+          location: v.branch,
+          message: v.notes,
+          service: "Home Page Consultation"
+        }
+      });
+      setState("done");
+      setTimeout(() => {
+        setState("idle");
+        setForm({
+          name: "",
+          phone: "",
+          branch: branches[0]!.city,
+          notes: "",
+        });
+      }, 3000);
+    } catch (err) {
+      console.error(err);
+      setError("Something went wrong. Please try again.");
+      setState("idle");
+    }
   };
 
   const field =
@@ -226,7 +253,11 @@ export function Contact() {
 
             <LuxeButton type="submit" className="w-full" disabled={state !== "idle"}>
               {state === "idle" && "Request Appointment"}
-              {state === "loading" && "Sending…"}
+              {state === "loading" && (
+                <span className="inline-flex items-center gap-2">
+                  <Loader2 className="size-4 animate-spin" /> Sending…
+                </span>
+              )}
               {state === "done" && (
                 <span className="inline-flex items-center gap-2">
                   <Check className="size-4" /> Request received

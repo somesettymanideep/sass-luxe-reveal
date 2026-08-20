@@ -3,6 +3,7 @@ import { Check, X, Loader2 } from "lucide-react";
 import { useDirectionalReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import { createBooking } from "@/lib/bookings.functions";
+import { createContact } from "@/lib/admin.functions";
 import {
   Dialog,
   DialogContent,
@@ -25,10 +26,12 @@ const services = [
 
 export function AppointmentForm({ 
   embedded = false,
-  trigger = null 
+  trigger = null,
+  type = "booking"
 }: { 
   embedded?: boolean;
   trigger?: React.ReactNode;
+  type?: "booking" | "contact";
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
@@ -37,23 +40,39 @@ export function AppointmentForm({
   const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const data = {
+    const data: any = {
       name: String(formData.get("name") || "").trim(),
       phone: String(formData.get("phone") || "").trim(),
-      service: String(formData.get("service") || ""),
-      branch: String(formData.get("branch") || ""),
       message: String(formData.get("message") || "").trim(),
     };
 
-    if (!data.name || !data.phone || !data.service || !data.branch) {
-      setError("Please fill in all required fields.");
-      setTimeout(() => setError(""), 1400);
-      return;
+    if (type === "booking") {
+      data.service = String(formData.get("service") || "");
+      data.branch = String(formData.get("branch") || "");
+      
+      if (!data.name || !data.phone || !data.service || !data.branch) {
+        setError("Please fill in all required fields.");
+        setTimeout(() => setError(""), 1400);
+        return;
+      }
+    } else {
+      data.email = String(formData.get("email") || "").trim();
+      data.subject = "Contact Form Submission";
+      
+      if (!data.name || !data.phone) {
+        setError("Please share your name and phone number.");
+        setTimeout(() => setError(""), 1400);
+        return;
+      }
     }
 
     setState("loading");
     try {
-      await createBooking({ data });
+      if (type === "booking") {
+        await createBooking({ data });
+      } else {
+        await createContact({ data });
+      }
       setState("done");
       setTimeout(() => {
         setIsOpen(false);
@@ -80,9 +99,9 @@ export function AppointmentForm({
     <div className={`h-full overflow-y-auto ${!embedded ? "p-0 max-h-[85vh] pr-2 custom-scrollbar" : "rounded-[2rem] border border-gold/20 bg-card p-8 shadow-luxe md:p-10"}`}>
       <div className="flex items-center justify-between">
         <div>
-          <p className="section-eyebrow text-gold">Appointment Request</p>
+          <p className="section-eyebrow text-gold">{type === "booking" ? "Appointment Request" : "Send a Message"}</p>
           <h2 className="mt-2 text-2xl font-display leading-tight md:text-3xl">
-            Reserve your chair
+            {type === "booking" ? "Reserve your chair" : "Get in touch"}
           </h2>
         </div>
         {!embedded && (
@@ -108,24 +127,33 @@ export function AppointmentForm({
           <input name="phone" inputMode="tel" placeholder=" " className={field} required />
           <span className={label}>Mobile Number</span>
         </div>
-        <div className="relative md:col-span-2">
-          <select name="service" className={selectCls} required>
-            <option value="" disabled selected>Select a Service</option>
-            {services.map((s) => (
-              <option key={s} value={s}>{s}</option>
-            ))}
-          </select>
-          <span className={staticLabel}>Type of Service</span>
-        </div>
-        <div className="relative md:col-span-2">
-          <select name="branch" className={selectCls} required>
-            <option value="" disabled selected>Select a Branch</option>
-            {branches.map((b) => (
-              <option key={b} value={b}>{b}</option>
-            ))}
-          </select>
-          <span className={staticLabel}>Branch</span>
-        </div>
+        {type === "booking" ? (
+          <>
+            <div className="relative md:col-span-2">
+              <select name="service" className={selectCls} required>
+                <option value="" disabled selected>Select a Service</option>
+                {services.map((s) => (
+                  <option key={s} value={s}>{s}</option>
+                ))}
+              </select>
+              <span className={staticLabel}>Type of Service</span>
+            </div>
+            <div className="relative md:col-span-2">
+              <select name="branch" className={selectCls} required>
+                <option value="" disabled selected>Select a Branch</option>
+                {branches.map((b) => (
+                  <option key={b} value={b}>{b}</option>
+                ))}
+              </select>
+              <span className={staticLabel}>Branch</span>
+            </div>
+          </>
+        ) : (
+          <div className="relative md:col-span-2">
+            <input name="email" type="email" placeholder=" " className={field} />
+            <span className={label}>Email address (optional)</span>
+          </div>
+        )}
         <div className="relative md:col-span-2">
           <textarea name="message" rows={3} placeholder=" " className={field} />
           <span className={label}>Message</span>
@@ -135,7 +163,7 @@ export function AppointmentForm({
 
         <div className="md:col-span-2">
           <LuxeButton type="submit" className="w-full" disabled={state !== "idle"}>
-            {state === "idle" && "Book Appointment"}
+            {state === "idle" && (type === "booking" ? "Book Appointment" : "Send Message")}
             {state === "loading" && (
               <span className="inline-flex items-center gap-2">
                 <Loader2 className="size-4 animate-spin" /> Sending…
