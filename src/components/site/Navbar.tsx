@@ -3,6 +3,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/sass-logo-new.png.asset.json";
 import { LuxeButton } from "./LuxeButton";
+import { AppointmentForm } from "./contact/AppointmentForm";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
@@ -131,13 +132,16 @@ export function Navbar() {
         </ul>
 
         <div className="flex items-center gap-3">
-          <LuxeButton
-            as="a"
-            href="/contact"
-            className="hidden gold-pulse md:inline-flex"
-          >
-            Book Appointment
-          </LuxeButton>
+          <AppointmentForm 
+            trigger={
+              <LuxeButton
+                className="hidden gold-pulse md:inline-flex"
+              >
+                Book Appointment
+              </LuxeButton>
+            }
+          />
+
           <button
             onClick={() => setOpen(true)}
             aria-label="Open menu"
@@ -238,9 +242,13 @@ export function Navbar() {
               </Link>
             ),
           )}
-          <LuxeButton as="a" href="/contact" className="mt-8 w-full">
-            Book Appointment
-          </LuxeButton>
+          <AppointmentForm 
+            trigger={
+              <LuxeButton className="mt-8 w-full">
+                Book Appointment
+              </LuxeButton>
+            }
+          />
         </aside>
       </div>
     </header>
