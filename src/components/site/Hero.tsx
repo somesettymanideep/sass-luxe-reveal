@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
-const heroHair = { url: "/sass-luxe-reveal/__l5e/assets-v1/4f235e8a-a58e-4a25-8fd3-6a0852f7175b/hero-hair.jpg" };;
-const heroBridal = { url: "/sass-luxe-reveal/__l5e/assets-v1/ed8b856a-fe5a-43c5-8837-9489c57bcf9d/hero-bridal.jpg" };;
-const heroMen = { url: "/sass-luxe-reveal/__l5e/assets-v1/18d6fa55-d091-4d99-87e3-e21c5456485a/hero-men.jpg" };;
+const heroHair = { url: "/__l5e/assets-v1/4f235e8a-a58e-4a25-8fd3-6a0852f7175b/hero-hair.jpg" };;
+const heroBridal = { url: "/__l5e/assets-v1/ed8b856a-fe5a-43c5-8837-9489c57bcf9d/hero-bridal.jpg" };;
+const heroMen = { url: "/__l5e/assets-v1/18d6fa55-d091-4d99-87e3-e21c5456485a/hero-men.jpg" };;
 
 const slides = [
   {image: heroHair.url,

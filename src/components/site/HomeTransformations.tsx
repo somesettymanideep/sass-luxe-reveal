@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-const reel1 = { url: "/sass-luxe-reveal/__l5e/assets-v1/06ee9068-cfe1-4dff-aab0-4e6694d66458/transformation-1.mp4" };;
-const reel2 = { url: "/sass-luxe-reveal/__l5e/assets-v1/a5974689-9d32-40bc-b7aa-aae102dfd29a/transformation-2.mp4" };;
-const reel3 = { url: "/sass-luxe-reveal/__l5e/assets-v1/4fc3f559-398a-405c-92d0-366e8d39921f/transformation-3.mp4" };;
-const reel4 = { url: "/sass-luxe-reveal/__l5e/assets-v1/11e5ce91-dc4b-49a9-bbf4-922cf3914521/transformation-4.mp4" };;
-const poster1 = { url: "/sass-luxe-reveal/__l5e/assets-v1/ee2947a9-7de2-406b-9853-a4eac369e36f/trans-poster-1.jpg" };;
-const poster2 = { url: "/sass-luxe-reveal/__l5e/assets-v1/a29c4b8a-0d41-42a9-bff4-cdd5e3a4d7f6/trans-poster-2.jpg" };;
-const poster3 = { url: "/sass-luxe-reveal/__l5e/assets-v1/2195d8a4-4b1f-4704-9b4f-c018cdcceb26/trans-poster-3.jpg" };;
-const poster4 = { url: "/sass-luxe-reveal/__l5e/assets-v1/b1f1c67d-e5d4-412d-920d-5a4c007677fc/trans-poster-4.jpg" };;
+const reel1 = { url: "/__l5e/assets-v1/06ee9068-cfe1-4dff-aab0-4e6694d66458/transformation-1.mp4" };;
+const reel2 = { url: "/__l5e/assets-v1/a5974689-9d32-40bc-b7aa-aae102dfd29a/transformation-2.mp4" };;
+const reel3 = { url: "/__l5e/assets-v1/4fc3f559-398a-405c-92d0-366e8d39921f/transformation-3.mp4" };;
+const reel4 = { url: "/__l5e/assets-v1/11e5ce91-dc4b-49a9-bbf4-922cf3914521/transformation-4.mp4" };;
+const poster1 = { url: "/__l5e/assets-v1/ee2947a9-7de2-406b-9853-a4eac369e36f/trans-poster-1.jpg" };;
+const poster2 = { url: "/__l5e/assets-v1/a29c4b8a-0d41-42a9-bff4-cdd5e3a4d7f6/trans-poster-2.jpg" };;
+const poster3 = { url: "/__l5e/assets-v1/2195d8a4-4b1f-4704-9b4f-c018cdcceb26/trans-poster-3.jpg" };;
+const poster4 = { url: "/__l5e/assets-v1/b1f1c67d-e5d4-412d-920d-5a4c007677fc/trans-poster-4.jpg" };;
 
 const clips = [
   { src: reel1.url, poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },

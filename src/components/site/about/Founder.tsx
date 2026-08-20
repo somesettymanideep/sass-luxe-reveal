@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Quote, Instagram, Award } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
-const founderAsset = { url: "/sass-luxe-reveal/__l5e/assets-v1/e18683ae-93aa-48e9-ac4b-f7727517cb55/founder.jpg" };;
+const founderAsset = { url: "/__l5e/assets-v1/e18683ae-93aa-48e9-ac4b-f7727517cb55/founder.jpg" };;
 import { LuxeButton } from "../LuxeButton";
 
 const founder = founderAsset.url;
