@@ -4,7 +4,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 export default defineConfig({
-  base: "./",
+  base: './',
   plugins: [
     TanStackRouterVite(),
     react(),
@@ -12,5 +12,7 @@ export default defineConfig({
   ],
   build: {
     emptyOutDir: true,
+    ssr: false,
+    outDir: 'dist',
   },
 });
