@@ -19,14 +19,25 @@ import why8 from "@/assets/why-8.svg.asset.json";
 
 // Helper to ensure assets from .asset.json or vite imports resolve correctly with base path
 export const getAssetUrl = (asset: any) => {
-  if (typeof asset === 'string') return asset;
+  if (typeof asset === 'string') {
+    if (asset.startsWith('/') && !asset.startsWith(import.meta.env.BASE_URL)) {
+      const resolved = `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset}`;
+      if (import.meta.env.DEV) console.debug(`[AssetDebug] Resolving string: ${asset} -> ${resolved}`);
+      return resolved;
+    }
+    return asset;
+  }
+  
   if (asset?.url) {
-    // If it's a relative path starting with /, prepend the base path if in production
     if (asset.url.startsWith('/') && !asset.url.startsWith(import.meta.env.BASE_URL)) {
-      return `${import.meta.env.BASE_URL.replace(/\/$/, '')}${asset.url}`;
+      const resolved = `${import.meta.env.BASE_URL.replace(/\/$/, '')}${asset.url}`;
+      if (import.meta.env.DEV) console.debug(`[AssetDebug] Resolving object: ${asset.url} -> ${resolved}`);
+      return resolved;
     }
     return asset.url;
   }
+  
+  if (asset && import.meta.env.DEV) console.warn(`[AssetDebug] Asset missing url property:`, asset);
   return '';
 };
 
