@@ -6,14 +6,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import haircut from "@/assets/svc-haircut.jpg?url";
-import why1 from "@/assets/why-1.svg.asset.json";
-import why2 from "@/assets/why-2.svg.asset.json";
-import why3 from "@/assets/why-3.svg.asset.json";
-import why4 from "@/assets/why-4.svg.asset.json";
-import why5 from "@/assets/why-5.svg.asset.json";
-import why6 from "@/assets/why-6.svg.asset.json";
-import why7 from "@/assets/why-7.svg.asset.json";
-import why8 from "@/assets/why-8.svg.asset.json";
+import { brandIcons } from "@/lib/assets";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import smoothening from "@/assets/svc-smoothening.jpg?url";
@@ -27,6 +20,7 @@ import g1 from "@/assets/g1.jpg?url";
 import g2 from "@/assets/g2.jpg?url";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
+
 
 function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title: string; italic?: string; copy?: string; light?: boolean }) {
   return (
@@ -46,8 +40,8 @@ function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title
 
 /* -------- 2. Why choose — single horizontal row with dividers -------- */
 const why: { icon: string; title: string; copy: string }[] = [
-  { icon: why1.url, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
-  { icon: why7.url, title: "Premium Products", copy: "We use top-quality, international brands" },
+  { icon: brandIcons.why1, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
+  { icon: brandIcons.why7, title: "Premium Products", copy: "We use top-quality, international brands" },
   { icon: why3.url, title: "Modern Equipment", copy: "Advanced technology for best results" },
   { icon: why8.url, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
   { icon: why5.url, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },

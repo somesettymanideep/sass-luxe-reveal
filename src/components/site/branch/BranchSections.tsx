@@ -7,14 +7,10 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import type { Branch } from "@/lib/branches";
-import storeExterior from "@/assets/store-exterior.jpg.asset.json";
-import reception from "@/assets/reception.jpg.asset.json";
-import stylingArea from "@/assets/styling-area.jpg.asset.json";
-import kidsStyling1 from "@/assets/kids-styling-1.jpg.asset.json";
-import hairWashStation from "@/assets/hair-wash-station.jpg.asset.json";
-import spaRoom from "@/assets/spa-room.jpg.asset.json";
-import studioCorridor from "@/assets/studio-corridor.jpg.asset.json";
-import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
+const galleryAssets = [
+  storeExterior, reception, stylingArea, kidsStyling1, 
+  hairWashStation, spaRoom, studioCorridor, kidsStyling2
+];
 import haircut from "@/assets/svc-haircut.jpg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
@@ -40,34 +36,17 @@ import storeStyling from "@/assets/store-styling-floor.jpg?url";
 import storeWash from "@/assets/store-wash-lounge.jpg?url";
 import storeBridalSuite from "@/assets/store-bridal-suite.jpg?url";
 import storeNail from "@/assets/store-nail-lounge.jpg?url";
-import reel1 from "@/assets/transformation-1.mp4.asset.json";
-import reel2 from "@/assets/transformation-2.mp4.asset.json";
-import reel3 from "@/assets/transformation-3.mp4.asset.json";
-import reel4 from "@/assets/transformation-4.mp4.asset.json";
-import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
-import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
-import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
-import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
-import why1 from "@/assets/why-1.svg.asset.json";
-import why2 from "@/assets/why-2.svg.asset.json";
-import why3 from "@/assets/why-3.svg.asset.json";
-import why4 from "@/assets/why-4.svg.asset.json";
-import why5 from "@/assets/why-5.svg.asset.json";
-import why6 from "@/assets/why-6.svg.asset.json";
-import why7 from "@/assets/why-7.svg.asset.json";
-import why8 from "@/assets/why-8.svg.asset.json";
-
-/* ---------------- Section 2 — Why Choose SASS ---------------- */
+import { reels, getAssetUrl, brandIcons } from "@/lib/assets";
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: why1.url, title: "Premium Salon Experience" },
-  { icon: why2.url, title: "Certified Hair Stylists" },
-  { icon: why3.url, title: "Bridal Makeup Experts" },
-  { icon: why4.url, title: "Luxury Hair Treatments" },
-  { icon: why5.url, title: "International Colour Techniques" },
-  { icon: why6.url, title: "Hygiene & Safety Standards" },
-  { icon: why7.url, title: "Premium Imported Products" },
-  { icon: why8.url, title: "Personalised Consultation" },
+  { icon: brandIcons.why1, title: "Premium Salon Experience" },
+  { icon: brandIcons.why2, title: "Certified Hair Stylists" },
+  { icon: brandIcons.why3, title: "Bridal Makeup Experts" },
+  { icon: brandIcons.why4, title: "Luxury Hair Treatments" },
+  { icon: brandIcons.why5, title: "International Colour Techniques" },
+  { icon: brandIcons.why6, title: "Hygiene & Safety Standards" },
+  { icon: brandIcons.why7, title: "Premium Imported Products" },
+  { icon: brandIcons.why8, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
