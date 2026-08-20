@@ -7,6 +7,15 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import type { Branch } from "@/lib/branches";
+import storeExterior from "@/assets/store-exterior.jpg.asset.json";
+import reception from "@/assets/reception.jpg.asset.json";
+import stylingArea from "@/assets/styling-area.jpg.asset.json";
+import kidsStyling1 from "@/assets/kids-styling-1.jpg.asset.json";
+import hairWashStation from "@/assets/hair-wash-station.jpg.asset.json";
+import spaRoom from "@/assets/spa-room.jpg.asset.json";
+import studioCorridor from "@/assets/studio-corridor.jpg.asset.json";
+import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
+
 const galleryAssets = [
   storeExterior, reception, stylingArea, kidsStyling1, 
   hairWashStation, spaRoom, studioCorridor, kidsStyling2
