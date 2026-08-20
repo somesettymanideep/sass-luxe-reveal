@@ -4,13 +4,12 @@ export default defineConfig({
   vite: {
     base: './',
     build: {
-      outDir: 'dist',
-      assetsDir: 'assets',
       emptyOutDir: true,
-      ssr: false,
     }
   },
-  nitro: { 
-    preset: "static",
+  nitro: {
+    preset: "github-pages",
+    // @ts-ignore - Disable SSR to avoid Rolldown entry errors and produce a static SPA
+    ssr: false,
   }
 });
