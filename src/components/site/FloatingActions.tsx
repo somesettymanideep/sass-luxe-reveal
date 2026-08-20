@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Phone, ArrowUp, CalendarCheck } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { AppointmentForm } from "./contact/AppointmentForm";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export function FloatingActions() {
@@ -66,13 +67,16 @@ export function FloatingActions() {
 
 
       {/* Mobile sticky booking bar */}
-      <a
-        href="#contact"
-        className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center gap-2 bg-gold-gradient py-4 font-button text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-ink transition-transform duration-500 md:hidden"
-        style={{ transform: show ? "translateY(0)" : "translateY(100%)" }}
-      >
-        <CalendarCheck className="size-4" /> Book Appointment
-      </a>
+      <AppointmentForm 
+        trigger={
+          <button
+            className="fixed inset-x-0 bottom-0 z-50 flex items-center justify-center gap-2 bg-gold-gradient py-4 font-button text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-ink transition-transform duration-500 md:hidden"
+            style={{ transform: show ? "translateY(0)" : "translateY(100%)" }}
+          >
+            <CalendarCheck className="size-4" /> Book Appointment
+          </button>
+        }
+      />
     </>
   );
 }
