@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
+import { AppointmentForm } from "./contact/AppointmentForm";
 import heroHairCustom from "@/assets/hero-hair-custom.jpg?url";
 import heroBridalCustom from "@/assets/hero-bridal-custom.jpg?url";
 import heroMenCustom from "@/assets/hero-men-custom.jpg?url";
