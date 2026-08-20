@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from "react";
 import {
-  Check, Clock, Mail, MapPin, Navigation, Phone, MessageCircle, Car, Landmark, Plus,
+  Check, Clock, Mail, MapPin, Navigation, Phone, MessageCircle, Car, Landmark, Plus, Loader2
 } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
 import { branches } from "@/lib/branches";
+import { createConsultation } from "@/lib/admin.functions";
 import transformsImage from "@/assets/transforms-services.png.asset.json";
 
 const serviceOptions = [
@@ -23,16 +24,36 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
   const [error, setError] = useState("");
 
-  const submit = (e: FormEvent<HTMLFormElement>) => {
+  const submit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    if (!String(data.get("name") || "").trim() || !String(data.get("phone") || "").trim()) {
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: String(formData.get("name") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      email: String(formData.get("email") || "").trim(),
+      service: String(formData.get("service") || ""),
+      location: String(formData.get("location") || ""),
+      date: String(formData.get("date") || ""),
+      time: String(formData.get("time") || ""),
+      message: String(formData.get("message") || "").trim(),
+    };
+
+    if (!data.name || !data.phone) {
       setError("Please share your name and phone number.");
       setTimeout(() => setError(""), 1600);
       return;
     }
+    
     setState("loading");
-    setTimeout(() => setState("done"), 1100);
+    try {
+      await createConsultation({ data });
+      setState("done");
+      setTimeout(() => setState("idle"), 3000);
+    } catch (err) {
+      console.error(err);
+      setError("Failed to book consultation. Please try again.");
+      setState("idle");
+    }
   };
 
   const field =
@@ -112,9 +133,15 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
             <div className="md:col-span-2">
               <LuxeButton type="submit" className="w-full py-4" disabled={state !== "idle"}>
                 {state === "idle" && "Book Appointment"}
-                {state === "loading" && "Sending…"}
+                {state === "loading" && (
+                  <span className="inline-flex items-center gap-2">
+                    <Loader2 className="size-4 animate-spin" /> Sending…
+                  </span>
+                )}
                 {state === "done" && (
-                  <span className="inline-flex items-center gap-2"><Check className="size-4" /> Request received</span>
+                  <span className="inline-flex items-center gap-2">
+                    <Check className="size-4" /> Request received
+                  </span>
                 )}
               </LuxeButton>
             </div>

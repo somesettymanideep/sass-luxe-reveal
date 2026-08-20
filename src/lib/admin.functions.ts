@@ -13,12 +13,13 @@ const contactSchema = z.object({
 export const createContact = createServerFn({ method: "POST" })
   .validator((data: unknown) => contactSchema.parse(data))
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("contacts").insert([{
+    const { error } = await supabase.from("bookings").insert([{
       name: data.name,
       phone: data.phone,
-      email: data.email || null,
-      subject: data.subject || null,
+      service: data.subject || "Contact Form",
+      branch: "General",
       message: data.message || null,
+      status: "contact"
     }]);
 
     if (error) throw new Error(error.message);
@@ -39,15 +40,13 @@ const consultationSchema = z.object({
 export const createConsultation = createServerFn({ method: "POST" })
   .validator((data: unknown) => consultationSchema.parse(data))
   .handler(async ({ data }) => {
-    const { error } = await supabase.from("consultations").insert([{
+    const { error } = await supabase.from("bookings").insert([{
       name: data.name,
       phone: data.phone,
-      email: data.email || null,
-      service: data.service || null,
-      location: data.location || null,
-      preferred_date: data.date || null,
-      preferred_time: data.time || null,
-      message: data.message || null,
+      service: data.service || "Consultation",
+      branch: data.location || "General",
+      message: `${data.date || ""} ${data.time || ""} ${data.message || ""}`.trim() || null,
+      status: "consultation"
     }]);
 
     if (error) throw new Error(error.message);
@@ -58,26 +57,6 @@ export const getBookings = createServerFn({ method: "GET" })
   .handler(async () => {
     const { data, error } = await supabase
       .from("bookings")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (error) throw new Error(error.message);
-    return data;
-  });
-
-export const getContacts = createServerFn({ method: "GET" })
-  .handler(async () => {
-    const { data, error } = await supabase
-      .from("contacts")
-      .select("*")
-      .order("created_at", { ascending: false });
-    if (error) throw new Error(error.message);
-    return data;
-  });
-
-export const getConsultations = createServerFn({ method: "GET" })
-  .handler(async () => {
-    const { data, error } = await supabase
-      .from("consultations")
       .select("*")
       .order("created_at", { ascending: false });
     if (error) throw new Error(error.message);
