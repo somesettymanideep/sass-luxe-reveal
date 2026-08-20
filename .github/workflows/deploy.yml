@@ -18,12 +18,12 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # We use nitro to build explicitly to ensure static output
-          npx nuxi generate
-          touch .output/public/.nojekyll
+          # Force a static production build
+          npm run build
+          touch dist/client/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .output/public
+          folder: dist/client
           branch: gh-pages
