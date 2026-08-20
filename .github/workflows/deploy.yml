@@ -18,9 +18,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # We force the build to ignore SSR steps that cause the HTML entry error
+          # Standard TanStack Start build
           npm run build
-          # Ensure we deploy from the client-only dist folder
+          # Ensure .nojekyll is present for GitHub Pages
           touch dist/client/.nojekyll
 
       - name: Deploy 🚀
