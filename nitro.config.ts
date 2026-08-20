@@ -1,7 +1,7 @@
 import { defineNitroConfig } from "nitro/config";
 
 export default defineNitroConfig({
-  ssr: false,
+  ssr: true,
   preset: "github-pages",
   prerender: {
     routes: ['/'],
