@@ -7,15 +7,24 @@ const bookingSchema = z.object({
   phone: z.string().min(1, "Phone is required"),
   service: z.string().min(1, "Service is required"),
   branch: z.string().min(1, "Branch is required"),
-  message: z.string().optional(),
+  message: z.string().nullable().optional(),
 });
 
 export const createBooking = createServerFn({ method: "POST" })
   .validator((data: unknown) => bookingSchema.parse(data))
   .handler(async ({ data }) => {
+    // Ensure optional fields are handled correctly for Supabase (null instead of undefined)
+    const bookingData = {
+      name: data.name,
+      phone: data.phone,
+      service: data.service,
+      branch: data.branch,
+      message: data.message ?? null,
+    };
+
     const { error } = await supabase
       .from("bookings")
-      .insert([data]);
+      .insert([bookingData]);
 
     if (error) {
       console.error("Error creating booking:", error);
