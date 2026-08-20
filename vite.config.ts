@@ -6,15 +6,11 @@ export default defineConfig({
     build: {
       outDir: 'dist',
       assetsDir: 'assets',
-      emptyOutDir: true
+      emptyOutDir: true,
     }
   },
-  nitro: {
-    preset: "github-pages",
-    output: {
-      dir: "dist",
-      publicDir: "dist/client"
-    }
+  nitro: { 
+    preset: "static",
   },
   tanstackStart: {
     server: { entry: "server" },
