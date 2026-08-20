@@ -11,6 +11,6 @@ export default defineConfig({
     }
   },
   nitro: { 
-    preset: "github-pages",
+    preset: "static",
   }
 });

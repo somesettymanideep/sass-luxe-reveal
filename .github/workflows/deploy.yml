@@ -18,7 +18,9 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
+          # Standard TanStack Start build
           npm run build
+          # Ensure .nojekyll is present for GitHub Pages
           touch dist/client/.nojekyll
 
       - name: Deploy 🚀
