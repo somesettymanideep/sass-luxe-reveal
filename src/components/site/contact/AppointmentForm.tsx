@@ -52,41 +52,31 @@ export function AppointmentForm() {
         </p>
 
         <form onSubmit={submit} noValidate className={`mt-10 grid gap-4 md:grid-cols-2 ${error ? "shake" : ""}`}>
-          <div className="relative">
-            <input name="name" placeholder=" " className={field} />
+          <div className="relative md:col-span-2">
+            <input name="name" placeholder=" " className={field} required />
             <span className={label}>Full name</span>
           </div>
-          <div className="relative">
-            <input name="phone" inputMode="tel" placeholder=" " className={field} />
-            <span className={label}>Phone number</span>
+          <div className="relative md:col-span-2">
+            <input name="phone" inputMode="tel" placeholder=" " className={field} required />
+            <span className={label}>Mobile Number</span>
           </div>
           <div className="relative md:col-span-2">
-            <input name="email" type="email" placeholder=" " className={field} />
-            <span className={label}>Email address</span>
+            <select name="service" className={selectCls} required>
+              <option value="" disabled selected>Select a Service</option>
+              {services.map((s) => (
+                <option key={s} value={s}>{s}</option>
+              ))}
+            </select>
+            <span className={staticLabel}>Type of Service</span>
           </div>
-          <div className="relative">
-            <select name="branch" className={selectCls}>
+          <div className="relative md:col-span-2">
+            <select name="branch" className={selectCls} required>
+              <option value="" disabled selected>Select a Branch</option>
               {branches.map((b) => (
-                <option key={b}>{b}</option>
+                <option key={b} value={b}>{b}</option>
               ))}
             </select>
             <span className={staticLabel}>Branch</span>
-          </div>
-          <div className="relative">
-            <select name="service" className={selectCls}>
-              {services.map((s) => (
-                <option key={s}>{s}</option>
-              ))}
-            </select>
-            <span className={staticLabel}>Service</span>
-          </div>
-          <div className="relative">
-            <input name="date" type="date" className={selectCls} />
-            <span className={staticLabel}>Preferred date</span>
-          </div>
-          <div className="relative">
-            <input name="time" type="time" className={selectCls} />
-            <span className={staticLabel}>Preferred time</span>
           </div>
           <div className="relative md:col-span-2">
             <textarea name="message" rows={4} placeholder=" " className={field} />

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Phone, ArrowUp, CalendarCheck } from "lucide-react";
 import { WhatsAppIcon } from "./WhatsAppIcon";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 export function FloatingActions() {
   const [show, setShow] = useState(false);
@@ -20,16 +21,24 @@ export function FloatingActions() {
 
   return (
     <>
-      <div className="fixed bottom-24 right-5 z-50 flex flex-col gap-3 md:bottom-8">
-        <a
-          href="https://wa.me/917286811999"
-          target="_blank"
-          rel="noreferrer"
-          aria-label="Chat on WhatsApp"
-          className="grid size-12 place-items-center rounded-full bg-ink text-gold shadow-luxe transition-transform duration-500 hover:scale-110 gold-pulse"
-        >
-          <WhatsAppIcon className="size-6" />
-        </a>
+      <TooltipProvider delayDuration={200}>
+        <div className="fixed bottom-24 right-5 z-50 flex flex-col gap-3 md:bottom-8">
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <a
+                href="https://wa.me/917286811999"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Chat on WhatsApp"
+                className="grid size-12 place-items-center rounded-full bg-[#25D366] text-white shadow-luxe transition-all duration-500 hover:scale-110 hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] gold-pulse"
+              >
+                <WhatsAppIcon className="size-6" />
+              </a>
+            </TooltipTrigger>
+            <TooltipContent side="left" className="border-gold/20 bg-ink px-3 py-1.5 text-[0.65rem] font-medium uppercase tracking-widest text-gold">
+              Chat on WhatsApp
+            </TooltipContent>
+          </Tooltip>
         <a
           href="tel:+917286811999"
           aria-label="Call SASS Hair & Beauty"
@@ -50,9 +59,10 @@ export function FloatingActions() {
             pointerEvents: show ? "auto" : "none",
           }}
         >
-          <ArrowUp className="size-5" />
-        </button>
-      </div>
+            <ArrowUp className="size-5" />
+          </button>
+        </div>
+      </TooltipProvider>
 
 
       {/* Mobile sticky booking bar */}
