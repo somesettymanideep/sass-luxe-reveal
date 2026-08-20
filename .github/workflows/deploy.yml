@@ -19,11 +19,10 @@ jobs:
         run: |
           npm install
           npm run build
-          # The github-pages preset outputs to .output/public
-          touch .output/public/.nojekyll
+          touch dist/client/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: .output/public
+          folder: dist/client
           branch: gh-pages
