@@ -18,13 +18,13 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # Standard TanStack Start build
+          # We use the standard build command. 
+          # The vite.config.ts is now set to a standard SPA build.
           npm run build
-          # Ensure .nojekyll is present for GitHub Pages
-          touch dist/client/.nojekyll
+          touch dist/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/client
+          folder: dist
           branch: gh-pages
