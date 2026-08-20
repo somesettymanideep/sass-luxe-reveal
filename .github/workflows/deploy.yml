@@ -18,7 +18,8 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          npm run build
+          # Run a pure Vite build for the client only to avoid SSR errors
+          npx vite build --ssr false
           touch dist/client/.nojekyll
 
       - name: Deploy 🚀
