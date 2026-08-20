@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/sass-logo-new.png.asset.json";
+const logo = { url: "/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png" };;
 import { LuxeButton } from "./LuxeButton";
 import { AppointmentForm } from "./contact/AppointmentForm";
 import { cn } from "@/lib/utils";

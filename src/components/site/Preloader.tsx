@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/sass-logo-new.png.asset.json";
+const logo = { url: "/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png" };;
 import { Scissors, Sparkles, Heart, Star, Sparkle } from "lucide-react";
 
 export function Preloader() {
