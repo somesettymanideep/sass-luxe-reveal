@@ -1,10 +1,11 @@
 import { useEffect, useRef } from "react";
 import { gsap, ensureGsap } from "@/lib/motion";
-const why1 = { url: "/__l5e/assets-v1/28e6e4fc-00b0-400e-9e3c-3862dec4316b/why-home-1.svg" };;
-const why2 = { url: "/__l5e/assets-v1/53fa5c07-73d0-476c-8ef7-5b92fc64b5f1/why-home-2.svg" };;
-const why3 = { url: "/__l5e/assets-v1/eb27d6e8-b1ee-4da0-aa52-1ad5a58c3cc9/why-home-3.svg" };;
-const why4 = { url: "/__l5e/assets-v1/be88c47c-a726-4523-8139-d3d2001dc97e/why-home-4.svg" };;
-const why5 = { url: "/__l5e/assets-v1/bb2b5e96-46fe-4076-8d48-7c30db150706/why-home-5.svg" };;
+import { getAssetUrl } from "@/lib/assets";
+const why1 = { url: getAssetUrl("/__l5e/assets-v1/28e6e4fc-00b0-400e-9e3c-3862dec4316b/why-home-1.svg") };
+const why2 = { url: getAssetUrl("/__l5e/assets-v1/53fa5c07-73d0-476c-8ef7-5b92fc64b5f1/why-home-2.svg") };
+const why3 = { url: getAssetUrl("/__l5e/assets-v1/eb27d6e8-b1ee-4da0-aa52-1ad5a58c3cc9/why-home-3.svg") };
+const why4 = { url: getAssetUrl("/__l5e/assets-v1/be88c47c-a726-4523-8139-d3d2001dc97e/why-home-4.svg") };
+const why5 = { url: getAssetUrl("/__l5e/assets-v1/bb2b5e96-46fe-4076-8d48-7c30db150706/why-home-5.svg") };
 
 const items = [
   {

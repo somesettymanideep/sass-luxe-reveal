@@ -8,8 +8,9 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-const logo = { url: "/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png" };;
+const logo = { url: getAssetUrl("/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png") };
 import { useReveal } from "@/lib/motion";
+import { getAssetUrl } from "@/lib/assets";
 
 const quickLinks: [string, string][] = [
   ["Home", "/"],

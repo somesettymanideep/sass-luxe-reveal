@@ -1,6 +1,7 @@
 import vijayawada from "@/assets/branch-vijayawada.jpg";
 import guntur from "@/assets/branch-guntur.jpg";
-const rajahmundryAsset = { url: "/__l5e/assets-v1/8ebd517e-61f2-43fe-8428-921bb58d3e91/rajahmundry-bridge.jpg" };;
+import { getAssetUrl } from "@/lib/assets";
+const rajahmundryAsset = { url: getAssetUrl("/__l5e/assets-v1/8ebd517e-61f2-43fe-8428-921bb58d3e91/rajahmundry-bridge.jpg") };
 
 export interface Branch {
   slug: string;

@@ -3,10 +3,11 @@ import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHa
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-const vjaHeroReel = { url: "/__l5e/assets-v1/1ec690db-3ed2-4aa4-a50f-a146d9ed6e88/vja-hero-reel-optimized.mp4" };;
-const heroPoster = { url: "/__l5e/assets-v1/5c9614ee-4c27-4178-95ec-29a5679f0821/hero-reel-poster.jpg" };;
-const gunturReel = { url: "/__l5e/assets-v1/194a4f69-8266-4c3b-87c1-2032ffef8154/guntur-hero-reel.mp4" };;
-const rjyReel = { url: "/__l5e/assets-v1/6a4b3d3f-bb9e-40db-9728-2ef5a0e7aa0e/rjy-hero-reel.mp4" };;
+import { getAssetUrl } from "@/lib/assets";
+const vjaHeroReel = { url: getAssetUrl("/__l5e/assets-v1/1ec690db-3ed2-4aa4-a50f-a146d9ed6e88/vja-hero-reel-optimized.mp4") };
+const heroPoster = { url: getAssetUrl("/__l5e/assets-v1/5c9614ee-4c27-4178-95ec-29a5679f0821/hero-reel-poster.jpg") };
+const gunturReel = { url: getAssetUrl("/__l5e/assets-v1/194a4f69-8266-4c3b-87c1-2032ffef8154/guntur-hero-reel.mp4") };
+const rjyReel = { url: getAssetUrl("/__l5e/assets-v1/6a4b3d3f-bb9e-40db-9728-2ef5a0e7aa0e/rjy-hero-reel.mp4") };
 
 const badges = [
   { Icon: Star, label: "4.9 Rating", sub: "★★★★★" },
