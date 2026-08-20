@@ -9,10 +9,12 @@ import heroMen from "@/assets/hero-men.jpg.asset.json";
 // Helper to resolve asset URLs with base path
 const getAssetUrl = (asset: any) => {
   if (!asset?.url) return "";
-  if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
-    return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
+  const url = asset.url;
+  if (url.startsWith("/") && !url.startsWith(import.meta.env.BASE_URL)) {
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    return `${base}${url}`;
   }
-  return asset.url;
+  return url;
 };
 
 const slides = [
