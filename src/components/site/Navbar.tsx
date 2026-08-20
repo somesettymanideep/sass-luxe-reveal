@@ -164,7 +164,7 @@ export function Navbar() {
         />
         <aside
           className={cn(
-            "absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col gap-2 bg-ink px-8 py-8 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "absolute right-0 top-0 flex h-full w-[82%] max-w-sm flex-col gap-2 border-l border-gold/20 bg-ink/95 px-8 py-8 backdrop-blur-2xl transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]",
             open ? "translate-x-0" : "translate-x-full",
           )}
         >
