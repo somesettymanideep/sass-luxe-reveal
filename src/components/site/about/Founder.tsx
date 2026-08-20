@@ -1,9 +1,8 @@
 import { useEffect, useRef } from "react";
 import { Quote, Instagram, Award } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
-const founderAsset = { url: getAssetUrl("/__l5e/assets-v1/e18683ae-93aa-48e9-ac4b-f7727517cb55/founder.jpg") };
+import founderAsset from "@/assets/founder.jpg.asset.json";
 import { LuxeButton } from "../LuxeButton";
-import { getAssetUrl } from "@/lib/assets";
 
 const founder = founderAsset.url;
 
@@ -208,7 +207,7 @@ export function Founder() {
             className="mt-10 flex flex-wrap items-center gap-4"
             style={{ opacity: 0, visibility: "hidden" }}
           >
-            <LuxeButton as="a" href="/sass-luxe-reveal/contact" className="px-10">
+            <LuxeButton as="a" href="/contact" className="px-10">
               Book with the Studio
             </LuxeButton>
             <a

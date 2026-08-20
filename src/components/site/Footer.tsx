@@ -8,18 +8,17 @@ import {
   Clock,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-const logo = { url: getAssetUrl("/__l5e/assets-v1/3359c226-2d32-43b9-ab30-de2428d7517a/sass-logo-new.png") };
+import logo from "@/assets/sass-logo-new.png.asset.json";
 import { useReveal } from "@/lib/motion";
-import { getAssetUrl } from "@/lib/assets";
 
 const quickLinks: [string, string][] = [
   ["Home", "/"],
   ["About Us", "/about"],
-  ["Transformations", "/sass-luxe-reveal/#gallery"],
-  ["Bridal Beauty", "/sass-luxe-reveal/#bridal"],
+  ["Transformations", "/#gallery"],
+  ["Bridal Beauty", "/#bridal"],
   
-  ["Membership", "/sass-luxe-reveal/#membership"],
-  ["FAQs", "/sass-luxe-reveal/#faq"],
+  ["Membership", "/#membership"],
+  ["FAQs", "/#faq"],
   ["Contact", "/contact"],
 ];
 
@@ -102,7 +101,7 @@ export function Footer() {
           <ul className="mt-6 space-y-3 text-sm text-cream/60">
             {services.map((s) => (
               <li key={s}>
-                <a href="/sass-luxe-reveal/#services" className="link-underline">
+                <a href="/#services" className="link-underline">
                   {s}
                 </a>
               </li>

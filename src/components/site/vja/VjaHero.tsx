@@ -4,8 +4,7 @@ import { Star, Phone, BadgeCheck, Sparkles, Award, MoveHorizontal, ChevronDown }
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import hero from "@/assets/hero.jpg?url";
-import { getAssetUrl } from "@/lib/assets";
-const vjaHeroReel = { url: getAssetUrl("/__l5e/assets-v1/1ec690db-3ed2-4aa4-a50f-a146d9ed6e88/vja-hero-reel-optimized.mp4") };
+import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
 
 const trust = [
   { Icon: BadgeCheck, label: "Certified Experts" },

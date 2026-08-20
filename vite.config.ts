@@ -7,14 +7,13 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 export default defineConfig({
-  // Pass additional Vite config via the 'vite' property
-  vite: {
-    base: "/sass-luxe-reveal/",
-  },
-  // Static SPA deployment for GitHub Pages
-  nitro: { preset: "static" },
+  // Lovable builds still force the Cloudflare target internally. External CI
+  // (including Netlify) uses Nitro's Netlify preset so SSR routes and assets
+  // are emitted in the layout expected by that platform.
+  nitro: { preset: process.env["NETLIFY"] ? "netlify" : "cloudflare-module" },
   tanstackStart: {
-    // We are disabling server features for SPA mode
+    // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
+    // nitro/vite builds from this
     server: { entry: "server" },
   },
 });

@@ -2,10 +2,9 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { gsap, ensureGsap } from "@/lib/motion";
 import { LuxeButton } from "./LuxeButton";
-import { getAssetUrl } from "@/lib/assets";
-const heroHair = { url: getAssetUrl("/__l5e/assets-v1/4f235e8a-a58e-4a25-8fd3-6a0852f7175b/hero-hair.jpg") };
-const heroBridal = { url: getAssetUrl("/__l5e/assets-v1/ed8b856a-fe5a-43c5-8837-9489c57bcf9d/hero-bridal.jpg") };
-const heroMen = { url: getAssetUrl("/__l5e/assets-v1/18d6fa55-d091-4d99-87e3-e21c5456485a/hero-men.jpg") };
+import heroHair from "@/assets/hero-hair.jpg.asset.json";
+import heroBridal from "@/assets/hero-bridal.jpg.asset.json";
+import heroMen from "@/assets/hero-men.jpg.asset.json";
 
 const slides = [
   {image: heroHair.url,
@@ -128,7 +127,7 @@ export function Hero() {
               ))}
             </ul>
             <div className="mt-10 flex flex-wrap items-center gap-4">
-              <LuxeButton as="a" href="/sass-luxe-reveal/contact" className="hero-anim">
+              <LuxeButton as="a" href="/contact" className="hero-anim">
                 Book Your Appointment
               </LuxeButton>
               <LuxeButton

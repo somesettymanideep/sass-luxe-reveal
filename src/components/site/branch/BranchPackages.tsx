@@ -6,12 +6,11 @@ import hairPkg from "@/assets/svc-keratin.jpg?url";
 import bridalPkg from "@/assets/svc-bridal.jpg?url";
 import glowPkg from "@/assets/svc-facial.jpg?url";
 import groomPkg from "@/assets/mens-grooming.jpg?url";
-import { getAssetUrl } from "@/lib/assets";
-const employeesIcon = { url: getAssetUrl("/__l5e/assets-v1/bbf14a41-3c84-4830-bab8-91470a9213ae/employees.svg") };
-const productsIcon = { url: getAssetUrl("/__l5e/assets-v1/35e7c426-3686-4a80-8867-d9a6452735ea/why-products.svg") };
-const consultationIcon = { url: getAssetUrl("/__l5e/assets-v1/b98acddf-f33e-4ac5-8bdf-b1be95f04e3e/consultation.svg") };
-const safeIcon = { url: getAssetUrl("/__l5e/assets-v1/2038b92b-1f8b-4f85-b6fc-e811b82c8d28/why-safe.svg") };
-const consumerIcon = { url: getAssetUrl("/__l5e/assets-v1/70bca972-cd35-4195-b670-adec1ce7273f/why-consumer.svg") };
+import employeesIcon from "@/assets/employees.svg.asset.json";
+import productsIcon from "@/assets/why-products.svg.asset.json";
+import consultationIcon from "@/assets/consultation.svg.asset.json";
+import safeIcon from "@/assets/why-safe.svg.asset.json";
+import consumerIcon from "@/assets/why-consumer.svg.asset.json";
 
 interface Pkg {
   name: string;

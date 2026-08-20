@@ -7,7 +7,7 @@ import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import { VjaHead as Head } from "./VjaServices";
 import client1 from "@/assets/client-1.jpg?url";
-const transformsImage = { url: getAssetUrl("/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png") };
+import transformsImage from "@/assets/transforms-services.png.asset.json";
 import client2 from "@/assets/client-2.jpg?url";
 import client3 from "@/assets/client-3.jpg?url";
 import g1 from "@/assets/g1.jpg?url";
@@ -16,7 +16,6 @@ import interior from "@/assets/interior.jpg?url";
 import makeup from "@/assets/svc-makeup.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import facial from "@/assets/svc-facial.jpg?url";
-import { getAssetUrl } from "@/lib/assets";
 
 const PHONE = "+91 72868 11999";
 const TEL = "tel:+917286811999";
