@@ -22,12 +22,19 @@ export function MediaDebugOverlay() {
         const url = target.src || (target instanceof HTMLVideoElement ? target.currentSrc : "");
         const type = target instanceof HTMLImageElement ? "image" : "video";
         
-        console.error(`[MediaDebug] Failed to load ${type}: ${url}`);
-        
-        setErrors(prev => {
-          if (prev.some(e => e.url === url)) return prev;
-          return [...prev, { url, type, timestamp: Date.now() }];
-        });
+        fetch(url, { method: 'HEAD' })
+          .then(res => {
+            setErrors(prev => {
+              if (prev.some(e => e.url === url)) return prev;
+              return [...prev, { url, type, status: res.status, timestamp: Date.now() }];
+            });
+          })
+          .catch(() => {
+            setErrors(prev => {
+              if (prev.some(e => e.url === url)) return prev;
+              return [...prev, { url, type, status: 0, timestamp: Date.now() }];
+            });
+          });
       }
     };
 
@@ -66,9 +73,14 @@ export function MediaDebugOverlay() {
             <div key={i} className="border-l-2 border-red-500 pl-2 py-1 bg-red-500/10">
               <div className="flex justify-between text-[10px] text-gray-400 mb-1">
                 <span>{error.type.toUpperCase()}</span>
-                <span>{new Date(error.timestamp).toLocaleTimeString()}</span>
+                <span className={error.status === 200 ? "text-green-400" : "text-red-400 font-bold"}>
+                  {error.status === 0 ? "NETWORK ERR" : `HTTP ${error.status}`}
+                </span>
               </div>
               <p className="break-all text-red-400 font-bold">{error.url}</p>
+              <div className="text-[9px] text-gray-500 mt-1">
+                {new Date(error.timestamp).toLocaleTimeString()}
+              </div>
             </div>
           ))}
         </div>
