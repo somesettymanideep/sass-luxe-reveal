@@ -18,12 +18,12 @@ jobs:
       - name: Install and Build 🔧
         run: |
           npm install
-          # Force a static production build
           npm run build
-          touch dist/client/.nojekyll
+          # The github-pages preset outputs to .output/public
+          touch .output/public/.nojekyll
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist/client
+          folder: .output/public
           branch: gh-pages
