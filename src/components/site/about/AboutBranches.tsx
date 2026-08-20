@@ -2,7 +2,7 @@ import { MapPin, Phone, Navigation } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import vijayawada from "@/assets/branch-vijayawada.jpg?url";
 import guntur from "@/assets/branch-guntur.jpg?url";
-import rajahmundryAsset from "@/assets/rajahmundry-bridge.jpg.asset.json";
+import rajahmundry from "@/assets/rajahmundry-flagship-custom.jpg?url";
 
 
 const branches = [
@@ -27,7 +27,7 @@ const branches = [
     tag: "Hair & skin studio",
     address: "Prasaditya Mall, Ave Appa Rao Road, Venkateswara Nagar, Rajamahendravaram 533103",
     phone: "+91 95502 81116",
-    image: rajahmundryAsset.url,
+    image: rajahmundry,
     q: "SASS Hair and beauty Prasaditya Mall Rajahmundry",
 
   },

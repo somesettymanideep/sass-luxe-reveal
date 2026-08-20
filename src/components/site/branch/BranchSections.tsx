@@ -7,13 +7,13 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import type { Branch } from "@/lib/branches";
-import storeExterior from "@/assets/store-exterior.jpg.asset.json";
-import reception from "@/assets/reception.jpg.asset.json";
-import stylingArea from "@/assets/styling-area.jpg.asset.json";
+import storeExterior from "@/assets/rjy-storefront-custom.jpg?url";
+import reception from "@/assets/rjy-reception-custom.jpg?url";
+import stylingArea from "@/assets/rjy-styling-custom.jpg?url";
 import kidsStyling1 from "@/assets/kids-styling-1.jpg.asset.json";
-import hairWashStation from "@/assets/hair-wash-station.jpg.asset.json";
-import spaRoom from "@/assets/spa-room.jpg.asset.json";
-import studioCorridor from "@/assets/studio-corridor.jpg.asset.json";
+import hairWashStation from "@/assets/rjy-wash-custom.jpg?url";
+import spaRoom from "@/assets/rjy-spa-custom.jpg?url";
+import studioCorridor from "@/assets/rjy-styling-custom.jpg?url";
 import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
 import haircut from "@/assets/svc-haircut.jpg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
@@ -499,13 +499,13 @@ const baseShots = [
 ];
 
 const rajahmundryShots = [
-  { src: storeExterior.url, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
-  { src: reception.url, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
-  { src: stylingArea.url, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
+  { src: storeExterior, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
+  { src: reception, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
+  { src: stylingArea, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
   { src: kidsStyling1.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
-  { src: hairWashStation.url, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
-  { src: spaRoom.url, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
-  { src: studioCorridor.url, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
+  { src: hairWashStation, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
+  { src: spaRoom, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
+  { src: studioCorridor, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
   { src: kidsStyling2.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
 ];
 

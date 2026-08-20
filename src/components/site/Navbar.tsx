@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import logo from "@/assets/sass-logo-new.png.asset.json";
+import logoUrl from "@/assets/sass-logo-custom.png?url";
 import { LuxeButton } from "./LuxeButton";
-import { AppointmentForm } from "./contact/AppointmentForm";
 import { cn } from "@/lib/utils";
+import { AppointmentForm } from "./contact/AppointmentForm";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -64,7 +64,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-[1400px] items-center justify-between px-6 lg:px-10">
         <Link to="/" aria-label="SASS Hair & Beauty home" className="shrink-0">
           <img
-            src={logo.url}
+            src={logoUrl}
             alt="SASS Hair & Beauty"
             width={160}
             height={80}
@@ -176,7 +176,7 @@ export function Navbar() {
           )}
         >
           <div className="mb-8 flex items-center justify-between">
-            <img src={logo.url} alt="" width={120} height={60} className="w-24" />
+            <img src={logoUrl} alt="" width={120} height={60} className="w-24" />
             <button
               onClick={() => setOpen(false)}
               aria-label="Close menu"

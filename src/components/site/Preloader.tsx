@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from "@/assets/sass-logo-new.png.asset.json";
+import logoUrl from "@/assets/sass-logo-custom.png?url";
 import { Scissors, Sparkles, Heart, Star, Sparkle } from "lucide-react";
 
 export function Preloader() {
@@ -67,7 +67,7 @@ export function Preloader() {
 
       <div className="relative h-20 w-64 px-4 overflow-hidden flex items-center justify-center">
         <img
-          src={logo.url}
+          src={logoUrl}
           alt="SASS Hair & Beauty"
           className="h-full w-auto object-contain transition-all duration-700 ease-luxe"
           style={{ 

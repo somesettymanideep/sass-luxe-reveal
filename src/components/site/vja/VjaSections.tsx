@@ -7,7 +7,7 @@ import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import { VjaHead as Head } from "./VjaServices";
 import client1 from "@/assets/client-1.jpg?url";
-import transformsImage from "@/assets/transforms-services.png.asset.json";
+import transformsImage from "@/assets/transforms-services-custom.jpg?url";
 import client2 from "@/assets/client-2.jpg?url";
 import client3 from "@/assets/client-3.jpg?url";
 import g1 from "@/assets/g1.jpg?url";
@@ -269,7 +269,7 @@ export function VjaFAQ() {
         <div className="mt-12 grid items-start gap-12 lg:grid-cols-[1fr_1.5fr]">
           <div className="mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28">
             <img
-              src={transformsImage.url}
+              src={transformsImage}
               alt="SASS Hair & Beauty signature services"
               loading="lazy"
               className="w-full rounded-[7px] shadow-luxe"
