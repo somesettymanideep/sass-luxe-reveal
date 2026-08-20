@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { Star, Phone, BadgeCheck, Sparkles, Award, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
