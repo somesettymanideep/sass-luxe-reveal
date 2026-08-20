@@ -12,10 +12,6 @@ export default defineConfig({
   },
   nitro: {
     preset: "static",
-    prerender: {
-      routes: ['/'],
-      crawlLinks: true
-    }
   },
   tanstackStart: {
     server: { entry: "server" },
