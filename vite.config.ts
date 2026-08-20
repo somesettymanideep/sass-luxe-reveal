@@ -11,6 +11,7 @@ export default defineConfig({
     }
   },
   nitro: { 
+    // Static preset is best for GH Pages
     preset: "static",
   }
 });
