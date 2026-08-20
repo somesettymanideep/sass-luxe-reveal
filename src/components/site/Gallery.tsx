@@ -13,10 +13,10 @@ import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
 import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
 
 const reels = [
-  {src: reel1.url,poster: poster1.url, tag: "Colour", title: "Fashion colour transformation" },
+  {src: reel1.url,poster: poster1.url, tag: "Keratin", title: "Signature Keratin treatment" },
   {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Bridal makeover reveal" },
-  {src: reel3.url,poster: poster3.url, tag: "Styling", title: "Signature blowout styling" },
-  {src: reel4.url,poster: poster4.url, tag: "Makeover", title: "Complete salon makeover" },
+  {src: reel3.url,poster: poster3.url, tag: "Styling", title: "Professional hair styling" },
+  {src: reel4.url,poster: poster4.url, tag: "Blowout", title: "Classic salon blowout" },
 ];
 
 const SNAP_POINTS = [0, 25, 50, 75, 100];
