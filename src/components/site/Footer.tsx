@@ -150,7 +150,7 @@ export function Footer() {
             href="https://ayrondigitalsolutions.com/"
             target="_blank"
             rel="noreferrer"
-            className="text-cream/60 transition-colors duration-300 hover:text-gold"
+            className="text-gold transition-colors duration-300 hover:text-white"
           >
             Ayrondigitalsolutions
           </a>
