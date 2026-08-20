@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, Facebook, Youtube } from "lucide-react";
-import { useReveal } from "@/lib/motion";
+import { useDirectionalReveal } from "@/lib/motion";
 
 const cards = [
   {
@@ -34,7 +34,7 @@ const socials = [
 ];
 
 export function ContactInfo() {
-  const ref = useReveal<HTMLDivElement>({ selector: ".ci-card, .ci-head", stagger: 0.1 });
+  const ref = useDirectionalReveal<HTMLDivElement>("right", { selector: ".ci-inner" });
 
   return (
     <div ref={ref} className="h-full">

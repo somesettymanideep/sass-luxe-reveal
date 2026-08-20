@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { Check } from "lucide-react";
-import { useReveal } from "@/lib/motion";
+import { useDirectionalReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 
 const branches = ["Vijayawada", "Guntur", "Rajahmundry"];
@@ -15,7 +15,7 @@ const services = [
 ];
 
 export function AppointmentForm() {
-  const ref = useReveal<HTMLDivElement>({ selector: ".af-inner", stagger: 0.1 });
+  const ref = useDirectionalReveal<HTMLDivElement>("left", { selector: ".af-inner" });
   const [state, setState] = useState<"idle" | "loading" | "done">("idle");
   const [error, setError] = useState("");
 
