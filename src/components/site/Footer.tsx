@@ -12,14 +12,14 @@ import logo from "@/assets/sass-logo-new.png.asset.json";
 import { useReveal } from "@/lib/motion";
 
 const quickLinks: [string, string][] = [
-  ["Home", "/sass-luxe-reveal/"],
-  ["About Us", "/sass-luxe-reveal/about"],
+  ["Home", "/"],
+  ["About Us", "/about"],
   ["Transformations", "/sass-luxe-reveal/#gallery"],
   ["Bridal Beauty", "/sass-luxe-reveal/#bridal"],
   
   ["Membership", "/sass-luxe-reveal/#membership"],
   ["FAQs", "/sass-luxe-reveal/#faq"],
-  ["Contact", "/sass-luxe-reveal/contact"],
+  ["Contact", "/contact"],
 ];
 
 const services = [
