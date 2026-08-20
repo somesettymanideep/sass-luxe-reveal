@@ -12,5 +12,8 @@ export default defineConfig({
   },
   nitro: {
     preset: "github-pages",
+    // Completely disable SSR at the Nitro level to prevent the SSR build pass in Vite
+    // which is causing the Rolldown entry error in GitHub Actions.
+    ssr: false,
   }
 });
