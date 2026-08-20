@@ -7,10 +7,9 @@ export default defineConfig({
       outDir: 'dist',
       assetsDir: 'assets',
       emptyOutDir: true,
-      ssr: false,
     }
   },
   nitro: { 
-    preset: "static",
+    preset: "github-pages",
   }
 });
