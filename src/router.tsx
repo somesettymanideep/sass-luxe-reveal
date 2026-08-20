@@ -1,16 +1,19 @@
-import { createHashHistory } from "@tanstack/react-router";
+import { createHashHistory, createMemoryHistory } from "@tanstack/react-router";
 import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
 
 export const getRouter = () => {
   const queryClient = new QueryClient();
-  const hashHistory = createHashHistory();
+  
+  // Use MemoryHistory on server to avoid window/DOM dependencies, HashHistory on client
+  // Ensure we are explicitly checking for the window object and its properties
+  const history = (typeof window !== "undefined" && window.history) ? createHashHistory() : createMemoryHistory();
 
   const router = createRouter({
     routeTree,
     context: { queryClient },
-    history: hashHistory,
+    history,
     basepath: "/sass-luxe-reveal",
   });
 
