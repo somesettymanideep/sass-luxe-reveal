@@ -2,16 +2,6 @@ import vijayawada from "@/assets/branch-vijayawada.jpg";
 import guntur from "@/assets/branch-guntur.jpg";
 import rajahmundryAsset from "@/assets/rajahmundry-bridge.jpg.asset.json";
 
-// Helper to resolve asset URLs with base path
-const getAssetUrl = (asset: any) => {
-  if (typeof asset === "string") return asset;
-  if (!asset?.url) return "";
-  if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
-    return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
-  }
-  return asset.url;
-};
-
 export interface Branch {
   slug: string;
   city: string;
@@ -78,7 +68,7 @@ export const branches: Branch[] = [
     phone: "+91 95502 81116",
     email: "rajahmundry@sasshairbeauty.com",
     hours: "Monday – Sunday · 9:30 AM – 8:30 PM",
-    image: getAssetUrl(rajahmundryAsset),
+    image: rajahmundryAsset.url,
     q: "SASS Hair and beauty Prasaditya Mall Rajahmundry",
     mapEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d61043.02376963011!2d81.7256108486328!3d17.014397700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a377219a19f9%3A0x83a2fe53a7870d21!2sSass%20Hair%20and%20beauty!5e0!3m2!1sen!2sin!4v1786008220424!5m2!1sen!2sin",
     intro:

@@ -4,7 +4,7 @@ import { gsap, ensureGsap } from "@/lib/motion";
 import founderAsset from "@/assets/founder.jpg.asset.json";
 import { LuxeButton } from "../LuxeButton";
 
-const founder = founderAsset.url.startsWith('/') && !founderAsset.url.startsWith(import.meta.env.BASE_URL) ? `${import.meta.env.BASE_URL.replace(/\/$/, '')}${founderAsset.url}` : founderAsset.url;
+const founder = founderAsset.url;
 
 const credentials = [
   "L'Oréal Professionnel certified educator",

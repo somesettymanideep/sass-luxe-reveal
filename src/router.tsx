@@ -10,7 +10,6 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
-    basepath: "/sass-luxe-reveal/",
   });
 
   return router;

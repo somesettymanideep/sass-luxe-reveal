@@ -9,16 +9,6 @@ import { branches } from "@/lib/branches";
 import { createConsultation } from "@/lib/admin.functions";
 import transformsImage from "@/assets/transforms-services.png.asset.json";
 
-// Helper to resolve asset URLs with base path
-const getAssetUrl = (asset: any) => {
-  if (typeof asset === 'string') return asset;
-  if (!asset?.url) return "";
-  if (asset.url.startsWith("/") && !asset.url.startsWith(import.meta.env.BASE_URL)) {
-    return `${import.meta.env.BASE_URL.replace(/\/$/, "")}${asset.url}`;
-  }
-  return asset.url;
-};
-
 const serviceOptions = [
   "Hair Cut", "Hair Styling", "Threading", "Fashion Colours", "Hair Smoothening",
   "Keratin Treatment", "Hair Spa", "Facials", "Pedicure", "Manicure",
@@ -56,7 +46,7 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
     
     setState("loading");
     try {
-      await createConsultation(data);
+      await createConsultation({ data });
       setState("done");
       setTimeout(() => setState("idle"), 3000);
     } catch (err) {
@@ -292,7 +282,7 @@ export function BranchFAQ({ branch }: { branch: Branch }) {
         <div className="grid items-start gap-12 lg:grid-cols-[1fr_1.15fr]">
           <div className="bf-image mx-auto w-full max-w-md lg:max-w-none lg:sticky lg:top-28">
             <img
-              src={getAssetUrl(transformsImage)}
+              src={transformsImage.url}
               alt={`SASS Hair & Beauty ${branch.city} signature services`}
               loading="lazy"
               width={1080}

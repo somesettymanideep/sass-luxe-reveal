@@ -1,12 +1,10 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { Link } from "@tanstack/react-router";
-import { Star, Phone, BadgeCheck, Sparkles, Award, Volume2, VolumeX } from "lucide-react";
+import { Star, Phone, BadgeCheck, Sparkles, Award, MoveHorizontal, ChevronDown } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
-import { getAssetUrl } from "@/lib/assets";
 import hero from "@/assets/hero.jpg?url";
 import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
-import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
 
 const trust = [
   { Icon: BadgeCheck, label: "Certified Experts" },
@@ -14,16 +12,17 @@ const trust = [
   { Icon: Award, label: "10+ Years Experience" },
 ];
 
+
 export function VjaHero() {
   const ref = useReveal<HTMLDivElement>({ selector: ".vh-item", stagger: 0.1 });
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [muted, setMuted] = useState(true);
 
   return (
     <section className="relative isolate overflow-hidden bg-ink pb-24 pt-32 text-cream md:pb-32 md:pt-40">
-      <img src={getAssetUrl(hero)} alt="" aria-hidden className="absolute inset-0 size-full object-cover opacity-20" />
+      <img src={hero} alt="" aria-hidden className="absolute inset-0 size-full object-cover opacity-20" />
       <div className="absolute inset-0 bg-gradient-to-br from-black via-black/85 to-black/70" />
-      
+      <span className="floaty pointer-events-none absolute -left-32 top-10 size-[30rem] rounded-full bg-gold/10 blur-[130px]" />
+      <span className="floaty pointer-events-none absolute right-[6%] top-[18%] size-32 rounded-full border border-gold/20" style={{ animationDelay: "1.2s" }} />
+
       <div ref={ref} className="relative mx-auto grid max-w-[1440px] items-center gap-16 px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-10">
         <div>
           <nav aria-label="Breadcrumb" className="vh-item">
@@ -82,18 +81,33 @@ export function VjaHero() {
         <div className="vh-item relative">
           <div className="relative aspect-4/5 w-full overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe">
             <video
-              ref={videoRef}
-              poster={getAssetUrl(heroPoster)}
               autoPlay
               muted
               loop
               playsInline
+              preload="auto"
               className="size-full object-cover"
             >
-              <source src={getAssetUrl(vjaHeroReel)} type="video/mp4" />
+              <source src={vjaHeroReel.url} type="video/mp4" />
             </video>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
+          </div>
+          <div className="absolute -left-4 bottom-10 hidden max-w-[13rem] rounded-[20px] border border-gold/25 bg-black/60 p-4 backdrop-blur-md md:block">
+            <div className="flex gap-1 text-gold">
+              {Array.from({ length: 5 }).map((_, i) => <Star key={i} className="size-3 fill-current" />)}
+            </div>
+            <p className="mt-2 text-xs leading-relaxed text-cream/75">
+              “Best keratin treatment in Vijayawada — my hair has never felt this good.”
+            </p>
+            <p className="mt-2 text-[0.6rem] uppercase tracking-[0.18em] text-gold">Sravani M.</p>
           </div>
         </div>
+      </div>
+
+      <div className="relative mt-14 flex justify-center">
+        <span className="flex flex-col items-center gap-2 text-[0.58rem] uppercase tracking-[0.28em] text-cream/45">
+          Scroll <ChevronDown className="size-4 animate-bounce text-gold" />
+        </span>
       </div>
     </section>
   );

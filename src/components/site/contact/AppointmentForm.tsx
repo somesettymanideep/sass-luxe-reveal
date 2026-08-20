@@ -69,9 +69,9 @@ export function AppointmentForm({
     setState("loading");
     try {
       if (type === "booking") {
-        await createBooking(data);
+        await createBooking({ data });
       } else {
-        await createContact(data);
+        await createContact({ data });
       }
       setState("done");
       setTimeout(() => {

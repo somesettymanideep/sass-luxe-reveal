@@ -15,11 +15,6 @@ import hairWashStation from "@/assets/hair-wash-station.jpg.asset.json";
 import spaRoom from "@/assets/spa-room.jpg.asset.json";
 import studioCorridor from "@/assets/studio-corridor.jpg.asset.json";
 import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
-
-const galleryAssets = [
-  storeExterior, reception, stylingArea, kidsStyling1, 
-  hairWashStation, spaRoom, studioCorridor, kidsStyling2
-];
 import haircut from "@/assets/svc-haircut.jpg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
@@ -45,17 +40,34 @@ import storeStyling from "@/assets/store-styling-floor.jpg?url";
 import storeWash from "@/assets/store-wash-lounge.jpg?url";
 import storeBridalSuite from "@/assets/store-bridal-suite.jpg?url";
 import storeNail from "@/assets/store-nail-lounge.jpg?url";
-import { reels, getAssetUrl, brandIcons } from "@/lib/assets";
+import reel1 from "@/assets/transformation-1.mp4.asset.json";
+import reel2 from "@/assets/transformation-2.mp4.asset.json";
+import reel3 from "@/assets/transformation-3.mp4.asset.json";
+import reel4 from "@/assets/transformation-4.mp4.asset.json";
+import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
+import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
+import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
+import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
+import why1 from "@/assets/why-1.svg.asset.json";
+import why2 from "@/assets/why-2.svg.asset.json";
+import why3 from "@/assets/why-3.svg.asset.json";
+import why4 from "@/assets/why-4.svg.asset.json";
+import why5 from "@/assets/why-5.svg.asset.json";
+import why6 from "@/assets/why-6.svg.asset.json";
+import why7 from "@/assets/why-7.svg.asset.json";
+import why8 from "@/assets/why-8.svg.asset.json";
+
+/* ---------------- Section 2 — Why Choose SASS ---------------- */
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: brandIcons.why1, title: "Premium Salon Experience" },
-  { icon: brandIcons.why2, title: "Certified Hair Stylists" },
-  { icon: brandIcons.why3, title: "Bridal Makeup Experts" },
-  { icon: brandIcons.why4, title: "Luxury Hair Treatments" },
-  { icon: brandIcons.why5, title: "International Colour Techniques" },
-  { icon: brandIcons.why6, title: "Hygiene & Safety Standards" },
-  { icon: brandIcons.why7, title: "Premium Imported Products" },
-  { icon: brandIcons.why8, title: "Personalised Consultation" },
+  { icon: why1.url, title: "Premium Salon Experience" },
+  { icon: why2.url, title: "Certified Hair Stylists" },
+  { icon: why3.url, title: "Bridal Makeup Experts" },
+  { icon: why4.url, title: "Luxury Hair Treatments" },
+  { icon: why5.url, title: "International Colour Techniques" },
+  { icon: why6.url, title: "Hygiene & Safety Standards" },
+  { icon: why7.url, title: "Premium Imported Products" },
+  { icon: why8.url, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
@@ -196,10 +208,10 @@ function Slider() {
 }
 
 const clips = [
-  {src: reels[0]?.src || '', poster: reels[0]?.poster || '', tag: "Style", title: "Signature Hair Transformation" },
-  {src: reels[1]?.src || '', poster: reels[1]?.poster || '', tag: "Bridal", title: "Exquisite Bridal Glow" },
-  {src: reels[2]?.src || '', poster: reels[2]?.poster || '', tag: "Glow", title: "Skin Revival Reveal" },
-  {src: reels[3]?.src || '', poster: reels[3]?.poster || '', tag: "Art", title: "Technical Colour Excellence" },
+  {src: reel1.url,poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
+  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Exquisite Bridal Glow" },
+  {src: reel3.url,poster: poster3.url, tag: "Glow", title: "Skin Revival Reveal" },
+  {src: reel4.url,poster: poster4.url, tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {
@@ -487,14 +499,14 @@ const baseShots = [
 ];
 
 const rajahmundryShots = [
-  { src: getAssetUrl(storeExterior), alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
-  { src: getAssetUrl(reception), alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
-  { src: getAssetUrl(stylingArea), alt: "SASS Rajahmundry styling floor with lit mirrors", cat: "Styling Floor", span: "" },
-  { src: getAssetUrl(kidsStyling1), alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
-  { src: getAssetUrl(hairWashStation), alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
-  { src: getAssetUrl(spaRoom), alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
-  { src: getAssetUrl(studioCorridor), alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
-  { src: getAssetUrl(kidsStyling2), alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
+  { src: storeExterior.url, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
+  { src: reception.url, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
+  { src: stylingArea.url, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
+  { src: kidsStyling1.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
+  { src: hairWashStation.url, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
+  { src: spaRoom.url, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
+  { src: studioCorridor.url, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
+  { src: kidsStyling2.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
 ];
 
 export function BranchGallery({ slug }: { slug?: string }) {

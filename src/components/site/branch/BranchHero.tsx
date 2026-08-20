@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHandshake, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-import { getAssetUrl } from "@/lib/assets";
 import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
 import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
 import gunturReel from "@/assets/guntur-hero-reel.mp4.asset.json";
@@ -31,17 +30,19 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const isVijayawada = branch.slug === "vijayawada";
   const isGuntur = branch.slug === "guntur";
   const isRajahmundry = branch.slug === "rajahmundry";
-
+  
   let reel = "";
-  let poster = getAssetUrl(heroPoster);
+  let poster = heroPoster.url;
 
   if (isVijayawada) {
-    reel = getAssetUrl(vjaHeroReel);
+    reel = vjaHeroReel.url;
   } else if (isGuntur) {
-    reel = getAssetUrl(gunturReel);
+    reel = gunturReel.url;
   } else if (isRajahmundry) {
-    reel = getAssetUrl(rjyReel);
+    reel = rjyReel.url;
   }
+
+
 
   const toggleSound = () => {
     const v = videoRef.current;
@@ -118,6 +119,7 @@ export function BranchHero({ branch }: { branch: Branch }) {
               {muted ? <VolumeX className="size-4" /> : <Volume2 className="size-4" />}
             </button>
           </div>
+
         </div>
       </div>
     </section>
