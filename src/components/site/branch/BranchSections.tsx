@@ -196,10 +196,10 @@ function Slider() {
 }
 
 const clips = [
-  {src: reels[0].src, poster: reels[0].poster, tag: "Style", title: "Signature Hair Transformation" },
-  {src: reels[1].src, poster: reels[1].poster, tag: "Bridal", title: "Exquisite Bridal Glow" },
-  {src: reels[2].src, poster: reels[2].poster, tag: "Glow", title: "Skin Revival Reveal" },
-  {src: reels[3].src, poster: reels[3].poster, tag: "Art", title: "Technical Colour Excellence" },
+  {src: reels[0]?.src || '', poster: reels[0]?.poster || '', tag: "Style", title: "Signature Hair Transformation" },
+  {src: reels[1]?.src || '', poster: reels[1]?.poster || '', tag: "Bridal", title: "Exquisite Bridal Glow" },
+  {src: reels[2]?.src || '', poster: reels[2]?.poster || '', tag: "Glow", title: "Skin Revival Reveal" },
+  {src: reels[3]?.src || '', poster: reels[3]?.poster || '', tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {
