@@ -22,12 +22,19 @@ export function MediaDebugOverlay() {
         const url = target.src || (target instanceof HTMLVideoElement ? target.currentSrc : "");
         const type = target instanceof HTMLImageElement ? "image" : "video";
         
-        console.error(`[MediaDebug] Failed to load ${type}: ${url}`);
-        
-        setErrors(prev => {
-          if (prev.some(e => e.url === url)) return prev;
-          return [...prev, { url, type, timestamp: Date.now() }];
-        });
+        fetch(url, { method: 'HEAD' })
+          .then(res => {
+            setErrors(prev => {
+              if (prev.some(e => e.url === url)) return prev;
+              return [...prev, { url, type, status: res.status, timestamp: Date.now() }];
+            });
+          })
+          .catch(() => {
+            setErrors(prev => {
+              if (prev.some(e => e.url === url)) return prev;
+              return [...prev, { url, type, status: 0, timestamp: Date.now() }];
+            });
+          });
       }
     };
 
