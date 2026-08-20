@@ -6,14 +6,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import haircut from "@/assets/svc-haircut.jpg?url";
-import why1 from "@/assets/why-1.svg.asset.json";
-import why2 from "@/assets/why-2.svg.asset.json";
-import why3 from "@/assets/why-3.svg.asset.json";
-import why4 from "@/assets/why-4.svg.asset.json";
-import why5 from "@/assets/why-5.svg.asset.json";
-import why6 from "@/assets/why-6.svg.asset.json";
-import why7 from "@/assets/why-7.svg.asset.json";
-import why8 from "@/assets/why-8.svg.asset.json";
+const why1 = { url: getAssetUrl("/__l5e/assets-v1/ace34086-8966-4eb3-b7c3-e96f7642165f/why-1.svg") };
+const why2 = { url: getAssetUrl("/__l5e/assets-v1/4a533a23-45b0-42d3-accf-fe46ebf4cad8/why-2.svg") };
+const why3 = { url: getAssetUrl("/__l5e/assets-v1/75f19b6f-e57e-4b7a-9dfa-f86d873e2b63/why-3.svg") };
+const why4 = { url: getAssetUrl("/__l5e/assets-v1/b64a5033-462f-4cc7-aed8-f0aa5a4882c1/why-4.svg") };
+const why5 = { url: getAssetUrl("/__l5e/assets-v1/113b2422-50e8-4d65-8256-f3899da6d167/why-5.svg") };
+const why6 = { url: getAssetUrl("/__l5e/assets-v1/c97d4720-ab82-4298-b7f9-aa816fd8b6ac/why-6.svg") };
+const why7 = { url: getAssetUrl("/__l5e/assets-v1/bc609fe1-a221-4de0-abc4-2dbb843b9331/why-7.svg") };
+const why8 = { url: getAssetUrl("/__l5e/assets-v1/7f27c310-44d4-44f9-ab73-0cd599d82ce4/why-8.svg") };
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import smoothening from "@/assets/svc-smoothening.jpg?url";
@@ -27,6 +27,7 @@ import g1 from "@/assets/g1.jpg?url";
 import g2 from "@/assets/g2.jpg?url";
 import before from "@/assets/before.jpg?url";
 import after from "@/assets/after.jpg?url";
+import { getAssetUrl } from "@/lib/assets";
 
 function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title: string; italic?: string; copy?: string; light?: boolean }) {
   return (

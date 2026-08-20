@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { Plus } from "lucide-react";
 import { gsap } from "gsap";
 import { ensureGsap } from "@/lib/motion";
-import transformsImage from "@/assets/transforms-services.png.asset.json";
+import { getAssetUrl } from "@/lib/assets";
+const transformsImage = { url: getAssetUrl("/__l5e/assets-v1/1bba25fa-07c1-4d56-9638-9128de833b69/transforms-services.png") };
 
 const faqs = [
   {
