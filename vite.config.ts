@@ -5,7 +5,7 @@ export default defineConfig({
     base: '/',
   },
   nitro: { 
-    preset: "github-pages",
+    preset: "static",
   },
   tanstackStart: {
     server: { entry: "server" },
