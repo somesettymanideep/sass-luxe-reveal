@@ -50,7 +50,7 @@ export function Footer() {
       >
         {/* Brand */}
         <div className="foot-col lg:col-span-4">
-          <img src={logo.url.startsWith('/') && !logo.url.startsWith("/sass-luxe-reveal/") ? `${"/sass-luxe-reveal/".replace(/\/$/, '')}${logo.url}` : logo.url} alt="SASS Hair & Beauty" width={180} height={90} className="w-36" />
+          <img src={getAssetUrl(logo)} alt="SASS Hair & Beauty" width={180} height={90} className="w-36" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/55">
             A premium hair &amp; beauty atelier with flagship salons in Vijayawada,
             Guntur and Rajahmundry.
