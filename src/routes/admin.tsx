@@ -152,7 +152,10 @@ function AdminPanel() {
         <header className="flex items-end justify-between mb-12">
           <div>
             <h2 className="text-4xl font-display mb-2">Dashboard</h2>
-            <p className="text-cream/50 text-sm">Welcome back to SASS management portal</p>
+            <p className="text-cream/50 text-sm">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            admin dashbord and admin login pages has poor ui fix ui to top-nptch</p>
           </div>
           <div className="flex items-center gap-4">
              <div className="relative">
