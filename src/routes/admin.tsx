@@ -155,7 +155,7 @@ function AdminPanel() {
             <p className="text-cream/50 text-sm whitespace-pre-line">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            Improve my admin login page with gold-accented inputs, better error handling, and premium loading states.and heading texts are not displaying clearly</p>
+                                            admin login page and dashboard page ui improve use this colorss only 000000,f6efe8,d39326</p>
           </div>
           <div className="flex items-center gap-4">
              <div className="relative">
