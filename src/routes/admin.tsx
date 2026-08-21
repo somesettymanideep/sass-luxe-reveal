@@ -155,11 +155,7 @@ function AdminPanel() {
             <p className="text-cream/50 text-sm whitespace-pre-line">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            Improve my admin login page UI to a top-notch premium look with consistent typography, spacing, and gold accents.
-
-Redesign my admin dashboard layout with premium card hierarchy, better spacing, and clearer section structure for a cleaner experience.
-
-Apply the same luxury dark-and-gold visual theme across all admin pages (header, sidebar, buttons, and cards) for consistency.</p>
+                                            Improve my admin login page with gold-accented inputs, better error handling, and premium loading states.and heading texts are not displaying clearly</p>
           </div>
           <div className="flex items-center gap-4">
              <div className="relative">
