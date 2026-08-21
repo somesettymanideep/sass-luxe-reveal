@@ -155,7 +155,7 @@ function AdminPanel() {
             <p className="text-cream/50 text-sm whitespace-pre-line">'''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
                                         
                                             
-                                            admin login page and dashboard page ui improve use this colorss only 000000,f6efe8,d39326</p>
+                                            Verify the admin login and dashboard use only the colors #000000, #F6EFE8, and #D39326 across all components.</p>
           </div>
           <div className="flex items-center gap-4">
              <div className="relative">
