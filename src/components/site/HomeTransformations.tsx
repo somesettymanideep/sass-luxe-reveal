@@ -1,20 +1,20 @@
 import { useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useReveal } from "@/lib/motion";
-import reel1 from "@/assets/transformation-1.mp4.asset.json";
-import reel2 from "@/assets/transformation-2.mp4.asset.json";
-import reel3 from "@/assets/transformation-3.mp4.asset.json";
-import reel4 from "@/assets/transformation-4.mp4.asset.json";
-import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
-import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
-import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
-import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
+import reel1 from "@/assets/transformation-1.mp4?url";
+import reel2 from "@/assets/transformation-2.mp4?url";
+import reel3 from "@/assets/transformation-3.mp4?url";
+import reel4 from "@/assets/transformation-4.mp4?url";
+import poster1 from "@/assets/trans-poster-1.jpg?url";
+import poster2 from "@/assets/trans-poster-2.jpg?url";
+import poster3 from "@/assets/trans-poster-3.jpg?url";
+import poster4 from "@/assets/trans-poster-4.jpg?url";
 
 const clips = [
-  { src: reel1.url, poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
-  { src: reel2.url, poster: poster2.url, tag: "Bridal", title: "Exquisite Bridal Glow" },
-  { src: reel3.url, poster: poster3.url, tag: "Glow", title: "Skin Revival Reveal" },
-  { src: reel4.url, poster: poster4.url, tag: "Art", title: "Technical Colour Excellence" },
+  { src: reel1, poster: poster1, tag: "Style", title: "Signature Hair Transformation" },
+  { src: reel2, poster: poster2, tag: "Bridal", title: "Exquisite Bridal Glow" },
+  { src: reel3, poster: poster3, tag: "Glow", title: "Skin Revival Reveal" },
+  { src: reel4, poster: poster4, tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {

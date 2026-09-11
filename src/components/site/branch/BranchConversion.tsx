@@ -84,11 +84,6 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
               </li>
             ))}
           </ul>
-          <div className="mt-9">
-            <LuxeButton as="a" href={`tel:${branch.phone.replace(/\s/g, "")}`}>
-              Book Consultation
-            </LuxeButton>
-          </div>
         </div>
 
         <div className="bc-item rounded-[24px] border border-gold/20 bg-card p-8 shadow-luxe md:p-10">

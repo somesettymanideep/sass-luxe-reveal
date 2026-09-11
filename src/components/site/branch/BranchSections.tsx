@@ -10,11 +10,11 @@ import type { Branch } from "@/lib/branches";
 import storeExterior from "@/assets/rjy-storefront-custom.jpg?url";
 import reception from "@/assets/rjy-reception-custom.jpg?url";
 import stylingArea from "@/assets/rjy-styling-custom.jpg?url";
-import kidsStyling1 from "@/assets/kids-styling-1.jpg.asset.json";
+import kidsStyling1 from "@/assets/kids-styling-1.jpg?url";
 import hairWashStation from "@/assets/rjy-wash-custom.jpg?url";
 import spaRoom from "@/assets/rjy-spa-custom.jpg?url";
 import studioCorridor from "@/assets/rjy-styling-custom.jpg?url";
-import kidsStyling2 from "@/assets/kids-styling-2.jpg.asset.json";
+import kidsStyling2 from "@/assets/kids-styling-2.jpg?url";
 import haircut from "@/assets/svc-haircut.jpg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
@@ -40,34 +40,34 @@ import storeStyling from "@/assets/store-styling-floor.jpg?url";
 import storeWash from "@/assets/store-wash-lounge.jpg?url";
 import storeBridalSuite from "@/assets/store-bridal-suite.jpg?url";
 import storeNail from "@/assets/store-nail-lounge.jpg?url";
-import reel1 from "@/assets/transformation-1.mp4.asset.json";
-import reel2 from "@/assets/transformation-2.mp4.asset.json";
-import reel3 from "@/assets/transformation-3.mp4.asset.json";
-import reel4 from "@/assets/transformation-4.mp4.asset.json";
-import poster1 from "@/assets/trans-poster-1.jpg.asset.json";
-import poster2 from "@/assets/trans-poster-2.jpg.asset.json";
-import poster3 from "@/assets/trans-poster-3.jpg.asset.json";
-import poster4 from "@/assets/trans-poster-4.jpg.asset.json";
-import why1 from "@/assets/why-1.svg.asset.json";
-import why2 from "@/assets/why-2.svg.asset.json";
-import why3 from "@/assets/why-3.svg.asset.json";
-import why4 from "@/assets/why-4.svg.asset.json";
-import why5 from "@/assets/why-5.svg.asset.json";
-import why6 from "@/assets/why-6.svg.asset.json";
-import why7 from "@/assets/why-7.svg.asset.json";
-import why8 from "@/assets/why-8.svg.asset.json";
+import reel1 from "@/assets/transformation-1.mp4?url";
+import reel2 from "@/assets/transformation-2.mp4?url";
+import reel3 from "@/assets/transformation-3.mp4?url";
+import reel4 from "@/assets/transformation-4.mp4?url";
+import poster1 from "@/assets/trans-poster-1.jpg?url";
+import poster2 from "@/assets/trans-poster-2.jpg?url";
+import poster3 from "@/assets/trans-poster-3.jpg?url";
+import poster4 from "@/assets/trans-poster-4.jpg?url";
+import why1 from "@/assets/why-1.svg?url";
+import why2 from "@/assets/why-2.svg?url";
+import why3 from "@/assets/why-3.svg?url";
+import why4 from "@/assets/why-4.svg?url";
+import why5 from "@/assets/why-5.svg?url";
+import why6 from "@/assets/why-6.svg?url";
+import why7 from "@/assets/why-7.svg?url";
+import why8 from "@/assets/why-8.svg?url";
 
 /* ---------------- Section 2 — Why Choose SASS ---------------- */
 
 const reasons: { icon: string; title: string }[] = [
-  { icon: why1.url, title: "Premium Salon Experience" },
-  { icon: why2.url, title: "Certified Hair Stylists" },
-  { icon: why3.url, title: "Bridal Makeup Experts" },
-  { icon: why4.url, title: "Luxury Hair Treatments" },
-  { icon: why5.url, title: "International Colour Techniques" },
-  { icon: why6.url, title: "Hygiene & Safety Standards" },
-  { icon: why7.url, title: "Premium Imported Products" },
-  { icon: why8.url, title: "Personalised Consultation" },
+  { icon: why1, title: "Premium Salon Experience" },
+  { icon: why2, title: "Certified Hair Stylists" },
+  { icon: why3, title: "Bridal Makeup Experts" },
+  { icon: why4, title: "Luxury Hair Treatments" },
+  { icon: why5, title: "International Colour Techniques" },
+  { icon: why6, title: "Hygiene & Safety Standards" },
+  { icon: why7, title: "Premium Imported Products" },
+  { icon: why8, title: "Personalised Consultation" },
 ];
 
 export function BranchWhy({ branch }: { branch: Branch }) {
@@ -116,12 +116,11 @@ export function BranchWhy({ branch }: { branch: Branch }) {
 const serviceGroups: { title: string; image: string; items: string[]; more?: string }[] = [
   { title: "Hair Services", image: colour, items: ["Hair Cut & Styling", "Hair Spa", "Hair Coloring", "Hair Smoothening", "Keratin Treatment", "Hair Botox"], more: "7 More Services" },
   { title: "Beauty & Skin Services", image: facial, items: ["Hydra Facial", "Medi Facial", "Skin Brightening", "Acne Treatment", "Pigmentation Treatment", "Anti-Aging Treatments"], more: "5 More Services" },
-  { title: "Laser Treatments", image: g1, items: ["Laser Hair Removal", "Tattoo Removal", "Scar Removal", "Pigmentation Laser", "Stretch Mark Removal", "Laser Skin Tightening"] },
   { title: "Bridal Services", image: bridal, items: ["Bridal Makeup", "Engagement Makeup", "Reception Makeup", "HD Makeup", "Airbrush Makeup", "Pre-Bridal Packages"], more: "2 More Services" },
   { title: "Nail & Spa Services", image: manicure, items: ["Manicure", "Pedicure", "Nail Extensions", "Gel Nails", "Nail Art", "Head Massage"], more: "2 More Services" },
   { title: "Hair Treatments", image: hairspa, items: ["Hair Fall Treatment", "PRP Hair Treatment", "Dandruff Treatment", "Scalp Detox", "Protein Treatment", "Ozone Therapy"] },
   { title: "Makeup & Styling", image: makeup, items: ["Party Makeup", "HD Makeup", "Airbrush Makeup", "Hairstyling", "Saree Draping", "Groom Packages"] },
-  { title: "Body Care", image: interior, items: ["Body Massage", "Body Spa", "Body Polishing", "Detan Treatment", "Stretch Mark Therapy", "Slimming Treatments"] },
+  { title: "Body Care", image: interior, items: ["Body Polishing", "Detan Treatment"] },
 ];
 
 export function BranchServices() {
@@ -161,12 +160,6 @@ export function BranchServices() {
                   </ul>
                   {more && <p className="mt-2 text-[0.66rem] text-gold">+ {more}</p>}
                 </div>
-                <a
-                  href="#book"
-                  className="mx-auto mt-4 inline-flex w-fit items-center justify-center rounded-[4px] bg-gold-gradient px-6 py-2 font-button text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-ink transition-transform duration-500 group-hover:-translate-y-0.5"
-                >
-                  View All
-                </a>
               </div>
             </article>
           ))}
@@ -208,10 +201,10 @@ function Slider() {
 }
 
 const clips = [
-  {src: reel1.url,poster: poster1.url, tag: "Style", title: "Signature Hair Transformation" },
-  {src: reel2.url,poster: poster2.url, tag: "Bridal", title: "Exquisite Bridal Glow" },
-  {src: reel3.url,poster: poster3.url, tag: "Glow", title: "Skin Revival Reveal" },
-  {src: reel4.url,poster: poster4.url, tag: "Art", title: "Technical Colour Excellence" },
+  {src: reel1,poster: poster1, tag: "Style", title: "Signature Hair Transformation" },
+  {src: reel2,poster: poster2, tag: "Bridal", title: "Exquisite Bridal Glow" },
+  {src: reel3,poster: poster3, tag: "Glow", title: "Skin Revival Reveal" },
+  {src: reel4,poster: poster4, tag: "Art", title: "Technical Colour Excellence" },
 ];
 
 function VideoSlider() {
@@ -502,11 +495,11 @@ const rajahmundryShots = [
   { src: storeExterior, alt: "SASS Hair & Beauty Rajahmundry storefront at Prasaditya Mall", cat: "Storefront", span: "row-span-2" },
   { src: reception, alt: "SASS Rajahmundry reception desk", cat: "Reception", span: "" },
   { src: stylingArea, alt: "Styling floor with lit mirrors", cat: "Styling Floor", span: "" },
-  { src: kidsStyling1.url, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
+  { src: kidsStyling1, alt: "Kids styling chair at SASS Rajahmundry", cat: "Kids Zone", span: "row-span-2" },
   { src: hairWashStation, alt: "Hair wash lounge with backwash units", cat: "Wash Lounge", span: "" },
   { src: spaRoom, alt: "Private facial and skin treatment room", cat: "Skin Studio", span: "" },
   { src: studioCorridor, alt: "Marble corridor of the salon", cat: "Interiors", span: "" },
-  { src: kidsStyling2.url, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
+  { src: kidsStyling2, alt: "Styling stations along the salon corridor", cat: "Studio", span: "" },
 ];
 
 export function BranchGallery({ slug }: { slug?: string }) {

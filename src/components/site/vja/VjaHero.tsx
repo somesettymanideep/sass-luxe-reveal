@@ -4,7 +4,7 @@ import { Star, Phone, BadgeCheck, Sparkles, Award, MoveHorizontal, ChevronDown }
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import hero from "@/assets/hero.jpg?url";
-import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
+import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4?url";
 
 const trust = [
   { Icon: BadgeCheck, label: "Certified Experts" },
@@ -88,7 +88,7 @@ export function VjaHero() {
               preload="auto"
               className="size-full object-cover"
             >
-              <source src={vjaHeroReel.url} type="video/mp4" />
+              <source src={vjaHeroReel} type="video/mp4" />
             </video>
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />
           </div>

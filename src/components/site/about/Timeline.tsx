@@ -1,6 +1,14 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ensureGsap, gsap } from "@/lib/motion";
-import { Scissors, Palette, Landmark, ShieldCheck, Heart, Sparkles } from "lucide-react";
+import { Scissors, Palette, Landmark, ShieldCheck, Heart, Sparkles, ChevronLeft, ChevronRight } from "lucide-react";
+
+// Import images for milestones
+import firstChairImg from "@/assets/interior.jpg?url";
+import colorLabImg from "@/assets/hero-hair-custom.jpg?url";
+import gunturFlagshipImg from "@/assets/reception.jpg?url";
+import hygieneRebuildImg from "@/assets/hair-wash-station.jpg?url";
+import rajahmundryBridalImg from "@/assets/hero-bridal-custom.jpg?url";
+import clientMilestoneImg from "@/assets/rjy-styling-custom.jpg?url";
 
 const milestones = [
   {
@@ -9,6 +17,7 @@ const milestones = [
     title: "The first chair",
     body: "A single-studio salon opens on MG Road, Vijayawada with two stylists and one belief — consultation before scissors.",
     Icon: Scissors,
+    image: firstChairImg,
   },
   {
     year: "2014",
@@ -16,6 +25,7 @@ const milestones = [
     title: "Colour lab",
     body: "SASS becomes one of the first salons in the region to run a dedicated fashion-colour and balayage lab.",
     Icon: Palette,
+    image: colorLabImg,
   },
   {
     year: "2017",
@@ -23,6 +33,7 @@ const milestones = [
     title: "Guntur flagship",
     body: "Brodipet opens with 14 stations, a private bridal suite and an in-house academy for new stylists.",
     Icon: Landmark,
+    image: gunturFlagshipImg,
   },
   {
     year: "2020",
@@ -30,6 +41,7 @@ const milestones = [
     title: "Hygiene-first rebuild",
     body: "Every branch re-engineered with single-use kits, sterilisation bays and appointment-only slots.",
     Icon: ShieldCheck,
+    image: hygieneRebuildImg,
   },
   {
     year: "2023",
@@ -37,6 +49,7 @@ const milestones = [
     title: "Rajahmundry & bridal wing",
     body: "Third flagship launches alongside a travelling bridal team covering weddings across Andhra Pradesh.",
     Icon: Heart,
+    image: rajahmundryBridalImg,
   },
   {
     year: "2026",
@@ -44,65 +57,49 @@ const milestones = [
     title: "42,000 clients later",
     body: "Three flagships, 30+ specialists and a 4.9 Google rating — with the same twelve-minute consultation.",
     Icon: Sparkles,
+    image: clientMilestoneImg,
   },
 ];
 
 export function Timeline() {
   const root = useRef<HTMLElement | null>(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isHovering, setIsHovering] = useState(false);
 
+  const activeMilestone = (milestones[activeIndex] ?? milestones[0]) as typeof milestones[0];
+  const progressPercent = (activeIndex / (milestones.length - 1)) * 100;
+
+  // GSAP Transition on activeIndex update
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!cardRef.current) return;
     ensureGsap();
+    
+    gsap.fromTo(
+      cardRef.current,
+      { autoAlpha: 0, y: 15, scale: 0.98, filter: "blur(6px)" },
+      { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.6, ease: "power3.out" }
+    );
+  }, [activeIndex]);
 
-    const ctx = gsap.context(() => {
-      // Glow and track line scale animation
-      gsap.fromTo(
-        ".tree-trunk",
-        { scaleY: 0 },
-        {
-          scaleY: 1,
-          ease: "none",
-          transformOrigin: "top center",
-          scrollTrigger: {
-            trigger: ".tree-wrap",
-            start: "top 72%",
-            end: "bottom 82%",
-            scrub: 0.6,
-          },
-        },
-      );
+  // Autoplay effect - pauses when hovering over the card
+  useEffect(() => {
+    if (isHovering) return;
+    
+    const interval = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % milestones.length);
+    }, 4500); // cycle to next milestone every 4.5 seconds
+    
+    return () => clearInterval(interval);
+  }, [isHovering]);
 
-      gsap.utils.toArray<HTMLElement>(".tree-node").forEach((node) => {
-        const branch = node.querySelector(".tree-branch");
-        const bud = node.querySelector(".tree-bud");
-        const card = node.querySelector(".tree-card");
-        
-        gsap
-          .timeline({
-            scrollTrigger: { trigger: node, start: "top 78%", once: true },
-          })
-          .fromTo(
-            bud, 
-            { scale: 0, rotation: -180 }, 
-            { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2)" }
-          )
-          .fromTo(
-            branch,
-            { scaleX: 0 },
-            { scaleX: 1, duration: 0.5, ease: "power2.out" },
-            "-=0.25",
-          )
-          .fromTo(
-            card,
-            { autoAlpha: 0, y: 40, scale: 0.96, filter: "blur(8px)" },
-            { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.75, ease: "power3.out" },
-            "-=0.3",
-          );
-      });
-    }, root);
+  const handleNext = () => {
+    setActiveIndex((prev) => (prev + 1) % milestones.length);
+  };
 
-    return () => ctx.revert();
-  }, []);
+  const handlePrev = () => {
+    setActiveIndex((prev) => (prev - 1 + milestones.length) % milestones.length);
+  };
 
   return (
     <section id="journey" ref={root} className="bg-background py-28 md:py-36 relative overflow-hidden">
@@ -111,77 +108,148 @@ export function Timeline() {
       <div className="absolute bottom-1/4 left-1/3 w-[400px] h-[400px] bg-gold-soft/5 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-[1400px] px-6 lg:px-10 relative z-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-2xl text-center mb-16 md:mb-24">
           <p className="section-eyebrow text-gold">Our Journey</p>
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4.4vw,3.6rem)] leading-[1.05]">
             Fifteen years, <span className="italic text-gold-gradient">growing branch by branch</span>
           </h2>
         </div>
 
-        <div className="tree-wrap relative mt-24 md:mt-32">
-          {/* Base background timeline line */}
-          <div className="absolute inset-y-0 left-4 w-[2px] bg-gold/10 md:left-1/2 md:-translate-x-1/2 rounded-full" />
-          {/* Animated growing progress line with gold glow */}
-          <div className="tree-trunk absolute inset-y-0 left-4 w-[2px] origin-top bg-gradient-to-b from-gold via-gold to-gold-soft md:left-1/2 md:-translate-x-1/2 rounded-full shadow-[0_0_12px_rgba(231,185,97,0.4)]" />
-
-          <ul className="space-y-20 md:space-y-32">
-            {milestones.map((m, i) => {
-              const right = i % 2 === 1;
-              const Icon = m.Icon;
+        {/* Roadmap Year Track */}
+        <div className="relative mx-auto max-w-4xl px-4 py-8 overflow-x-auto pb-8 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="relative flex items-center justify-between min-w-[600px] md:min-w-0">
+            {/* Background connecting line */}
+            <div className="absolute left-0 right-0 top-[20px] md:top-[24px] h-[2px] -translate-y-1/2 bg-gold/10" />
+            
+            {/* Animated glowing progress line */}
+            <div 
+              className="absolute left-0 top-[20px] md:top-[24px] h-[2px] -translate-y-1/2 bg-gold-gradient shadow-[0_0_10px_rgba(231,185,97,0.5)] transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              style={{ width: `${progressPercent}%` }}
+            />
+            
+            {/* Year Nodes */}
+            {milestones.map((m, idx) => {
+              const isActive = idx === activeIndex;
+              const isPast = idx < activeIndex;
               return (
-                <li
+                <button
                   key={m.year}
-                  className="tree-node relative pl-16 md:grid md:grid-cols-2 md:gap-16 md:pl-0"
+                  onClick={() => setActiveIndex(idx)}
+                  className="group relative z-10 flex flex-col items-center cursor-pointer focus:outline-none"
                 >
-                  {/* Glowing Icon Badge on the trunk */}
-                  <div className="tree-bud absolute left-4 top-0 z-20 -translate-x-1/2 md:left-1/2">
-                    <div className="relative flex size-12 items-center justify-center rounded-full border border-gold/40 bg-ink shadow-2xl md:size-14 transition-transform duration-500 hover:scale-110">
-                      {/* Pulsing ring outer */}
-                      <span className="absolute -inset-2 rounded-full bg-gold/5 border border-gold/10 pointer-events-none" />
-                      <span className="absolute -inset-4 animate-ping rounded-full bg-gold/5 pointer-events-none opacity-40 [animation-duration:3s]" />
-                      <Icon className="size-5 text-gold-gradient" strokeWidth={1.5} />
-                    </div>
-                  </div>
-
-                  {/* Horizontal branch line */}
-                  <span
-                    className={`tree-branch absolute top-6 h-px bg-gradient-to-r from-gold/30 to-gold/5 md:top-7 ${
-                      right
-                        ? "left-4 origin-left w-8 md:left-1/2 md:w-16"
-                        : "left-4 origin-left w-8 md:left-auto md:right-1/2 md:w-16 md:origin-right md:from-gold/5 md:to-gold/30"
+                  {/* Pulse ring indicator */}
+                  <div 
+                    className={`flex size-10 items-center justify-center rounded-full border-2 bg-ink transition-all duration-500 md:size-12 ${
+                      isActive 
+                        ? "border-gold shadow-[0_0_15px_rgba(231,185,97,0.5)] scale-110" 
+                        : isPast 
+                          ? "border-gold/60 bg-gold/5" 
+                          : "border-gold/20 hover:border-gold/50"
                     }`}
-                  />
-
-                  <div
-                    className={
-                      right
-                        ? "md:col-start-2 md:pl-20"
-                        : "md:col-start-1 md:row-start-1 md:pr-20 md:text-right"
-                    }
                   >
-                    <article className="tree-card luxe-card relative overflow-hidden inline-block w-full bg-card/45 backdrop-blur-md p-6 text-left md:w-auto md:p-8 border border-gold/15 transition-all duration-500 hover:border-gold/40">
-                      {/* Huge elegant background year watermark */}
-                      <span className="absolute -top-4 -right-2 text-[5.5rem] font-display font-black italic select-none pointer-events-none opacity-5 text-gold-gradient">
-                        {m.year}
-                      </span>
-                      
-                      <div className={`flex items-center gap-4 mb-4 ${right ? "justify-start" : "md:justify-end"}`}>
-                        <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/10 px-3.5 py-0.8 text-[10px] font-semibold tracking-[0.18em] text-gold uppercase">
-                          <span className="size-1 rounded-full bg-gold animate-pulse" />
-                          {m.date}
-                        </span>
-                      </div>
-                      
-                      <h3 className="text-xl font-medium tracking-tight text-foreground md:text-2xl">{m.title}</h3>
-                      <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground/90">
-                        {m.body}
-                      </p>
-                    </article>
+                    {/* Inner core */}
+                    <div 
+                      className={`size-3 rounded-full transition-all duration-500 ${
+                        isActive 
+                          ? "bg-gold scale-120 animate-pulse" 
+                          : isPast 
+                            ? "bg-gold/60" 
+                            : "bg-transparent"
+                      }`}
+                    />
                   </div>
-                </li>
+                  
+                  {/* Floating Year Label */}
+                  <span 
+                    className={`mt-4 font-display text-sm font-semibold tracking-wider transition-all duration-500 ${
+                      isActive 
+                        ? "text-gold scale-110" 
+                        : "text-cream/50 hover:text-cream/80"
+                    }`}
+                  >
+                    {m.year}
+                  </span>
+                </button>
               );
             })}
-          </ul>
+          </div>
+        </div>
+
+        {/* Milestone Detail Card */}
+        <div 
+          ref={cardRef} 
+          onMouseEnter={() => setIsHovering(true)}
+          onMouseLeave={() => setIsHovering(false)}
+          className="mx-auto mt-8 max-w-4xl px-2"
+        >
+          <article className="luxe-card relative overflow-hidden rounded-[2rem] border border-gold/15 bg-card/45 backdrop-blur-md p-6 md:p-8 shadow-luxe transition-all duration-500 hover:border-gold/30">
+            {/* Giant background Year watermark */}
+            <span className="absolute -right-6 -top-8 text-[8rem] font-display font-black italic select-none pointer-events-none opacity-5 text-gold-gradient md:text-[12rem]">
+              {activeMilestone.year}
+            </span>
+            
+            <div className="grid gap-8 md:grid-cols-[280px_1fr] items-center">
+              {/* Milestone image on the left */}
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border border-gold/15 bg-ink shadow-lg">
+                <img 
+                  src={activeMilestone.image} 
+                  alt={activeMilestone.title} 
+                  className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+                />
+                
+                {/* Float tag / icon */}
+                <div className="absolute bottom-3 left-3 z-10">
+                  <div className="relative flex size-10 items-center justify-center rounded-full border border-gold/30 bg-ink/90 shadow-2xl backdrop-blur-sm">
+                    {(() => {
+                      const Icon = activeMilestone.Icon;
+                      return <Icon className="size-5 text-gold-gradient" strokeWidth={1.5} />;
+                    })()}
+                  </div>
+                </div>
+              </div>
+              
+              {/* Content text */}
+              <div className="text-center md:text-left">
+                <div className="flex justify-center md:justify-start mb-4">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gold/10 px-4 py-1 text-[11px] font-semibold tracking-[0.2em] text-gold uppercase">
+                    <span className="size-1.5 rounded-full bg-gold animate-pulse" />
+                    {activeMilestone.date}
+                  </span>
+                </div>
+                
+                <h3 className="font-display text-2xl font-semibold tracking-tight text-foreground md:text-3.5xl">
+                  {activeMilestone.title}
+                </h3>
+                
+                <p className="mt-4 text-base leading-relaxed text-muted-foreground/80 md:text-lg">
+                  {activeMilestone.body}
+                </p>
+              </div>
+            </div>
+            
+            {/* Roadmap Navigation Panel */}
+            <div className="mt-8 flex items-center justify-between border-t border-gold/10 pt-6">
+              <button
+                onClick={handlePrev}
+                className="flex items-center gap-2 cursor-pointer font-button text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/60 transition-colors hover:text-gold"
+              >
+                <ChevronLeft className="size-4" />
+                Previous
+              </button>
+              
+              <span className="font-display text-sm italic text-gold/55 select-none">
+                Step {activeIndex + 1} of {milestones.length}
+              </span>
+              
+              <button
+                onClick={handleNext}
+                className="flex items-center gap-2 cursor-pointer font-button text-[10px] font-semibold uppercase tracking-[0.2em] text-gold/60 transition-colors hover:text-gold"
+              >
+                Next
+                <ChevronRight className="size-4" />
+              </button>
+            </div>
+          </article>
         </div>
       </div>
     </section>

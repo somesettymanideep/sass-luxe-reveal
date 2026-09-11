@@ -3,10 +3,10 @@ import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHa
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
-import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4.asset.json";
-import heroPoster from "@/assets/hero-reel-poster.jpg.asset.json";
-import gunturReel from "@/assets/guntur-hero-reel.mp4.asset.json";
-import rjyReel from "@/assets/rjy-hero-reel.mp4.asset.json";
+import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4?url";
+import heroPoster from "@/assets/hero-reel-poster.jpg?url";
+import gunturReel from "@/assets/guntur-hero-reel.mp4?url";
+import rjyReel from "@/assets/rjy-hero-reel.mp4?url";
 
 const badges = [
   { Icon: Star, label: "4.9 Rating", sub: "★★★★★" },
@@ -32,14 +32,14 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const isRajahmundry = branch.slug === "rajahmundry";
   
   let reel = "";
-  let poster = heroPoster.url;
+  let poster = heroPoster;
 
   if (isVijayawada) {
-    reel = vjaHeroReel.url;
+    reel = vjaHeroReel;
   } else if (isGuntur) {
-    reel = gunturReel.url;
+    reel = gunturReel;
   } else if (isRajahmundry) {
-    reel = rjyReel.url;
+    reel = rjyReel;
   }
 
 

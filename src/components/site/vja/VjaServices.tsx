@@ -6,14 +6,14 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import haircut from "@/assets/svc-haircut.jpg?url";
-import why1 from "@/assets/why-1.svg.asset.json";
-import why2 from "@/assets/why-2.svg.asset.json";
-import why3 from "@/assets/why-3.svg.asset.json";
-import why4 from "@/assets/why-4.svg.asset.json";
-import why5 from "@/assets/why-5.svg.asset.json";
-import why6 from "@/assets/why-6.svg.asset.json";
-import why7 from "@/assets/why-7.svg.asset.json";
-import why8 from "@/assets/why-8.svg.asset.json";
+import why1 from "@/assets/why-1.svg?url";
+import why2 from "@/assets/why-2.svg?url";
+import why3 from "@/assets/why-3.svg?url";
+import why4 from "@/assets/why-4.svg?url";
+import why5 from "@/assets/why-5.svg?url";
+import why6 from "@/assets/why-6.svg?url";
+import why7 from "@/assets/why-7.svg?url";
+import why8 from "@/assets/why-8.svg?url";
 import hairspa from "@/assets/svc-hairspa.jpg?url";
 import colour from "@/assets/svc-colour.jpg?url";
 import smoothening from "@/assets/svc-smoothening.jpg?url";
@@ -46,12 +46,12 @@ function Head({ eyebrow, title, italic, copy, light }: { eyebrow?: string; title
 
 /* -------- 2. Why choose — single horizontal row with dividers -------- */
 const why: { icon: string; title: string; copy: string }[] = [
-  { icon: why1.url, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
-  { icon: why7.url, title: "Premium Products", copy: "We use top-quality, international brands" },
-  { icon: why3.url, title: "Modern Equipment", copy: "Advanced technology for best results" },
-  { icon: why8.url, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
-  { icon: why5.url, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
-  { icon: why6.url, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
+  { icon: why1, title: "Premium Salon Experience", copy: "Expert & experienced beauty specialists" },
+  { icon: why7, title: "Premium Products", copy: "We use top-quality, international brands" },
+  { icon: why3, title: "Modern Equipment", copy: "Advanced technology for best results" },
+  { icon: why8, title: "Personalized Consultation", copy: "Customized treatments for your unique needs" },
+  { icon: why5, title: "Affordable Pricing", copy: "Luxury services at reasonable prices" },
+  { icon: why6, title: "Hygienic Environment", copy: "Clean, safe & sanitized clinic" },
 ];
 
 export function VjaWhy() {
@@ -89,12 +89,11 @@ export function VjaWhy() {
 const serviceGroups: { title: string; image: string; items: string[]; more?: string }[] = [
   { title: "Hair Services", image: colour, items: ["Hair Cut & Styling", "Hair Spa", "Hair Coloring", "Hair Smoothening", "Keratin Treatment", "Hair Botox"], more: "7 More Services" },
   { title: "Beauty & Skin Services", image: facial, items: ["Hydra Facial", "Medi Facial", "Skin Brightening", "Acne Treatment", "Pigmentation Treatment", "Anti-Aging Treatments"], more: "5 More Services" },
-  { title: "Laser Treatments", image: g1, items: ["Laser Hair Removal", "Tattoo Removal", "Scar Removal", "Pigmentation Laser", "Stretch Mark Removal", "Laser Skin Tightening"] },
   { title: "Bridal Services", image: bridal, items: ["Bridal Makeup", "Engagement Makeup", "Reception Makeup", "HD Makeup", "Airbrush Makeup", "Pre-Bridal Packages"], more: "2 More Services" },
   { title: "Nail & Spa Services", image: manicure, items: ["Manicure", "Pedicure", "Nail Extensions", "Gel Nails", "Nail Art", "Head Massage"], more: "2 More Services" },
   { title: "Hair Treatments", image: hairspa, items: ["Hair Fall Treatment", "PRP Hair Treatment", "Dandruff Treatment", "Scalp Detox", "Protein Treatment", "Ozone Therapy"] },
   { title: "Makeup & Styling", image: makeup, items: ["Party Makeup", "HD Makeup", "Airbrush Makeup", "Hairstyling", "Saree Draping", "Groom Packages"] },
-  { title: "Body Care", image: interior, items: ["Body Massage", "Body Spa", "Body Polishing", "Detan Treatment", "Stretch Mark Therapy", "Slimming Treatments"] },
+  { title: "Body Care", image: interior, items: ["Body Polishing", "Detan Treatment"] },
 ];
 
 export function VjaServiceGrid() {
@@ -130,12 +129,6 @@ export function VjaServiceGrid() {
                   </ul>
                   {more && <p className="mt-2 text-[0.66rem] text-gold">+ {more}</p>}
                 </div>
-                <a
-                  href="#book"
-                  className="mx-auto mt-4 inline-flex w-fit items-center justify-center rounded-[4px] bg-gold-gradient px-6 py-2 font-button text-[0.56rem] font-semibold uppercase tracking-[0.18em] text-ink transition-transform duration-500 group-hover:-translate-y-0.5"
-                >
-                  View All
-                </a>
               </div>
             </article>
           ))}

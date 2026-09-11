@@ -5,11 +5,11 @@ import {
   Mail,
   Phone,
   MapPin,
-  Clock,
 } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logoUrl from "@/assets/sass-logo-custom.png?url";
 import { useReveal } from "@/lib/motion";
+import { branches } from "@/lib/branches";
 
 const quickLinks: [string, string][] = [
   ["Home", "/"],
@@ -32,17 +32,11 @@ const services = [
   "Threading",
 ];
 
-const branches = [
-  { city: "Vijayawada", address: "2nd Floor, PVP Square, MG Road, Mogalrajapuram, Labbipet, Vijayawada 520010" },
-  { city: "Guntur", address: "1st Floor, Phoenix Mall, Srinivasarao Pet, Guntur 522004" },
-  { city: "Rajahmundry", address: "Prasaditya Mall, Ave Appa Rao Road, Venkateswara Nagar, Rajamahendravaram 533103" },
-];
-
 export function Footer() {
   const ref = useReveal<HTMLDivElement>({ selector: ".foot-col", stagger: 0.1 });
 
   return (
-    <footer className="border-t border-gold/15 bg-ink pb-16 pt-14 text-cream md:pb-10">
+    <footer className="border-t-2 border-solid border-gold bg-ink pb-16 pt-14 text-cream md:pb-10">
       <div
         ref={ref}
         className="mx-auto grid max-w-[1400px] gap-12 px-6 md:grid-cols-2 lg:grid-cols-12 lg:px-10"
@@ -119,25 +113,22 @@ export function Footer() {
                 hello@sasshairbeauty.in
               </a>
             </li>
-            <li className="flex items-start gap-3">
-              <Phone className="mt-0.5 size-4 shrink-0 text-gold" />
-              <a href="tel:+917286811999" className="link-underline">
-                +91 72868 11999
-              </a>
-            </li>
             {branches.map((b) => (
               <li key={b.city} className="flex items-start gap-3">
                 <MapPin className="mt-0.5 size-4 shrink-0 text-gold" />
-                <span>
-                  <span className="block text-cream/85">{b.city}</span>
-                  {b.address}
-                </span>
+                <div className="space-y-1">
+                  <span className="block font-medium text-cream/90">{b.city}</span>
+                  <span className="block text-xs leading-relaxed text-cream/60">{b.address}</span>
+                  <a
+                    href={`tel:${b.phone.replace(/\s/g, "")}`}
+                    className="inline-flex items-center gap-1.5 pt-0.5 text-xs text-gold transition-colors hover:text-cream"
+                  >
+                    <Phone className="size-3 shrink-0" />
+                    <span>{b.phone}</span>
+                  </a>
+                </div>
               </li>
             ))}
-            <li className="flex items-start gap-3">
-              <Clock className="mt-0.5 size-4 shrink-0 text-gold" />
-              Open daily · 10:00 AM – 9:00 PM
-            </li>
           </ul>
         </div>
       </div>

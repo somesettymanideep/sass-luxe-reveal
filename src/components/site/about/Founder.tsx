@@ -5,9 +5,9 @@ import founder from "@/assets/founder-custom.jpg?url";
 import { LuxeButton } from "../LuxeButton";
 
 const credentials = [
-  "L'Oréal Professionnel certified educator",
-  "15 years in couture colour & bridal artistry",
-  "Trained in London & Mumbai academies",
+  "Pioneer of luxury salon experiences across Andhra Pradesh",
+  "15+ years in couture styling, color & bridal artistry",
+  "Trained in London & Mumbai premier hair academies",
 ];
 
 export function Founder() {
@@ -177,8 +177,7 @@ export function Founder() {
           >
             <Quote className="mt-1 size-8 shrink-0 text-gold" />
             <p className="font-display text-xl italic leading-relaxed text-cream/85 md:text-2xl">
-              "Luxury isn't marble and gold. It's the ten extra minutes we spend
-              understanding your hair before we ever pick up the scissors."
+              "Our dream has always been to bring global runway standards and luxury hair couture to Andhra Pradesh. SASS was born from the conviction that our guests deserve world-class artistry without compromise."
             </p>
           </div>
 
@@ -187,7 +186,7 @@ export function Founder() {
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <p className="mt-7 text-sm leading-relaxed text-cream/60">
-              SASS is more than just a salon—it is a vision to bring world-class hair and beauty expertise to our community. From the very beginning, my goal has been to ensure every client experiences luxury that is personal, professional, and precise. We don't just follow trends; we set standards.
+              From our bespoke styling stations to our state-of-the-art bridal lounges across Vijayawada, Guntur, and Rajahmundry, our passionate team of artists works tirelessly to turn every visit into an unforgettable transformation. We don't just follow trends—we set standards and honor your trust with excellence every single day.
             </p>
 
             <ul className="mt-8 space-y-3">
