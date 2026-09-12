@@ -39,7 +39,7 @@ interface Service {
 const services: Service[] = [
   { title: "Hair Cuts", copy: "Trendy cuts tailored to your personality.", img: haircut, Icon: Scissors },
   { title: "Threading", copy: "Perfect shaping for a flawless look.", img: threading, Icon: Feather },
-  { title: "Fashion Colours", copy: "Bold, vibrant & stunning colour transformations.", img: colour, Icon: Palette },
+  { title: "Hair Colouring", copy: "Bold, vibrant & stunning colour transformations.", img: colour, Icon: Palette },
   { title: "Pedicure", copy: "Relaxing pedicures for soft & smooth feet.", img: pedicure, Icon: Flower2 },
   { title: "Manicure", copy: "Perfect nails, perfect you.", img: manicure, Icon: Hand },
   { title: "Smoothening", copy: "Frizz-free, silky & smooth hair.", img: smoothening, Icon: Waves },
