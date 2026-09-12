@@ -35,8 +35,14 @@
   --color-gold-soft: var(--gold-soft);
   --color-cream: var(--cream);
   --color-ink: var(--ink);
+  --color-admin-canvas: var(--admin-canvas);
+  --color-admin-surface: var(--admin-surface);
+  --color-admin-ink: var(--admin-ink);
+  --color-admin-gold: var(--admin-gold);
   --font-display: "Playfair Display", serif;
   --font-sans: "Poppins", sans-serif;
+  --font-admin-display: "Space Grotesk", sans-serif;
+  --font-admin-sans: "DM Sans", sans-serif;
   --font-button: "Montserrat", sans-serif;
   --font-script: "Great Vibes", cursive;
 }
@@ -48,6 +54,11 @@
   --cream: oklch(0.955 0.012 70);
   --gold: oklch(0.795 0.108 79.5);
   --gold-soft: oklch(0.885 0.062 82);
+
+  --admin-canvas: oklch(0.955 0.018 73);
+  --admin-surface: oklch(1 0 0);
+  --admin-ink: oklch(0.178 0 0);
+  --admin-gold: oklch(0.665 0.135 71.5);
 
   --background: oklch(0.955 0.012 70);
   --foreground: oklch(0.16 0.004 60);

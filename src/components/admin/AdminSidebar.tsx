@@ -1,35 +1,45 @@
-import { LayoutDashboard, CalendarDays, Phone, MessageSquare, LogOut, Search } from "lucide-react";
-import { Link } from "@tanstack/react-router";
+import { CalendarDays, LayoutDashboard, LogOut, Sparkles } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function AdminSidebar({ onLogout }: { onLogout: () => void }) {
   return (
-    <aside className="w-64 h-screen bg-card border-r border-gold/10 flex flex-col fixed left-0 top-0">
-      <div className="p-6">
-        <h1 className="font-display text-2xl tracking-tight text-cream">
-          SASS <span className="text-gold">Admin</span>
-        </h1>
+    <aside className="flex w-full shrink-0 flex-row items-center justify-between bg-admin-ink px-4 py-3 font-admin-sans text-admin-canvas lg:min-h-screen lg:w-60 lg:flex-col lg:items-stretch lg:px-5 lg:py-8">
+      <div className="flex items-center gap-3 lg:px-3">
+        <div className="flex size-9 items-center justify-center rounded-[7px] bg-admin-gold text-admin-ink">
+          <Sparkles className="size-4" />
+        </div>
+        <div>
+          <p className="font-admin-display text-lg font-semibold leading-none">SASS</p>
+          <p className="mt-1 text-[10px] font-medium uppercase text-admin-canvas/50">Salon desk</p>
+        </div>
       </div>
-      
-      <nav className="flex-1 px-4 py-6 space-y-2">
-        <Link to="/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all [&.active]:bg-gold/10 [&.active]:text-gold">
+
+      <nav className="hidden flex-1 pt-14 lg:block">
+        <p className="mb-3 px-3 text-[10px] font-semibold uppercase text-admin-canvas/35">Workspace</p>
+        <div className="flex items-center gap-3 rounded-[7px] bg-admin-surface/10 px-3 py-3 text-sm font-medium text-admin-surface">
           <LayoutDashboard className="size-5" />
-          Dashboard
-        </Link>
-        <Link to="/admin" className="flex items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-gold/10 hover:text-gold transition-all">
-          <CalendarDays className="size-5" />
-          Bookings
-        </Link>
+          Overview
+        </div>
+        <div className="mt-2 flex items-center gap-3 px-3 py-3 text-sm text-admin-canvas/55">
+          <CalendarDays className="size-5" /> Bookings
+        </div>
       </nav>
 
-      <div className="p-4 border-t border-gold/10">
-        <button
+      <div className="hidden border-t border-admin-surface/10 pt-5 lg:block">
+        <div className="mb-4 flex items-center gap-3 px-2">
+          <div className="flex size-9 items-center justify-center rounded-[7px] bg-admin-gold font-admin-display text-xs font-bold text-admin-ink">SA</div>
+          <div><p className="text-sm font-medium">Administrator</p><p className="text-xs text-admin-canvas/40">SASS Hair & Beauty</p></div>
+        </div>
+        <Button
+          variant="ghost"
           onClick={onLogout}
-          className="flex w-full items-center gap-3 px-4 py-3 rounded-[7px] text-cream/70 hover:bg-destructive/10 hover:text-destructive transition-all"
+          className="h-10 w-full justify-start text-admin-canvas/55 hover:bg-admin-surface/10 hover:text-admin-surface"
         >
-          <LogOut className="size-5" />
-          Logout
-        </button>
+          <LogOut /> Sign out
+        </Button>
       </div>
+
+      <Button variant="ghost" size="icon" onClick={onLogout} aria-label="Sign out" className="text-admin-canvas hover:bg-admin-surface/10 hover:text-admin-surface lg:hidden"><LogOut /></Button>
     </aside>
   );
 }
