@@ -26,7 +26,7 @@ const services: Service[] = [
     Icon: Scissors,
   },
   {
-    title: "Fashion Colours",
+    title: "Hair Colouring",
     copy: "Vibrant, long-lasting colours that make a statement.",
     image: colour,
     Icon: Palette,
