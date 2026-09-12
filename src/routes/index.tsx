@@ -12,9 +12,6 @@ import { SplitBanner } from "@/components/site/SplitBanner";
 import { Testimonials } from "@/components/site/Testimonials";
 import { Stats } from "@/components/site/Stats";
 
-
-import { Brands } from "@/components/site/Brands";
-import { Membership } from "@/components/site/Membership";
 import { FAQ } from "@/components/site/FAQ";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
@@ -73,7 +70,7 @@ function Index() {
         <Hero />
         <SplitBanner />
         <Services />
-        
+
         <Gallery />
         <WhyChoose />
         <Contact />
@@ -81,8 +78,6 @@ function Index() {
         <Bridal />
         <Testimonials />
         <Stats />
-        <Brands />
-        <Membership />
       </main>
       <Footer />
       <FloatingActions />

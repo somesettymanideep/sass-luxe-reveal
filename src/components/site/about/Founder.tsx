@@ -1,14 +1,9 @@
 import { useEffect, useRef } from "react";
-import { Quote, Instagram, Award } from "lucide-react";
-import { gsap, ensureGsap } from "@/lib/motion";
+import { Award, Instagram, Quote } from "lucide-react";
+import { ensureGsap, gsap } from "@/lib/motion";
 import founder from "@/assets/founder-custom.jpg?url";
-import { LuxeButton } from "../LuxeButton";
 
-const credentials = [
-  "Pioneer of luxury salon experiences across Andhra Pradesh",
-  "15+ years in couture styling, color & bridal artistry",
-  "Trained in London & Mumbai premier hair academies",
-];
+const credentials = ["Pioneer of luxury salon experiences across Andhra Pradesh"];
 
 export function Founder() {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -152,14 +147,18 @@ export function Founder() {
 
         <div ref={bioRef} className="will-change-transform">
           <div
-            ref={(el) => { if (el) bioItemsRef.current[0] = el; }}
+            ref={(el) => {
+              if (el) bioItemsRef.current[0] = el;
+            }}
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <p className="section-eyebrow text-gold">Founder's Message</p>
           </div>
 
           <div
-            ref={(el) => { if (el) bioItemsRef.current[1] = el; }}
+            ref={(el) => {
+              if (el) bioItemsRef.current[1] = el;
+            }}
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <h2 className="mt-2 font-semibold text-[clamp(2rem,4.4vw,3.6rem)] leading-[1.05] text-cream">
@@ -171,22 +170,31 @@ export function Founder() {
           </div>
 
           <div
-            ref={(el) => { if (el) bioItemsRef.current[2] = el; }}
+            ref={(el) => {
+              if (el) bioItemsRef.current[2] = el;
+            }}
             className="mt-8 flex gap-4"
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <Quote className="mt-1 size-8 shrink-0 text-gold" />
             <p className="font-display text-xl italic leading-relaxed text-cream/85 md:text-2xl">
-              "Our dream has always been to bring global runway standards and luxury hair couture to Andhra Pradesh. SASS was born from the conviction that our guests deserve world-class artistry without compromise."
+              "Our dream has always been to bring global runway standards and luxury hair couture to
+              Andhra Pradesh. SASS was born from the conviction that our guests deserve world-class
+              artistry without compromise."
             </p>
           </div>
 
           <div
-            ref={(el) => { if (el) bioItemsRef.current[3] = el; }}
+            ref={(el) => {
+              if (el) bioItemsRef.current[3] = el;
+            }}
             style={{ opacity: 0, visibility: "hidden" }}
           >
             <p className="mt-7 text-sm leading-relaxed text-cream/60">
-              From our bespoke styling stations to our state-of-the-art bridal lounges across Vijayawada, Guntur, and Rajahmundry, our passionate team of artists works tirelessly to turn every visit into an unforgettable transformation. We don't just follow trends—we set standards and honor your trust with excellence every single day.
+              From our bespoke styling stations to our state-of-the-art bridal lounges across
+              Vijayawada, Guntur, and Rajahmundry, our passionate team of artists works tirelessly
+              to turn every visit into an unforgettable transformation. We don't just follow
+              trends—we set standards and honor your trust with excellence every single day.
             </p>
 
             <ul className="mt-8 space-y-3">
@@ -200,13 +208,12 @@ export function Founder() {
           </div>
 
           <div
-            ref={(el) => { if (el) bioItemsRef.current[4] = el; }}
+            ref={(el) => {
+              if (el) bioItemsRef.current[4] = el;
+            }}
             className="mt-10 flex flex-wrap items-center gap-4"
             style={{ opacity: 0, visibility: "hidden" }}
           >
-            <LuxeButton as="a" href="/contact" className="px-10">
-              Book with the Studio
-            </LuxeButton>
             <a
               href="https://instagram.com"
               target="_blank"

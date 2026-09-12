@@ -1,11 +1,4 @@
-import {
-  Instagram,
-  Facebook,
-  Youtube,
-  Mail,
-  Phone,
-  MapPin,
-} from "lucide-react";
+import { Instagram, Facebook, Youtube, Mail, Phone, MapPin } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import logoUrl from "@/assets/sass-logo-custom.png?url";
 import { useReveal } from "@/lib/motion";
@@ -16,8 +9,7 @@ const quickLinks: [string, string][] = [
   ["About Us", "/about"],
   ["Transformations", "/#gallery"],
   ["Bridal Beauty", "/#bridal"],
-  
-  ["Membership", "/#membership"],
+  ["Membership", "/services#membership"],
   ["FAQs", "/#faq"],
   ["Contact", "/contact"],
 ];
@@ -45,14 +37,22 @@ export function Footer() {
         <div className="foot-col lg:col-span-4">
           <img src={logoUrl} alt="SASS Hair & Beauty" width={180} height={90} className="w-36" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/55">
-            A premium hair &amp; beauty atelier with flagship salons in Vijayawada,
-            Guntur and Rajahmundry.
+            A premium hair &amp; beauty atelier with flagship salons in Vijayawada, Guntur and
+            Rajahmundry.
           </p>
 
           <div className="mt-6 flex gap-3">
             {[
-              { Icon: Instagram, label: "Instagram", href: "https://www.instagram.com/sasshairbeauty/" },
-              { Icon: Facebook, label: "Facebook", href: "https://www.facebook.com/profile.php?id=61560116745363" },
+              {
+                Icon: Instagram,
+                label: "Instagram",
+                href: "https://www.instagram.com/sasshairbeauty/",
+              },
+              {
+                Icon: Facebook,
+                label: "Facebook",
+                href: "https://www.facebook.com/profile.php?id=61560116745363",
+              },
               { Icon: Youtube, label: "YouTube", href: "https://youtube.com" },
             ].map(({ Icon, label, href }) => (
               <a
@@ -75,7 +75,7 @@ export function Footer() {
           <ul className="mt-6 space-y-3 text-sm text-cream/60">
             {quickLinks.map(([label, href]) => (
               <li key={href}>
-                {href.startsWith("/#") ? (
+                {href.startsWith("/#") || href.includes("#") ? (
                   <a href={href} className="link-underline">
                     {label}
                   </a>
