@@ -9,14 +9,13 @@ import { Timeline } from "@/components/site/about/Timeline";
 import { AboutStats } from "@/components/site/about/AboutStats";
 import { AboutBranches } from "@/components/site/about/AboutBranches";
 
-import { Brands } from "@/components/site/Brands";
 import { Footer } from "@/components/site/Footer";
 import { FloatingActions } from "@/components/site/FloatingActions";
-import interior from "@/assets/interior.jpg?url";;
+import interior from "@/assets/interior.jpg?url";
 
 const title = "About SASS Hair & Beauty | Our Story, Founder & Journey";
 const description =
-  "Since 2011 SASS Hair & Beauty has grown from one chair in Vijayawada to three luxury flagships. Meet our founder, our journey and the team behind the craft.";
+  "Since 2016 SASS Hair & Beauty has grown from our Vijayawada flagship across Andhra Pradesh to Guntur and Rajahmundry. Meet our founder, our journey and the team behind the craft.";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -42,7 +41,7 @@ function AboutPage() {
         <PageHero
           crumb="About"
           eyebrow="About SASS"
-          title="Fifteen years of"
+          title="A journey of"
           italic="quiet obsession with detail"
           subtitle="A premium hair and beauty house built in Andhra Pradesh — one consultation, one client, one branch at a time."
           image={interior}
@@ -52,8 +51,6 @@ function AboutPage() {
         <Timeline />
         <AboutBranches />
         <AboutStats />
-        
-        <Brands />
       </main>
       <Footer />
       <FloatingActions />

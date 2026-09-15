@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { Award, Instagram, Quote } from "lucide-react";
+import { Award, Quote } from "lucide-react";
 import { ensureGsap, gsap } from "@/lib/motion";
 import founder from "@/assets/founder-custom.jpg?url";
 
@@ -205,24 +205,6 @@ export function Founder() {
                 </li>
               ))}
             </ul>
-          </div>
-
-          <div
-            ref={(el) => {
-              if (el) bioItemsRef.current[4] = el;
-            }}
-            className="mt-10 flex flex-wrap items-center gap-4"
-            style={{ opacity: 0, visibility: "hidden" }}
-          >
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noreferrer"
-              className="grid size-11 place-items-center rounded-full border border-gold/35 text-gold transition-colors duration-500 hover:border-gold hover:bg-gold hover:text-ink"
-              aria-label="Instagram"
-            >
-              <Instagram className="size-4" />
-            </a>
           </div>
         </div>
       </div>

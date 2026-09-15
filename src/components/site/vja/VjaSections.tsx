@@ -378,7 +378,7 @@ export function VjaAreas() {
 }
 
 /* -------- 16. Book appointment -------- */
-const serviceOptions = ["Hair Cut & Styling", "Hair Colour", "Keratin / Smoothening", "Hydra / Medi Facial", "Laser Treatment", "Bridal Makeup", "Nails & Spa"];
+const serviceOptions = ["Hair Cut & Styling", "Hair Colouring", "Keratin / Smoothening", "Hydra / Medi Facial", "Laser Treatment", "Bridal Makeup", "Nails & Spa"];
 
 export function VjaBooking() {
   const ref = useReveal<HTMLDivElement>({ selector: ".v-col", stagger: 0.12 });

@@ -1,6 +1,16 @@
 import { useState, type FormEvent } from "react";
 import {
-  Check, Clock, Mail, MapPin, Navigation, Phone, MessageCircle, Car, Landmark, Plus, Loader2
+  Check,
+  Clock,
+  Mail,
+  MapPin,
+  Navigation,
+  Phone,
+  MessageCircle,
+  Car,
+  Landmark,
+  Plus,
+  Loader2,
 } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
@@ -8,14 +18,30 @@ import type { Branch } from "@/lib/branches";
 import { branches } from "@/lib/branches";
 import { createConsultation } from "@/lib/admin.functions";
 import transformsImage from "@/assets/transforms-services-custom.jpg?url";
+import transformationBg from "@/assets/beauty-transformation-bg.jpg?url";
 
 const serviceOptions = [
-  "Hair Cut", "Hair Styling", "Threading", "Fashion Colours", "Hair Smoothening",
-  "Keratin Treatment", "Hair Spa", "Facials", "Pedicure", "Manicure",
-  "Bridal Makeup", "Party Makeup", "Advanced Hair Treatments",
+  "Hair Cut",
+  "Hair Styling",
+  "Threading",
+  "Hair Colouring",
+  "Hair Smoothening",
+  "Keratin Treatment",
+  "Hair Spa",
+  "Facials",
+  "Pedicure",
+  "Manicure",
+  "Bridal Makeup",
+  "Party Makeup",
+  "Advanced Hair Treatments",
 ];
 
-const benefits = ["Free Hair Analysis", "Skin Consultation", "Bridal Consultation", "Hair Treatment Guidance"];
+const benefits = [
+  "Free Hair Analysis",
+  "Skin Consultation",
+  "Bridal Consultation",
+  "Hair Treatment Guidance",
+];
 
 /* ---------------- Section 7 — Free Consultation ---------------- */
 
@@ -43,7 +69,7 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
       setTimeout(() => setError(""), 1600);
       return;
     }
-    
+
     setState("loading");
     try {
       await createConsultation({ data });
@@ -62,23 +88,30 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
     "pointer-events-none absolute left-4 top-4 text-xs uppercase tracking-[0.16em] text-muted-foreground transition-all duration-300 peer-focus:top-2 peer-focus:text-[0.6rem] peer-focus:text-gold peer-[:not(:placeholder-shown)]:top-2 peer-[:not(:placeholder-shown)]:text-[0.6rem]";
   const selectCls =
     "w-full appearance-none rounded-xl border border-border bg-card px-4 pb-2.5 pt-6 text-sm outline-none transition-[border-color,box-shadow] duration-400 focus:border-gold focus:shadow-gold";
-  const staticLabel = "pointer-events-none absolute left-4 top-2 text-[0.6rem] uppercase tracking-[0.16em] text-gold";
+  const staticLabel =
+    "pointer-events-none absolute left-4 top-2 text-[0.6rem] uppercase tracking-[0.16em] text-gold";
 
   return (
     <section id="consultation" className="bg-background py-20 md:py-28">
-      <div ref={ref} className="mx-auto grid max-w-[1400px] items-start gap-10 px-6 lg:grid-cols-2 lg:px-10">
+      <div
+        ref={ref}
+        className="mx-auto grid max-w-[1400px] items-start gap-10 px-6 lg:grid-cols-2 lg:px-10"
+      >
         <div className="bc-item lg:sticky lg:top-28">
           <p className="section-eyebrow text-gold">Free Consultation</p>
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.06]">
             Book your free <span className="italic text-gold-gradient">consultation</span>
           </h2>
           <p className="mt-5 max-w-lg text-sm leading-relaxed text-muted-foreground">
-            Meet our expert stylists at {branch.city} and receive personalised recommendations
-            for your perfect look.
+            Meet our expert stylists at {branch.city} and receive personalised recommendations for
+            your perfect look.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {benefits.map((b) => (
-              <li key={b} className="flex items-start gap-3 rounded-[18px] border border-gold/20 bg-card/70 p-4 backdrop-blur-sm">
+              <li
+                key={b}
+                className="flex items-start gap-3 rounded-[18px] border border-gold/20 bg-card/70 p-4 backdrop-blur-sm"
+              >
                 <Check className="mt-0.5 size-4 shrink-0 text-gold" />
                 <span className="text-sm text-foreground/75">{b}</span>
               </li>
@@ -87,7 +120,11 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
         </div>
 
         <div className="bc-item rounded-[24px] border border-gold/20 bg-card p-8 shadow-luxe md:p-10">
-          <form onSubmit={submit} noValidate className={`grid gap-4 md:grid-cols-2 ${error ? "shake" : ""}`}>
+          <form
+            onSubmit={submit}
+            noValidate
+            className={`grid gap-4 md:grid-cols-2 ${error ? "shake" : ""}`}
+          >
             <div className="relative">
               <input name="name" placeholder=" " className={field} />
               <span className={label}>Full name</span>
@@ -102,13 +139,17 @@ export function BranchConsultation({ branch }: { branch: Branch }) {
             </div>
             <div className="relative">
               <select name="service" className={selectCls}>
-                {serviceOptions.map((s) => <option key={s}>{s}</option>)}
+                {serviceOptions.map((s) => (
+                  <option key={s}>{s}</option>
+                ))}
               </select>
               <span className={staticLabel}>Select service</span>
             </div>
             <div className="relative">
               <select name="location" defaultValue={branch.city} className={selectCls}>
-                {branches.map((b) => <option key={b.slug}>{b.city}</option>)}
+                {branches.map((b) => (
+                  <option key={b.slug}>{b.city}</option>
+                ))}
               </select>
               <span className={staticLabel}>Location</span>
             </div>
@@ -188,17 +229,26 @@ export function BranchLocation({ branch }: { branch: Branch }) {
             </p>
             <p className="flex items-center gap-3 text-sm text-cream/75">
               <Phone className="size-4 shrink-0 text-gold" />
-              <a href={`tel:${tel}`} className="link-underline text-cream">{branch.phone}</a>
+              <a href={`tel:${tel}`} className="link-underline text-cream">
+                {branch.phone}
+              </a>
             </p>
             <p className="flex items-center gap-3 text-sm text-cream/75">
               <MessageCircle className="size-4 shrink-0 text-gold" />
-              <a href={`https://wa.me/${wa}`} target="_blank" rel="noreferrer" className="link-underline text-cream">
+              <a
+                href={`https://wa.me/${wa}`}
+                target="_blank"
+                rel="noreferrer"
+                className="link-underline text-cream"
+              >
                 WhatsApp us
               </a>
             </p>
             <p className="flex items-center gap-3 text-sm text-cream/75">
               <Mail className="size-4 shrink-0 text-gold" />
-              <a href={`mailto:${branch.email}`} className="link-underline text-cream">{branch.email}</a>
+              <a href={`mailto:${branch.email}`} className="link-underline text-cream">
+                {branch.email}
+              </a>
             </p>
           </div>
 
@@ -260,7 +310,10 @@ function branchFaqs(branch: Branch) {
 }
 
 export function BranchFAQ({ branch }: { branch: Branch }) {
-  const ref = useReveal<HTMLDivElement>({ selector: ".bf-item, .bf-head, .bf-image", stagger: 0.07 });
+  const ref = useReveal<HTMLDivElement>({
+    selector: ".bf-item, .bf-head, .bf-image",
+    stagger: 0.07,
+  });
   const [open, setOpen] = useState<number | null>(0);
   const faqs = branchFaqs(branch);
 
@@ -312,8 +365,12 @@ export function BranchFAQ({ branch }: { branch: Branch }) {
                     >
                       {num}
                     </span>
-                    <span className="flex-1 font-display text-base sm:text-lg md:text-xl">{f.q}</span>
-                    <Plus className={`size-5 shrink-0 text-gold transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? "rotate-135" : "group-hover:rotate-90"}`} />
+                    <span className="flex-1 font-display text-base sm:text-lg md:text-xl">
+                      {f.q}
+                    </span>
+                    <Plus
+                      className={`size-5 shrink-0 text-gold transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] ${isOpen ? "rotate-135" : "group-hover:rotate-90"}`}
+                    />
                   </button>
                   <div
                     className="grid transition-all duration-600 ease-[cubic-bezier(0.22,1,0.36,1)]"
@@ -321,7 +378,9 @@ export function BranchFAQ({ branch }: { branch: Branch }) {
                   >
                     <div className="overflow-hidden px-5 sm:px-6">
                       <div className="border-t border-gold/10 py-4">
-                        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">{f.a}</p>
+                        <p className="text-sm leading-relaxed text-muted-foreground sm:text-base">
+                          {f.a}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -340,20 +399,35 @@ export function BranchFAQ({ branch }: { branch: Branch }) {
 export function BranchCTA({ branch }: { branch: Branch }) {
   const ref = useReveal<HTMLDivElement>({ selector: ".bcta-item", stagger: 0.1 });
   return (
-    <section className="relative overflow-hidden bg-ink py-20 text-cream md:py-28">
-      <div className="pointer-events-none absolute left-1/2 top-0 size-[36rem] -translate-x-1/2 rounded-full bg-gold/10 blur-[150px]" />
-      <div ref={ref} className="mx-auto max-w-3xl px-6 text-center">
-        <h2 className="bcta-item text-[clamp(2rem,4.6vw,3.4rem)] leading-[1.05]">
+    <section className="relative overflow-hidden bg-ink py-24 text-cream md:py-32">
+      {/* Background transformation image */}
+      <img
+        src={transformationBg}
+        alt="Beauty transformation at SASS"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+
+      {/* Increased overlay color */}
+      <div className="absolute inset-0 bg-black/65" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-black/75" />
+
+      {/* Subtle gold glow accent */}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 size-[32rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gold/10 blur-[140px]" />
+
+      <div ref={ref} className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+        <h2 className="bcta-item text-[clamp(2rem,4.6vw,3.4rem)] font-semibold leading-[1.05] drop-shadow-[0_4px_16px_rgba(0,0,0,0.85)]">
           Ready for your <span className="italic text-gold-gradient">beauty transformation?</span>
         </h2>
-        <p className="bcta-item mt-5 text-sm leading-relaxed text-cream/70 md:text-base">
+        <p className="bcta-item mt-5 text-sm leading-relaxed text-cream/90 md:text-base drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)]">
           Experience premium salon services from Andhra Pradesh&apos;s trusted beauty destination.
         </p>
         <div className="bcta-item mt-9 flex flex-wrap justify-center gap-4">
-          <LuxeButton as="a" href="#consultation">Book Appointment</LuxeButton>
+          <LuxeButton as="a" href="#consultation">
+            Book Appointment
+          </LuxeButton>
           <a
             href={`tel:${branch.phone.replace(/\s/g, "")}`}
-            className="inline-flex items-center gap-2 rounded-full border border-gold/45 px-7 py-3.5 font-button text-[0.7rem] font-semibold uppercase tracking-[0.2em] transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:text-gold"
+            className="inline-flex items-center gap-2 rounded-full border border-gold/60 bg-ink/75 backdrop-blur-md px-7 py-3.5 font-button text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-cream transition-all duration-500 hover:-translate-y-1 hover:border-gold hover:bg-gold hover:text-ink shadow-luxe"
           >
             <Phone className="size-3.5" /> Call Now
           </a>

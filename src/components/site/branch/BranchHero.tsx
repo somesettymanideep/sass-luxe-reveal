@@ -1,11 +1,12 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Star, Users, BadgeCheck, Sparkles, Phone, Scissors, Crown, Gem, HeartHandshake, Volume2, VolumeX } from "lucide-react";
 import { useReveal } from "@/lib/motion";
 import { LuxeButton } from "../LuxeButton";
 import type { Branch } from "@/lib/branches";
 import vjaHeroReel from "@/assets/vja-hero-reel-optimized.mp4?url";
 import heroPoster from "@/assets/hero-reel-poster.jpg?url";
-import gunturReel from "@/assets/guntur-hero-reel.mp4?url";
+import gunturReel from "@/assets/guntur-reel.mp4?url";
+import gunturPoster from "@/assets/guntur-reel-poster.jpg?url";
 import rjyReel from "@/assets/rjy-hero-reel.mp4?url";
 
 const badges = [
@@ -31,18 +32,34 @@ export function BranchHero({ branch }: { branch: Branch }) {
   const isGuntur = branch.slug === "guntur";
   const isRajahmundry = branch.slug === "rajahmundry";
   
-  let reel = "";
+  let reel = vjaHeroReel;
   let poster = heroPoster;
 
   if (isVijayawada) {
     reel = vjaHeroReel;
+    poster = heroPoster;
   } else if (isGuntur) {
     reel = gunturReel;
+    poster = gunturPoster;
   } else if (isRajahmundry) {
     reel = rjyReel;
+    poster = heroPoster;
   }
 
-
+  useEffect(() => {
+    const v = videoRef.current;
+    if (v) {
+      v.defaultMuted = true;
+      v.muted = true;
+      v.load();
+      const playPromise = v.play();
+      if (playPromise !== undefined) {
+        playPromise.catch((err) => {
+          console.warn(`Autoplay for ${branch.city} video:`, err);
+        });
+      }
+    }
+  }, [branch.slug, reel]);
 
   const toggleSound = () => {
     const v = videoRef.current;
@@ -98,7 +115,9 @@ export function BranchHero({ branch }: { branch: Branch }) {
         <div className="bh-item relative">
           <div className="relative mx-auto max-w-[26rem] overflow-hidden rounded-[24px] border border-gold/25 shadow-luxe">
             <video
+              key={branch.slug}
               ref={videoRef}
+              src={reel}
               poster={poster}
               autoPlay
               muted

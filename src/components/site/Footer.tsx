@@ -9,14 +9,13 @@ const quickLinks: [string, string][] = [
   ["About Us", "/about"],
   ["Transformations", "/#gallery"],
   ["Bridal Beauty", "/#bridal"],
-  ["Membership", "/services#membership"],
   ["FAQs", "/#faq"],
   ["Contact", "/contact"],
 ];
 
 const services = [
   "Hair Cut & Styling",
-  "Fashion Colours",
+  "Hair Colouring",
   "Keratin Treatment",
   "Hair Smoothening",
   "Bridal Makeup",

@@ -5,7 +5,10 @@ import { branches as branchData } from "@/lib/branches";
 const branches = branchData;
 
 export function Branches() {
-  const ref = useDirectionalReveal<HTMLDivElement>("up", { selector: ".br-card, .br-head", stagger: 0.12 });
+  const ref = useDirectionalReveal<HTMLDivElement>("up", {
+    selector: ".br-card, .br-head",
+    stagger: 0.12,
+  });
 
   return (
     <section className="bg-ink py-24 text-cream md:py-32">
@@ -13,13 +16,17 @@ export function Branches() {
         <div className="br-head max-w-2xl">
           <p className="section-eyebrow text-gold">Our Branches</p>
           <h2 className="mt-2 font-semibold text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.05] text-cream">
-            Three flagships across Andhra Pradesh
+            Three salons across Andhra Pradesh
           </h2>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {branches.map((b) => (
-            <article id={`branch-${b.city.toLowerCase()}`} key={b.city} className="br-card luxe-card overflow-hidden bg-white/[0.03]">
+            <article
+              id={`branch-${b.city.toLowerCase()}`}
+              key={b.city}
+              className="br-card luxe-card overflow-hidden bg-white/[0.03]"
+            >
               <iframe
                 title={`Map of SASS ${b.city}`}
                 src={b.mapEmbed}

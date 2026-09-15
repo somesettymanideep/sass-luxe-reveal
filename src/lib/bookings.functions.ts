@@ -7,19 +7,30 @@ const bookingSchema = z.object({
   phone: z.string().min(1, "Phone is required"),
   service: z.string().min(1, "Service is required"),
   branch: z.string().min(1, "Branch is required"),
+  date: z.string().nullable().optional(),
+  time: z.string().nullable().optional(),
+  email: z.string().nullable().optional(),
   message: z.string().nullable().optional(),
 });
 
 export const createBooking = createServerFn({ method: "POST" })
   .validator((data: unknown) => bookingSchema.parse(data))
   .handler(async ({ data }) => {
-    // Ensure optional fields are handled correctly for Supabase (null instead of undefined)
+    // Pack date, time, email, and notes into structured JSON in message
+    const structuredMessage = JSON.stringify({
+      date: data.date || null,
+      time: data.time || null,
+      email: data.email || null,
+      notes: data.message || null,
+    });
+
     const bookingData = {
       name: data.name,
       phone: data.phone,
       service: data.service,
       branch: data.branch,
-      message: data.message ?? null,
+      message: structuredMessage,
+      status: "booking",
     };
 
     const { error } = await supabase

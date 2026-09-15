@@ -1,29 +1,10 @@
-import { Phone, Mail, MapPin, Clock, MessageCircle, Instagram, Facebook, Youtube } from "lucide-react";
+import { Phone, Mail, Clock, MessageCircle, Instagram, Facebook, Youtube } from "lucide-react";
 import { useDirectionalReveal } from "@/lib/motion";
 
-const cards = [
-  {
-    icon: Phone,
-    title: "Call us",
-    lines: ["+91 72868 11999", "+91 89071 11999"],
-    href: "tel:+917286811999",
-  },
-  {
-    icon: Mail,
-    title: "Email",
-    lines: ["hello@sasshairbeauty.in", "bridal@sasshairbeauty.in"],
-    href: "mailto:hello@sasshairbeauty.in",
-  },
-  {
-    icon: MapPin,
-    title: "Flagship",
-    lines: ["2nd Floor, PVP Square, MG Road", "Mogalrajapuram, Vijayawada 520010"],
-  },
-  {
-    icon: Clock,
-    title: "Business hours",
-    lines: ["Mon – Sun · 10:00 AM – 9:00 PM", "Bridal slots from 6:00 AM"],
-  },
+const branchPhones = [
+  { name: "Vijayawada", phone: "+91 72868 11999", href: "tel:+917286811999" },
+  { name: "Guntur", phone: "+91 89071 11999", href: "tel:+918907111999" },
+  { name: "Rajahmundry", phone: "+91 95502 81116", href: "tel:+919550281116" },
 ];
 
 const socials = [
@@ -50,31 +31,60 @@ export function ContactInfo() {
         </div>
 
         <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {cards.map((c) => {
-            const Icon = c.icon;
-            const inner = (
-              <>
-                <span className="grid size-10 place-items-center rounded-full border border-gold/30 text-gold transition-colors duration-500 group-hover:bg-gold-gradient group-hover:text-ink">
-                  <Icon className="size-4" />
-                </span>
-                <h3 className="mt-4 text-base">{c.title}</h3>
-                {c.lines.map((l) => (
-                  <p key={l} className="mt-1 text-sm text-muted-foreground">
-                    {l}
-                  </p>
-                ))}
-              </>
-            );
-            return c.href ? (
-              <a key={c.title} href={c.href} className="ci-card group luxe-card block bg-background p-5">
-                {inner}
-              </a>
-            ) : (
-              <div key={c.title} className="ci-card group luxe-card bg-background p-5">
-                {inner}
+          {/* Call us - All 3 branches */}
+          <div className="ci-card luxe-card bg-background p-6 sm:col-span-2">
+            <div className="flex items-center gap-3">
+              <span className="grid size-10 place-items-center rounded-full border border-gold/30 text-gold transition-colors duration-500 hover:bg-gold-gradient hover:text-ink">
+                <Phone className="size-4" />
+              </span>
+              <div>
+                <h3 className="text-base font-semibold">Call us</h3>
+                <p className="text-xs text-muted-foreground">
+                  Direct lines for our branch locations
+                </p>
               </div>
-            );
-          })}
+            </div>
+
+            <div className="mt-5 grid gap-3 sm:grid-cols-3">
+              {branchPhones.map((b) => (
+                <a
+                  key={b.name}
+                  href={b.href}
+                  className="group/branch flex flex-col rounded-xl border border-gold/15 bg-card/60 p-3.5 transition-all duration-300 hover:border-gold hover:bg-gold/10 hover:-translate-y-0.5"
+                >
+                  <span className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-gold">
+                    {b.name}
+                  </span>
+                  <span className="mt-1 text-sm font-medium text-foreground transition-colors group-hover/branch:text-gold">
+                    {b.phone}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Email */}
+          <a
+            href="mailto:hello@sasshairbeauty.in"
+            className="ci-card group luxe-card block bg-background p-5"
+          >
+            <span className="grid size-10 place-items-center rounded-full border border-gold/30 text-gold transition-colors duration-500 group-hover:bg-gold-gradient group-hover:text-ink">
+              <Mail className="size-4" />
+            </span>
+            <h3 className="mt-4 text-base">Email</h3>
+            <p className="mt-1 text-sm text-muted-foreground">hello@sasshairbeauty.in</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">bridal@sasshairbeauty.in</p>
+          </a>
+
+          {/* Business hours */}
+          <div className="ci-card group luxe-card bg-background p-5">
+            <span className="grid size-10 place-items-center rounded-full border border-gold/30 text-gold transition-colors duration-500 group-hover:bg-gold-gradient group-hover:text-ink">
+              <Clock className="size-4" />
+            </span>
+            <h3 className="mt-4 text-base">Business hours</h3>
+            <p className="mt-1 text-sm text-muted-foreground">Mon – Sun · 10:00 AM – 9:00 PM</p>
+            <p className="mt-0.5 text-sm text-muted-foreground">Bridal slots from 6:00 AM</p>
+          </div>
         </div>
 
         <div className="ci-card mt-4 flex flex-wrap items-center justify-between gap-5 rounded-2xl border border-gold/20 bg-background px-6 py-5">

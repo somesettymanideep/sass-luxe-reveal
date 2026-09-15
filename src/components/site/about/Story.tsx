@@ -22,7 +22,6 @@ const pillars = [
   },
 ];
 
-
 export function Story() {
   const ref = useReveal<HTMLDivElement>({ selector: ".story-fade", stagger: 0.14 });
   const mvvRef = useRef<HTMLDivElement | null>(null);
@@ -65,7 +64,6 @@ export function Story() {
     return () => ctx.revert();
   }, []);
 
-
   return (
     <section id="story" className="bg-background py-28 md:py-36">
       <div ref={ref} className="mx-auto max-w-[1400px] px-6 lg:px-10">
@@ -101,19 +99,19 @@ export function Story() {
             </h2>
             <div className="mt-7 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
               <p>
-                SASS Hair &amp; Beauty began in 2011 as a small studio on MG Road with one
-                promise — that a haircut in Andhra Pradesh should feel as considered as one
-                in Milan or Mumbai. No rushed chairs, no compromise products, no guesswork.
+                SASS Hair &amp; Beauty began in 2016 with our flagship at PVP Square on MG Road with
+                one promise — that a haircut in Andhra Pradesh should feel as considered as one in
+                Milan or Mumbai. No rushed chairs, no compromise products, no guesswork.
               </p>
               <p>
-                Over fifteen years that promise turned into three flagship salons, a
-                dedicated bridal suite, and a team of colourists and texture specialists
-                trained on L'Oréal, Schwarzkopf, Wella and Olaplex systems.
+                Over the years that promise turned into premier branches across Vijayawada, Guntur
+                and Rajahmundry, a dedicated bridal suite, and a team of colourists and texture
+                specialists trained on L'Oréal, Schwarzkopf, Wella and Olaplex systems.
               </p>
               <p>
-                Today more than 42,000 clients trust us with the way they walk into a room —
-                and every one of them still starts with the same twelve-minute consultation
-                we began with.
+                Today more than 42,000 clients trust us with the way they walk into a room — and
+                every one of them still starts with the same twelve-minute consultation we began
+                with.
               </p>
             </div>
           </div>
@@ -158,8 +156,6 @@ export function Story() {
             })}
           </div>
         </div>
-
-
       </div>
     </section>
   );
