@@ -1,10 +1,18 @@
 import Lenis from "lenis";
 import { useEffect } from "react";
+import { useRouterState } from "@tanstack/react-router";
 import { ensureGsap, ScrollTrigger } from "@/lib/motion";
 
 export function SmoothScroll() {
+  const { pathname, hash } = useRouterState({
+    select: (s) => ({
+      pathname: s.location.pathname,
+      hash: s.location.hash,
+    }),
+  });
+
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (typeof window === "undefined" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     ensureGsap();
 
     const lenis = new Lenis({
@@ -16,13 +24,24 @@ export function SmoothScroll() {
     lenis.on("scroll", ScrollTrigger.update);
     (window as unknown as { lenis?: Lenis }).lenis = lenis;
 
-
     let frame = 0;
     const raf = (time: number) => {
       lenis.raf(time);
       frame = requestAnimationFrame(raf);
     };
     frame = requestAnimationFrame(raf);
+
+    if (window.location.hash) {
+      setTimeout(() => {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+          lenis.scrollTo(target as HTMLElement, { offset: -90, immediate: true });
+        }
+      }, 150);
+    } else {
+      window.scrollTo(0, 0);
+      lenis.scrollTo(0, { immediate: true });
+    }
 
     const onAnchor = (e: MouseEvent) => {
       const anchor = (e.target as HTMLElement)?.closest?.(
@@ -46,6 +65,25 @@ export function SmoothScroll() {
       lenis.destroy();
     };
   }, []);
+
+  useEffect(() => {
+    const win = window as unknown as { lenis?: Lenis };
+    if (!hash) {
+      window.scrollTo(0, 0);
+      if (win.lenis) {
+        win.lenis.scrollTo(0, { immediate: true });
+      }
+    } else {
+      const target = document.getElementById(hash.replace(/^#/, ""));
+      if (target) {
+        if (win.lenis) {
+          win.lenis.scrollTo(target, { offset: -90 });
+        } else {
+          target.scrollIntoView();
+        }
+      }
+    }
+  }, [pathname, hash]);
 
   return null;
 }

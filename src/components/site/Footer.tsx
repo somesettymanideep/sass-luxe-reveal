@@ -6,11 +6,12 @@ import { branches } from "@/lib/branches";
 
 const quickLinks: [string, string][] = [
   ["Home", "/"],
-  ["About Us", "/about"],
-  ["Transformations", "/#gallery"],
-  ["Bridal Beauty", "/#bridal"],
-  ["FAQs", "/#faq"],
+  ["About", "/about"],
+  ["Services", "/services"],
   ["Contact", "/contact"],
+  ["Bridal Beauty", "/#bridal"],
+  ["Transformations", "/#gallery"],
+  ["FAQs", "/#faq"],
 ];
 
 const services = [
@@ -26,6 +27,17 @@ const services = [
 export function Footer() {
   const ref = useReveal<HTMLDivElement>({ selector: ".foot-col", stagger: 0.1 });
 
+  const handleScrollToTop = () => {
+    const win = window as unknown as {
+      lenis?: { scrollTo: (target: number | HTMLElement, opts?: { immediate?: boolean; duration?: number }) => void };
+    };
+    if (win.lenis) {
+      win.lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <footer className="border-t-2 border-solid border-gold bg-ink pb-16 pt-14 text-cream md:pb-10">
       <div
@@ -34,7 +46,9 @@ export function Footer() {
       >
         {/* Brand */}
         <div className="foot-col lg:col-span-4">
-          <img src={logoUrl} alt="SASS Hair & Beauty" width={180} height={90} className="w-36" />
+          <Link to="/" onClick={handleScrollToTop} aria-label="SASS Hair & Beauty home" className="inline-block">
+            <img src={logoUrl} alt="SASS Hair & Beauty" width={180} height={90} className="w-36" />
+          </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/55">
             A premium hair &amp; beauty atelier with flagship salons in Vijayawada, Guntur and
             Rajahmundry.
@@ -79,7 +93,7 @@ export function Footer() {
                     {label}
                   </a>
                 ) : (
-                  <Link to={href} className="link-underline">
+                  <Link to={href} onClick={handleScrollToTop} className="link-underline">
                     {label}
                   </Link>
                 )}
@@ -94,9 +108,9 @@ export function Footer() {
           <ul className="mt-6 space-y-3 text-sm text-cream/60">
             {services.map((s) => (
               <li key={s}>
-                <a href="/#services" className="link-underline">
+                <Link to="/services" onClick={handleScrollToTop} className="link-underline">
                   {s}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
