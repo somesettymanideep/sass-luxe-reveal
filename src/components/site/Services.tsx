@@ -43,7 +43,7 @@ const services: Service[] = [
   { title: "Pedicure", copy: "Relaxing pedicures for soft & smooth feet.", img: pedicure, Icon: Flower2 },
   { title: "Manicure", copy: "Perfect nails, perfect you.", img: manicure, Icon: Hand },
   { title: "Smoothening", copy: "Frizz-free, silky & smooth hair.", img: smoothening, Icon: Waves },
-  { title: "Keratin", copy: "Stronger, shinier & healthier hair.", img: keratin, Icon: Droplets },
+  { title: "Keratin & Botox treatment", copy: "Stronger, shinier & healthier hair.", img: keratin, Icon: Droplets },
   { title: "Facials", copy: "Rejuvenate your skin with expert care.", img: facial, Icon: Smile },
   { title: "Bridal Makeup", copy: "Look your best on your big day.", img: bridal, Icon: Crown },
   { title: "Transformations", copy: "Stunning makeovers that inspire.", img: after, Icon: Sparkles },

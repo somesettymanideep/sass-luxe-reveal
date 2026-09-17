@@ -32,7 +32,7 @@ const services: Service[] = [
     Icon: Palette,
   },
   {
-    title: "Keratin Treatment",
+    title: "Keratin & Botox Treatment",
     copy: "Smooth, frizz-free hair with natural shine.",
     image: keratin,
     Icon: Droplets,
